@@ -10,11 +10,11 @@ provenance only.
 
 ## Contents
 
-| Folder | Version | Notes |
-|--------|---------|-------|
-| `3.0.60/` | 3.0.60 (WPF) | Last 3.x release |
-| `3.0.59/` | 3.0.59 (WPF) | |
-| `2.4.16/` | 2.4.16 (WinForms) | Last widely-used 2.x |
+| Folder                    | Version           | Notes                |
+|---------------------------|-------------------|----------------------|
+| `3.0.60/`                 | 3.0.60 (WPF)      | Last 3.x release     |
+| `3.0.59/`                 | 3.0.59 (WPF)      |                      |
+| `2.4.16-sligltly-faster/` | 2.4.16 (WinForms) | Last widely-used 2.x |
 
 Each version folder contains the original `.exe`/`.dll` files plus a
 `<version>-decompiled/` subfolder with ilspycmd output.
@@ -33,7 +33,7 @@ Each version folder contains the original `.exe`/`.dll` files plus a
 chmod +x decompile.sh
 ./decompile.sh 3.0.60
 ./decompile.sh 3.0.59
-./decompile.sh 2.4.16
+./decompile.sh 2.4.16-sligltly-faster
 ```
 
 ### Windows (PowerShell)
@@ -41,7 +41,7 @@ chmod +x decompile.sh
 ```powershell
 .\decompile.ps1 -Target "3.0.60"
 .\decompile.ps1 -Target "3.0.59"
-.\decompile.ps1 -Target "2.4.16"
+.\decompile.ps1 -Target "2.4.16-sligltly-faster"
 ```
 
 Native DLLs (SQL CE, etc.) are skipped automatically. MSHTML interop stubs
