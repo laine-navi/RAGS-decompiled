@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.AboutWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="About Rags Designer" FrameworkElement.Height="300" FrameworkElement.Width="450" Window.Icon="App.ico" Window.WindowStartupLocation="CenterOwner" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="28" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="28" />
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Image Grid.RowSpan="7" Source="site_logo.gif" FrameworkElement.Margin="0,0,5,0" />
+    <Label Name="a" Grid.Column="1" ContentControl.Content="Rags Designer" FrameworkElement.VerticalAlignment="Center">
+      <!--Unknown connection ID: 2-->
+    </Label>
+    <Label Name="b" Grid.Column="1" Grid.Row="1" ContentControl.Content="Subscription Expires:" FrameworkElement.VerticalAlignment="Center">
+      <!--Unknown connection ID: 3-->
+    </Label>
+    <Label Name="c" Grid.Column="1" Grid.Row="2" ContentControl.Content="Version:" FrameworkElement.VerticalAlignment="Center">
+      <!--Unknown connection ID: 4-->
+    </Label>
+    <Label Grid.Column="1" Grid.Row="3" ContentControl.Content="Copyright 2014" FrameworkElement.VerticalAlignment="Center" />
+    <Label Grid.Column="1" Grid.Row="4" ContentControl.Content="Rags Game LLC" FrameworkElement.VerticalAlignment="Center" />
+    <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" FrameworkElement.HorizontalAlignment="Center">Rags Game Designer creates fun exciting interactive fiction games. For more information, visit http://www.ragsgame.com</TextBlock>
+    <Button ContentControl.Content="OK" IsDefault="True" Grid.Column="1" Grid.Row="6" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 5-->
+    </Button>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

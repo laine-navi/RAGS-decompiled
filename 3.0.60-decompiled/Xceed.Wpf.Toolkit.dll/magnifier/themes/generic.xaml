@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Mag.Converters" xmlns:coreconv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters">
+  <conv:RadiusConverter x:Key="RadiusConverter" />
+  <coreconv:BorderThicknessToStrokeThicknessConverter x:Key="BorderThicknessToStrokeThicknessConverter" />
+  <ControlTemplate x:Key="CircleTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Magnifier</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid>
+      <Ellipse Shape.Fill="{TemplateBinding Control.Background}" />
+      <Ellipse>
+        <Shape.Stroke>
+          <Binding Path="BorderBrush">
+            <Binding.RelativeSource>
+              <RelativeSource>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+              </RelativeSource>
+            </Binding.RelativeSource>
+          </Binding>
+        </Shape.Stroke>
+        <Shape.StrokeThickness>
+          <Binding Path="BorderThickness">
+            <Binding.RelativeSource>
+              <RelativeSource>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+              </RelativeSource>
+            </Binding.RelativeSource>
+            <Binding.Converter>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BorderThicknessToStrokeThicknessConverter</Ctor>
+              </StaticResourceExtension>
+            </Binding.Converter>
+          </Binding>
+        </Shape.StrokeThickness>
+        <Shape.Fill>
+          <VisualBrush x:Name="PART_VisualBrush" TileBrush.ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+              <Binding Path="Target">
+                <Binding.RelativeSource>
+                  <RelativeSource>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                  </RelativeSource>
+                </Binding.RelativeSource>
+              </Binding>
+            </VisualBrush.Visual>
+          </VisualBrush>
+        </Shape.Fill>
+      </Ellipse>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="RectangleTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Magnifier</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid Panel.Background="{TemplateBinding Control.Background}">
+      <Rectangle>
+        <Shape.Stroke>
+          <Binding Path="BorderBrush">
+            <Binding.RelativeSource>
+              <RelativeSource>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+              </RelativeSource>
+            </Binding.RelativeSource>
+          </Binding>
+        </Shape.Stroke>
+        <Shape.StrokeThickness>
+          <Binding Path="BorderThickness">
+            <Binding.RelativeSource>
+              <RelativeSource>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+              </RelativeSource>
+            </Binding.RelativeSource>
+            <Binding.Converter>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BorderThicknessToStrokeThicknessConverter</Ctor>
+              </StaticResourceExtension>
+            </Binding.Converter>
+          </Binding>
+        </Shape.StrokeThickness>
+        <Shape.Fill>
+          <VisualBrush x:Name="PART_VisualBrush" TileBrush.ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+              <Binding Path="Target">
+                <Binding.RelativeSource>
+                  <RelativeSource>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                  </RelativeSource>
+                </Binding.RelativeSource>
+              </Binding>
+            </VisualBrush.Visual>
+          </VisualBrush>
+        </Shape.Fill>
+      </Rectangle>
+    </Grid>
+  </ControlTemplate>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Magnifier</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.IsHitTestVisible" Value="False" />
+    <Style.Triggers>
+      <Trigger Property="local:Magnifier.FrameType" Value="Circle">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <StaticResourceExtension xmlns="">
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CircleTemplate</Ctor>
+            </StaticResourceExtension>
+          </Setter.Value>
+        </Setter>
+      </Trigger>
+      <Trigger Property="local:Magnifier.FrameType" Value="Rectangle">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <StaticResourceExtension xmlns="">
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RectangleTemplate</Ctor>
+            </StaticResourceExtension>
+          </Setter.Value>
+        </Setter>
+      </Trigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Magnifier</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

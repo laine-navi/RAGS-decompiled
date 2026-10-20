@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="RAGSWPFPlayer.DebugDataWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:util="clr-namespace:Wpf.Util" Window.Title="DebugDataWindow" FrameworkElement.Height="425" FrameworkElement.Width="600" Window.WindowStartupLocation="CenterOwner" xmlns:ragswpfplayer="clr-namespace:RAGSWPFPlayer">
+  <Grid>
+    <TabControl Control.Background="#00FFFFFF">
+      <TabItem HeaderedContentControl.Header="Execution Log">
+        <ListBox Name="b">
+          <!--Unknown connection ID: 2-->
+        </ListBox>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Variables" FrameworkElement.Height="22" FrameworkElement.VerticalAlignment="Top">
+        <ListView Name="c" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True">
+          <ItemsControl.ItemsSource>
+            <Binding>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GameVariable</Ctor>
+            </Binding>
+          </ItemsControl.ItemsSource>
+          <ListView.View>
+            <GridView>
+              <GridViewColumn Header="Name" util:GridViewSort.PropertyName="DisplayName" util:GridViewSort.AutoSort="True">
+                <GridViewColumn.DisplayMemberBinding>
+                  <Binding Path="DisplayName" />
+                </GridViewColumn.DisplayMemberBinding>
+              </GridViewColumn>
+              <GridViewColumn Header="Value" util:GridViewSort.PropertyName="DisplayValue" util:GridViewSort.AutoSort="True">
+                <GridViewColumn.DisplayMemberBinding>
+                  <Binding Path="DisplayValue" />
+                </GridViewColumn.DisplayMemberBinding>
+              </GridViewColumn>
+            </GridView>
+          </ListView.View>
+          <!--Unknown connection ID: 3-->
+        </ListView>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Custom Properties">
+        <ListView Name="d" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+          <ItemsControl.ItemsSource>
+            <Binding>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CustomProperty</Ctor>
+            </Binding>
+          </ItemsControl.ItemsSource>
+          <ListView.View>
+            <GridView>
+              <GridViewColumn Header="Name" util:GridViewSort.PropertyName="Name" util:GridViewSort.AutoSort="True">
+                <GridViewColumn.DisplayMemberBinding>
+                  <Binding Path="Name" />
+                </GridViewColumn.DisplayMemberBinding>
+              </GridViewColumn>
+              <GridViewColumn Header="Value" util:GridViewSort.PropertyName="Value" util:GridViewSort.AutoSort="True">
+                <GridViewColumn.DisplayMemberBinding>
+                  <Binding Path="Value" />
+                </GridViewColumn.DisplayMemberBinding>
+              </GridViewColumn>
+            </GridView>
+          </ListView.View>
+          <!--Unknown connection ID: 4-->
+        </ListView>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Player" />
+    </TabControl>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

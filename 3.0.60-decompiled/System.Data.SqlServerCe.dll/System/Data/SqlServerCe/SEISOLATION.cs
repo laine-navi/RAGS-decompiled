@@ -1,0 +1,9 @@
+namespace System.Data.SqlServerCe;
+
+internal enum SEISOLATION
+{
+	ISO_READ_COMMITTED = 1,
+	ISO_REPEATABLE_READ = 2,
+	ISO_SERIALIZABLE = 3,
+	ISO_DEFAULT = ISO_READ_COMMITTED
+}

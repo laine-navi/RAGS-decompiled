@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsLib.AddTimerActionsWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Add Timer Actions" FrameworkElement.Height="300" FrameworkElement.Width="300" Window.WindowStartupLocation="CenterOwner" Window.Icon="App.ico" xmlns:wpfragslib="clr-namespace:WPFRagsLib;assembly=WPFRagsLib">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <ListBox Name="b" Grid.ColumnSpan="2" SelectionMode="Extended">
+      <!--Unknown connection ID: 2-->
+    </ListBox>
+    <Button ContentControl.Content="Add Actions" IsDefault="True" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Grid.Row="1">
+      <!--Unknown connection ID: 3-->
+    </Button>
+    <Button ContentControl.Content="Cancel" IsCancel="True" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+      <!--Unknown connection ID: 4-->
+    </Button>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

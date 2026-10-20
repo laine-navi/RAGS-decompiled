@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.Zoombox">
+  <conv:RoundedValueConverter x:Key="RoundedValueConverter" Precision="2" />
+  <conv:VisibilityToBoolConverter x:Key="TrueIfVisibleConverter" Inverted="False" Not="False" />
+  <conv:VisibilityToBoolConverter x:Key="TrueIfNotVisibleConverter" Inverted="False" Not="True" />
+  <conv:VisibilityToBoolConverter x:Key="VisibleIfTrueConverter" Inverted="True" Not="False" />
+  <conv:VisibilityToBoolConverter x:Key="VisibleIfNotTrueConverter" Inverted="True" Not="True" />
+  <SolidColorBrush x:Key="GlyphBrush" Color="white" />
+  <Style x:Key="TransparentButton">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ButtonBase</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <NullExtension />
+    </Style.BasedOn>
+    <Setter Property="FrameworkElement.FocusVisualStyle">
+      <Setter.Value>
+        <NullExtension />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.Background" Value="#333333" />
+    <Setter Property="Control.Foreground" Value="#cccccc" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ButtonBase</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid Panel.Background="#00FFFFFF" FrameworkElement.Cursor="Hand">
+            <Rectangle Name="BackgroundTextBoxRectangle" Shape.Fill="{TemplateBinding Control.Background}" Shape.Stroke="{TemplateBinding Control.Foreground}" RadiusX="3" RadiusY="3" UIElement.Opacity="0" />
+            <ContentPresenter />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter Property="UIElement.Opacity" Value="0.4" />
+            </Trigger>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="BackgroundTextBoxRectangle" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="UIElement.IsKeyboardFocusWithin" Value="True">
+              <Setter TargetName="BackgroundTextBoxRectangle" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ViewFinderToggleButtonStyle">
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ToggleButton</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.Visibility" Value="Visible" />
+    <Style.Triggers>
+      <DataTrigger Value="Hidden">
+        <DataTrigger.Binding>
+          <Binding Path="ViewFinderVisibility">
+            <Binding.RelativeSource>
+              <RelativeSource>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">FindAncestor</Ctor>
+                <RelativeSource.AncestorType>
+                  <x:TypeExtension>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Zoombox</Ctor>
+                  </x:TypeExtension>
+                </RelativeSource.AncestorType>
+              </RelativeSource>
+            </Binding.RelativeSource>
+          </Binding>
+        </DataTrigger.Binding>
+        <Setter Property="UIElement.Visibility" Value="Collapsed" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <DrawingImage x:Key="ShowViewFinderGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="0.707,0.707,-0.707,0.707,11.533,0.664" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="#FF000000" Geometry="M8.823,9.895 L12.44,13.46 L10.784,15.092 L15.347,15.092 L15.347,15.125 L9.651,15.125 L11.306,13.493 L8.239,10.47 L8.823,9.895 M15.347,9.511 L15.347,10.595 L14.842,11.093 L14.292,10.551 L15.347,9.511 M0,9.481 L1.133,10.598 L1.133,15.092 L5.694,15.092 L5.727,15.125 L0,15.125 L0,9.481 M14.842,3.963 L15.347,4.461 L15.347,5.611 L14.258,4.538 L14.842,3.963 M2.793,3.952 L6.41,7.517 L2.793,11.082 L2.243,10.54 L5.276,7.551 L2.209,4.527 L2.793,3.952 M9.653,0 L10.821,0 L12.429,1.585 L8.812,5.15 L8.262,4.608 L11.296,1.618 L9.653,0 M0,0 L1.133,0 L1.133,4.504 L0,5.621 L0,0" />
+        </DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="0.707,0.707,-0.707,0.707,12.048,1.182" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="#4B5F5F5F" Geometry="M0,0 L5.703,0 L4.061,1.618 L7.678,5.183 L11.295,1.618 L9.653,0 L15.347,0 L15.347,5.611 L13.704,3.996 L10.091,7.561 L13.708,11.126 L15.347,9.511 L15.347,15.125 L9.651,15.125 L11.306,13.493 L7.689,9.928 L4.071,13.493 L5.727,15.125 L0,15.125 L0,9.48 L1.659,11.115 L5.276,7.551 L1.659,3.986 L0,5.621 L0,0" />
+        </DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="0.707,0.707,-0.707,0.707,12.186,1.538" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="M6.867,9.82 L7.334,10.28 L4.072,13.494 L5.727,15.126 L0,15.126 L0,15.016 L4.906,15.016 L3.25,13.384 L6.867,9.82 M15.347,9.512 L15.347,15.126 L9.651,15.126 L9.762,15.016 L14.525,15.016 L14.525,10.322 L15.347,9.512 M0,9.481 L1.193,10.657 L0.837,11.007 L0,10.182 L0,9.481 M12.887,3.888 L13.353,4.347 L10.091,7.56 L13.242,10.667 L12.887,11.018 L9.27,7.453 L12.887,3.888 M0.837,3.878 L1.303,4.337 L0,5.621 L0,4.703 L0.837,3.878 M14.525,0 L15.347,0 L15.347,5.612 L14.525,4.802 L14.525,0 M4.772,0 L5.703,0 L4.061,1.617 L7.212,4.724 L6.857,5.075 L3.239,1.511 L4.772,0" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="FillToBoundsGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Geometry="F1 M218.138,210.145 L255.599,210.145 L255.599,246.628 L218.138,246.628 L218.138,210.145">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.2" LineJoin="Round">
+                <Pen.Brush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                  </StaticResourceExtension>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M249.378,215.741 L249.378,215.743 L249.383,215.743 L249.383,219.159 L249.378,219.159 L249.378,224.598 L245.962,224.598 L245.962,219.159 L240.525,219.159 L240.525,215.743 L245.962,215.743 L245.962,215.741 L249.378,215.741">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M249.383,240.726 L249.381,240.726 L249.381,240.73 L245.965,240.73 L245.965,240.726 L240.526,240.726 L240.526,237.31 L245.965,237.31 L245.965,231.873 L249.381,231.873 L249.381,237.31 L249.383,237.31 L249.383,240.726">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M247.539,220.321 L239.801,228.059 L247.539,235.796 L244.962,238.373 L237.224,230.635 L229.487,238.373 L226.91,235.796 L234.648,228.059 L226.91,220.321 L229.487,217.744 L237.224,225.482 L244.962,217.744 L247.539,220.321">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M224.879,240.73 L224.879,240.729 L224.874,240.729 L224.874,237.312 L224.879,237.312 L224.879,231.873 L228.295,231.873 L228.295,237.312 L233.732,237.312 L233.732,240.729 L228.295,240.729 L228.295,240.73 L224.879,240.73">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M224.874,215.746 L224.876,215.746 L224.876,215.741 L228.292,215.741 L228.292,215.746 L233.731,215.746 L233.731,219.162 L228.292,219.162 L228.292,224.598 L224.876,224.598 L224.876,219.162 L224.874,219.162 L224.874,215.746">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="FitContentGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Geometry="F1 M267.334,210.477 L304.795,210.477 L304.795,246.96 L267.334,246.96 L267.334,210.477">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.2" LineJoin="Round">
+                <Pen.Brush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                  </StaticResourceExtension>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M298.574,216.073 L298.574,216.075 L298.579,216.075 L298.579,219.491 L298.574,219.491 L298.574,224.93 L295.158,224.93 L295.158,219.491 L289.721,219.491 L289.721,216.075 L295.158,216.075 L295.158,216.073 L298.574,216.073">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M298.579,241.058 L298.577,241.058 L298.577,241.062 L295.161,241.062 L295.161,241.058 L289.722,241.058 L289.722,237.642 L295.161,237.642 L295.161,232.205 L298.577,232.205 L298.577,237.642 L298.579,237.642 L298.579,241.058">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M274.075,241.062 L274.075,241.061 L274.07,241.061 L274.07,237.644 L274.075,237.644 L274.075,232.205 L277.491,232.205 L277.491,237.644 L282.928,237.644 L282.928,241.061 L277.491,241.061 L277.491,241.062 L274.075,241.062">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M274.07,216.078 L274.072,216.078 L274.072,216.073 L277.488,216.073 L277.488,216.078 L282.927,216.078 L282.927,219.494 L277.488,219.494 L277.488,224.93 L274.072,224.93 L274.072,219.494 L274.07,219.494 L274.07,216.078">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="CenterGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Geometry="F1 M315.334,209.944 L352.795,209.944 L352.795,246.427 L315.334,246.427 L315.334,209.944">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.2" LineJoin="Round">
+                <Pen.Brush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                  </StaticResourceExtension>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M328.878,223.652 L338.19,223.652 C338.27,223.652 338.334,223.716 338.334,223.796 L338.334,233.108 C338.334,233.188 338.27,233.252 338.19,233.252 L328.878,233.252 C328.799,233.252 328.734,233.188 328.734,233.108 L328.734,223.796 C328.734,223.716 328.799,223.652 328.878,223.652">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="RefocusGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="1,0,0,1,0.667,1.667" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="M6.624,0 C10.281,0 13.247,2.836 13.247,6.334 C13.247,7.176 13.075,7.98 12.734,8.703 L14.666,10.55 L14.666,10.631 L8.989,10.631 L8.989,5.202 L9.072,5.202 L10.971,7.018 C11.095,6.81 11.116,6.573 11.116,6.331 C11.116,3.959 9.104,2.034 6.622,2.034 C4.139,2.034 2.127,3.959 2.127,6.331 C2.127,8.575 3.925,10.417 6.224,10.552 L8.22,12.461 C7.712,12.602 7.176,12.667 6.624,12.667 C2.966,12.667 0,9.831 0,6.334 C0,2.836 2.966,0 6.624,0" />
+        </DrawingGroup>
+        <GeometryDrawing Brush="#00FFFFFF">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,16,16" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="HomeGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Geometry="F1 M414.001,209.411 L451.462,209.411 L451.462,245.893 L414.001,245.893 L414.001,209.411">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.2" LineJoin="Round" Brush="#00FFFFFF" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M442.009,240.438 C442.009,240.534 441.886,240.612 441.735,240.612 L423.992,240.612 C423.841,240.612 423.718,240.534 423.718,240.438 L423.718,229.595 L418.991,229.595 C418.874,229.479 418.874,229.289 418.991,229.173 L432.652,215.511 C432.769,215.395 432.958,215.395 433.075,215.511 L446.736,229.173 C446.853,229.289 446.853,229.479 446.736,229.595 L442.009,229.595 L442.009,240.438">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="PreviousGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Brush="#00000000" Geometry="F1 M8.47772,268.99 L75.1444,268.99 L75.1444,335.657 L8.47772,335.657 L8.47772,268.99">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1" LineJoin="Round" Brush="#00FFFFFF" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M57.2513,286.303 L57.2513,318.344 L26.3707,302.323 L57.2513,286.303">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1" LineJoin="Round">
+                <Pen.Brush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                  </StaticResourceExtension>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="NextGlyph">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Brush="#00000000" Geometry="F1 M75.1444,415.886 L8.47772,415.886 L8.47772,349.219 L75.1444,349.219 L75.1444,415.886">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1" LineJoin="Round" Brush="#00FFFFFF" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M26.3708,398.573 L26.3708,366.532 L57.2514,382.553 L26.3708,398.573">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1" LineJoin="Round">
+                <Pen.Brush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                  </StaticResourceExtension>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="CloseXDrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Geometry="F1 M470.57,422.952 C470.414,423.109 470.161,423.109 470.005,422.952 L451.714,404.662 C451.558,404.506 451.558,404.252 451.714,404.096 L489.144,366.667 L451.714,329.237 C451.558,329.081 451.558,328.828 451.714,328.671 L470.005,310.381 C470.161,310.225 470.414,310.225 470.57,310.381 L508,347.81 L545.43,310.381 C545.586,310.225 545.839,310.225 545.995,310.381 L564.286,328.671 C564.442,328.828 564.442,329.081 564.286,329.237 L526.856,366.667 L564.286,404.096 C564.442,404.252 564.442,404.506 564.286,404.662 L545.995,422.952 C545.839,423.109 545.586,423.109 545.43,422.952 L508,385.523 L470.57,422.952">
+            <GeometryDrawing.Brush>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+              </StaticResourceExtension>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Zoombox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+    <Setter Property="local:Zoombox.PanDistance" Value="5.0" />
+    <Setter Property="local:Zoombox.ZoomOrigin" Value="0.5,0.5" />
+    <Setter Property="local:Zoombox.ZoomPercentage" Value="5.0" />
+    <Setter Property="local:Zoombox.DragModifiers" Value="Ctrl,Exact" />
+    <Setter Property="local:Zoombox.DragOnPreview" Value="False" />
+    <Setter Property="local:Zoombox.ZoomModifiers" Value="Shift,Exact" />
+    <Setter Property="local:Zoombox.ZoomOnPreview" Value="True" />
+    <Setter Property="local:Zoombox.RelativeZoomModifiers" Value="Ctrl,Alt,Exact" />
+    <Setter Property="local:Zoombox.ZoomToSelectionModifiers" Value="Alt,Exact" />
+    <Setter Property="local:Zoombox.NavigateOnPreview" Value="False" />
+    <Setter Property="local:Zoombox.ViewFinderVisibility" Value="Collapsed" />
+    <Setter Property="local:Zoombox.MinScale" Value="0.01" />
+    <Setter Property="local:Zoombox.MaxScale" Value="100.0" />
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="Control.IsTabStop" Value="False" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Zoombox</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <FrameworkTemplate.Resources>
+            <ResourceDictionary>
+              <SolidColorBrush x:Key="SelectionBrush" Color="Transparent" />
+              <Pen x:Key="SelectionPen" Thickness="2.0" Brush="#7F3F3F3F" />
+              <Pen x:Key="ViewportPen" Thickness="1.0" Brush="#FFFF0000" />
+              <InputBindingCollection x:Key="InputBindings">
+                <KeyBinding InputBinding.Command="local:Zoombox.ZoomOut" Key="Left" Modifiers="Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.ZoomOut" Key="Up" Modifiers="Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.ZoomIn" Key="Right" Modifiers="Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.ZoomIn" Key="Down" Modifiers="Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.PanLeft" Key="Left" Modifiers="Shift+Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.PanUp" Key="Up" Modifiers="Shift+Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.PanRight" Key="Right" Modifiers="Shift+Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.PanDown" Key="Down" Modifiers="Shift+Control" />
+                <KeyBinding InputBinding.Command="local:Zoombox.Forward" Key="BrowserForward" />
+                <KeyBinding InputBinding.Command="local:Zoombox.Back" Key="BrowserBack" />
+                <KeyBinding InputBinding.Command="local:Zoombox.Back" Key="Back" />
+              </InputBindingCollection>
+            </ResourceDictionary>
+          </FrameworkTemplate.Resources>
+          <Grid FrameworkElement.Name="BackgroundGrid" Panel.Background="{TemplateBinding Control.Background}">
+            <ContentPresenter />
+            <Border FrameworkElement.Name="ViewFinder" UIElement.RenderTransformOrigin="1,1" Background="#b0666666" BorderBrush="{TemplateBinding Control.Foreground}" BorderThickness="2" UIElement.Opacity="0" FrameworkElement.Width="200" FrameworkElement.Height="190" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Bottom" FrameworkElement.Margin="10" CornerRadius="4">
+              <UIElement.RenderTransform>
+                <TransformGroup>
+                  <ScaleTransform x:Name="LayoutScaleTransform" ScaleX="0" ScaleY="0" />
+                </TransformGroup>
+              </UIElement.RenderTransform>
+              <Grid FrameworkElement.Margin="4">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" FrameworkElement.Margin="0,0,0,3">
+                  <Button Name="BackButton" ButtonBase.Command="local:Zoombox.Back" FrameworkElement.ToolTip="Go Back" FrameworkElement.Width="20px" FrameworkElement.Height="20px">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image>
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PreviousGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="ForwardButton" ButtonBase.Command="local:Zoombox.Forward" FrameworkElement.ToolTip="Go Forward" FrameworkElement.Width="20px" FrameworkElement.Height="20px">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image>
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NextGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="HomeButton" ButtonBase.Command="local:Zoombox.Home" FrameworkElement.ToolTip="Go Home" FrameworkElement.Width="20px" FrameworkElement.Height="20px">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image FrameworkElement.Margin="2">
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">HomeGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="FitButton" ButtonBase.Command="local:Zoombox.Fit" FrameworkElement.ToolTip="Fit Content within Bounds" FrameworkElement.Width="20px" FrameworkElement.Height="20px" FrameworkElement.Margin="2,0">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image FrameworkElement.Margin="2">
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">FitContentGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="FillButton" ButtonBase.Command="local:Zoombox.Fill" FrameworkElement.ToolTip="Fill Bounds with Content" FrameworkElement.Width="20px" FrameworkElement.Height="20px" FrameworkElement.Margin="2,0">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image FrameworkElement.Margin="2">
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">FillToBoundsGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="CenterButton" ButtonBase.Command="local:Zoombox.Center" FrameworkElement.ToolTip="Center Content" FrameworkElement.Width="20px" FrameworkElement.Height="20px" FrameworkElement.Margin="2,0">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image FrameworkElement.Margin="2">
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CenterGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                  <Button Name="RefocusButton" ButtonBase.Command="local:Zoombox.Refocus" UIElement.Visibility="Collapsed" FrameworkElement.ToolTip="Refocus View" FrameworkElement.Width="20px" FrameworkElement.Height="20px" FrameworkElement.Margin="2,0">
+                    <FrameworkElement.Style>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                      </StaticResourceExtension>
+                    </FrameworkElement.Style>
+                    <Image FrameworkElement.Margin="2">
+                      <Image.Source>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RefocusGlyph</Ctor>
+                        </StaticResourceExtension>
+                      </Image.Source>
+                    </Image>
+                  </Button>
+                </StackPanel>
+                <ToggleButton Name="ToggleViewFinderButton" FrameworkElement.ToolTip="Hide View Finder" FrameworkElement.Height="13" FrameworkElement.Width="13" FrameworkElement.Margin="0,2,0,0" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Top" Control.Foreground="#FFFFFFFF">
+                  <FrameworkElement.Style>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TransparentButton</Ctor>
+                    </StaticResourceExtension>
+                  </FrameworkElement.Style>
+                  <ToggleButton.IsChecked>
+                    <Binding ElementName="ShowViewFinder" Path="IsChecked" />
+                  </ToggleButton.IsChecked>
+                  <Image FrameworkElement.Margin="2">
+                    <Image.Source>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CloseXDrawingImage</Ctor>
+                      </StaticResourceExtension>
+                    </Image.Source>
+                  </Image>
+                </ToggleButton>
+                <Border Grid.Row="1" BorderThickness="2" Background="#80FFFFFF">
+                  <Border.BorderBrush>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+                    </StaticResourceExtension>
+                  </Border.BorderBrush>
+                </Border>
+                <local:ZoomboxViewFinderDisplay FrameworkElement.Name="ViewFinderDisplay" Grid.Row="1" UIElement.ClipToBounds="True" Background="#C0FFFFFF" FrameworkElement.Margin="2" ShadowBrush="#80FFFFFF" ViewportBrush="#00FFFFFF">
+                  <local:ZoomboxViewFinderDisplay.ViewportPen>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ViewportPen</Ctor>
+                    </StaticResourceExtension>
+                  </local:ZoomboxViewFinderDisplay.ViewportPen>
+                </local:ZoomboxViewFinderDisplay>
+              </Grid>
+            </Border>
+            <ToggleButton FrameworkElement.Name="ShowViewFinder" Control.IsTabStop="False" FrameworkElement.ToolTip="Show View Finder" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Bottom" FrameworkElement.Margin="5" FrameworkElement.Height="22" FrameworkElement.Width="22" Control.Foreground="#00FFFFFF" Control.Background="#00FFFFFF">
+              <FrameworkElement.Style>
+                <StaticResourceExtension xmlns="">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ViewFinderToggleButtonStyle</Ctor>
+                </StaticResourceExtension>
+              </FrameworkElement.Style>
+              <FrameworkElement.FocusVisualStyle>
+                <NullExtension />
+              </FrameworkElement.FocusVisualStyle>
+              <ToggleButton.IsChecked>
+                <Binding Path="ViewFinderVisibility" Mode="TwoWay">
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                  <Binding.Converter>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TrueIfVisibleConverter</Ctor>
+                    </StaticResourceExtension>
+                  </Binding.Converter>
+                </Binding>
+              </ToggleButton.IsChecked>
+              <Grid FrameworkElement.Name="ShowViewFinderGlyph" UIElement.Opacity="0">
+                <Image Name="ShowViewFinderGlyphImage">
+                  <Image.Source>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowViewFinderGlyph</Ctor>
+                    </StaticResourceExtension>
+                  </Image.Source>
+                </Image>
+              </Grid>
+            </ToggleButton>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="local:Zoombox.EffectiveViewStackMode" Value="Manual">
+              <Setter TargetName="RefocusButton" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <TriggerBase.EnterActions>
+                <BeginStoryboard>
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="ShowViewFinderGlyph" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="0" To="1" Timeline.FillBehavior="HoldEnd" />
+                  </Storyboard>
+                </BeginStoryboard>
+              </TriggerBase.EnterActions>
+              <TriggerBase.ExitActions>
+                <BeginStoryboard>
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="ShowViewFinderGlyph" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="1" To="0" Timeline.FillBehavior="HoldEnd" />
+                  </Storyboard>
+                </BeginStoryboard>
+              </TriggerBase.ExitActions>
+            </Trigger>
+            <Trigger SourceName="ShowViewFinder" Property="ToggleButton.IsChecked" Value="False">
+              <Setter TargetName="BackButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="ForwardButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="HomeButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="FitButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="FillButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="CenterButton" Property="UIElement.Focusable" Value="False" />
+              <Setter TargetName="ToggleViewFinderButton" Property="UIElement.Focusable" Value="False" />
+            </Trigger>
+            <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="ShowViewFinder">
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimation Storyboard.TargetName="ViewFinder" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="0" To="1" Timeline.FillBehavior="HoldEnd" />
+                  <DoubleAnimation Storyboard.TargetName="ShowViewFinder" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="1" To="0" Timeline.FillBehavior="HoldEnd" />
+                  <DoubleAnimationUsingKeyFrames Timeline.BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutScaleTransform" Timeline.AccelerationRatio="1">
+                    <SplineDoubleKeyFrame KeySpline="0.5,0.5,0.5,0.5" DoubleKeyFrame.KeyTime="00:00:00.3" DoubleKeyFrame.Value="1" />
+                  </DoubleAnimationUsingKeyFrames>
+                  <DoubleAnimationUsingKeyFrames Timeline.BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleX)" Storyboard.TargetName="LayoutScaleTransform" Timeline.AccelerationRatio="1">
+                    <SplineDoubleKeyFrame KeySpline="0.5,0.5,0.5,0.5" DoubleKeyFrame.KeyTime="00:00:00.3" DoubleKeyFrame.Value="1" />
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="ShowViewFinder">
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimationUsingKeyFrames Timeline.BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutScaleTransform" Timeline.AccelerationRatio="1">
+                    <SplineDoubleKeyFrame KeySpline="0.5,0.5,0.5,0.5" DoubleKeyFrame.KeyTime="00:00:00.3" DoubleKeyFrame.Value="0" />
+                  </DoubleAnimationUsingKeyFrames>
+                  <DoubleAnimationUsingKeyFrames Timeline.BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleX)" Storyboard.TargetName="LayoutScaleTransform" Timeline.AccelerationRatio="1">
+                    <SplineDoubleKeyFrame KeySpline="0.5,0.5,0.5,0.5" DoubleKeyFrame.KeyTime="00:00:00.3" DoubleKeyFrame.Value="0" />
+                  </DoubleAnimationUsingKeyFrames>
+                  <DoubleAnimation Storyboard.TargetName="ViewFinder" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="1" To="0" Timeline.FillBehavior="HoldEnd" />
+                  <DoubleAnimation Storyboard.TargetName="ShowViewFinder" Storyboard.TargetProperty="Opacity" Timeline.DecelerationRatio="1" Timeline.Duration="0:0:0.3" From="0" To="1" Timeline.FillBehavior="HoldEnd" />
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="local:Zoombox.AreDragModifiersActive" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll" />
+      </Trigger>
+      <Trigger Property="local:Zoombox.AreZoomToSelectionModifiersActive" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="Cross" />
+      </Trigger>
+      <Trigger Property="local:Zoombox.AreZoomModifiersActive" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="{Static local:ZoomboxCursors.Zoom}" />
+      </Trigger>
+      <Trigger Property="local:Zoombox.AreRelativeZoomModifiersActive" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="{Static local:ZoomboxCursors.ZoomRelative}" />
+      </Trigger>
+      <Trigger Property="local:Zoombox.IsDraggingContent" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll" />
+      </Trigger>
+      <Trigger Property="local:Zoombox.IsSelectingRegion" Value="True">
+        <Setter Property="FrameworkElement.Cursor" Value="Cross" />
+      </Trigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Zoombox</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

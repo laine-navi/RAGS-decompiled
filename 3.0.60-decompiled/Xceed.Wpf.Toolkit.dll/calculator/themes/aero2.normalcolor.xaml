@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:themes="clr-namespace:Xceed.Wpf.Toolkit.Themes" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../../Themes/Aero2/Common.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <conv:CalculatorMemoryToVisibilityConverter x:Key="CalculatorMemoryToVisibilityConverter" />
+  <Style x:Key="CalculatorOperatorButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="CalculatorClearButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="Control.Background" Value="#FFFFC0CB" />
+  </Style>
+  <Style x:Key="CalculatorDigitButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="Control.Background" Value="#FFE8E8E8" />
+  </Style>
+  <ControlTemplate x:Key="CalculatorButtonPanel">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ContentControl</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="3" />
+        <ColumnDefinition />
+        <ColumnDefinition Width="3" />
+        <ColumnDefinition />
+        <ColumnDefinition Width="3" />
+        <ColumnDefinition />
+        <ColumnDefinition Width="3" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="3" />
+        <RowDefinition />
+        <RowDefinition Height="3" />
+        <RowDefinition />
+        <RowDefinition Height="3" />
+        <RowDefinition />
+        <RowDefinition Height="3" />
+        <RowDefinition />
+        <RowDefinition Height="3" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Button Grid.Column="0" Grid.Row="0" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="MC" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="0" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="MR" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="0" Grid.Row="2" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Back" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick" Grid.RowSpan="1">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="2" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Cancel" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorClearButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="2" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Clear" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick" Grid.ColumnSpan="1" Grid.RowSpan="1">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorClearButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="0" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="MS" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="0" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="MAdd" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick" FrameworkElement.Margin="0">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="8" Grid.Row="0" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="MSub" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="2" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Negate" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="8" Grid.Row="2" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Sqrt" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="0" Grid.Row="4" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Seven" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="4" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Eight" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="4" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Nine" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="4" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Divide" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="8" Grid.Row="4" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Percent" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="0" Grid.Row="6" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Four" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="6" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Five" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="6" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Six" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="6" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Multiply" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="8" Grid.Row="6" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Fraction" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="0" Grid.Row="8" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="One" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="8" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Two" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="8" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Three" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="8" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Subtract" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="55" local:Calculator.CalculatorButtonType="Equal" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" FrameworkElement.MinWidth="59" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Zero" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="10" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Decimal" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorDigitButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="10" FrameworkElement.MinWidth="28" FrameworkElement.MinHeight="26" local:Calculator.CalculatorButtonType="Add" ButtonBase.Command="local:CalculatorCommands.CalculatorButtonClick">
+        <FrameworkElement.Style>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorOperatorButtonStyle</Ctor>
+          </StaticResourceExtension>
+        </FrameworkElement.Style>
+      </Button>
+    </Grid>
+  </ControlTemplate>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Calculator</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PanelBackgroundBrush</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.BorderBrush" Value="{DynamicResource {Static themes:ResourceKeys.ControlNormalBorderKey}}" />
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="FrameworkElement.FocusVisualStyle">
+      <Setter.Value>
+        <NullExtension />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Calculator</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="0">
+            <Grid FrameworkElement.Margin="10">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Border Name="PART_Display" FrameworkElement.Margin="0,0,0,10" Background="#FFFFFFFF" BorderBrush="{DynamicResource {Static themes:ResourceKeys.ControlNormalBorderKey}}" BorderThickness="1">
+                <StackPanel>
+                  <Path Shape.Stretch="Fill" FrameworkElement.Height="9" FrameworkElement.Width="9" Shape.Fill="#FFA9A9A9" Data="F1 M508.172,390 L506.031,390 L504.612,393.385 C504.174,394.477 503.788,395.533 503.453,396.555 L503.417,396.555 C503.334,395.528 503.206,394.471 503.035,393.385 L502.454,390 L500.301,390 L498.637,399 L500.226,399 L500.807,395.537 C500.903,394.973 501,394.379 501.099,393.756 C501.198,393.133 501.287,392.534 501.367,391.957 L501.402,391.957 C501.444,392.514 501.499,393.08 501.567,393.655 C501.635,394.231 501.712,394.776 501.8,395.292 L502.382,398.871 L503.7,398.871 L505.231,395.233 C505.445,394.724 505.663,394.187 505.884,393.622 C506.105,393.057 506.313,392.502 506.508,391.957 L506.543,391.957 C506.411,393.11 506.304,394.292 506.223,395.502 L505.979,399 L507.637,399 L508.172,390" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Margin="4,4,0,0">
+                    <UIElement.Visibility>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Memory</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                          </RelativeSource>
+                        </Binding.RelativeSource>
+                        <Binding.Converter>
+                          <StaticResourceExtension xmlns="">
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorMemoryToVisibilityConverter</Ctor>
+                          </StaticResourceExtension>
+                        </Binding.Converter>
+                      </Binding>
+                    </UIElement.Visibility>
+                  </Path>
+                  <TextBlock FontSize="18" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Margin="0,0,4,0">
+                    <TextBlock.Text>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">DisplayText</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                          </RelativeSource>
+                        </Binding.RelativeSource>
+                      </Binding>
+                    </TextBlock.Text>
+                  </TextBlock>
+                </StackPanel>
+              </Border>
+              <ContentControl Name="PART_CalculatorButtonPanel" Grid.Row="1">
+                <Control.Template>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CalculatorButtonPanel</Ctor>
+                  </StaticResourceExtension>
+                </Control.Template>
+                <FrameworkElement.DataContext>
+                  <Binding>
+                    <Binding.RelativeSource>
+                      <RelativeSource>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                      </RelativeSource>
+                    </Binding.RelativeSource>
+                  </Binding>
+                </FrameworkElement.DataContext>
+              </ContentControl>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsFocused" Value="True">
+              <Setter TargetName="PART_Display" Property="Border.Background" Value="#FFF0FFFF" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:Calculator</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

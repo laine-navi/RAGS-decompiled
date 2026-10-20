@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>WPFRagsLib</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <Page Remove="WPFRagsLib/AddTimerActionsWindow.xaml" />
+    <Page Remove="WPFRagsLib/GetNameWindow.xaml" />
+    <Page Remove="WPFRagsLib/InsertVariableWindow.xaml" />
+    <Page Remove="WPFRagsLib/RagsEditor.xaml" />
+    <Page Remove="WPFRagsLib/WaitWindow.xaml" />
+    <Page Remove="WPFRagsLib/WPFActionControl.xaml" />
+    <Page Include="WPFRagsLib/AddTimerActionsWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="addtimeractionswindow.xaml" />
+    <Page Include="WPFRagsLib/GetNameWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="getnamewindow.xaml" />
+    <Page Include="WPFRagsLib/InsertVariableWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="insertvariablewindow.xaml" />
+    <Page Include="WPFRagsLib/RagsEditor.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="ragseditor.xaml" />
+    <Page Include="WPFRagsLib/WaitWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="waitwindow.xaml" />
+    <Page Include="WPFRagsLib/WPFActionControl.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="wpfactioncontrol.xaml" />
+    <Resource Remove="app.ico" />
+    <Resource Remove="images/green.png" />
+    <Resource Remove="images/red.png" />
+    <Resource Remove="images/run.png" />
+    <Resource Include="app.ico" LogicalName="app.ico" />
+    <Resource Include="images/green.png" LogicalName="images/green.png" />
+    <Resource Include="images/red.png" LogicalName="images/red.png" />
+    <Resource Include="images/run.png" LogicalName="images/run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="RagsSvPlayerLib">
+      <HintPath>3.0.60/RagsSvPlayerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>3.0.60/System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="Polenter.SharpSerializer">
+      <HintPath>3.0.60/Polenter.SharpSerializer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

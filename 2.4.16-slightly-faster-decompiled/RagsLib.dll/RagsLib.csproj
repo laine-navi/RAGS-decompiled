@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>RagsLib</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RagsLib.dll.licenses" />
+    <None Remove="RagsLib" />
+    <EmbeddedResource Include="RagsLib.dll.licenses" LogicalName="RagsLib.dll.licenses" />
+    <EmbeddedResource Include="RagsLib" LogicalName="RagsLib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpSpell.Core" />
+    <Reference Include="SharpSpell.Windows" />
+    <Reference Include="System.Data.SqlServerCe" />
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Management" />
+  </ItemGroup>
+</Project>

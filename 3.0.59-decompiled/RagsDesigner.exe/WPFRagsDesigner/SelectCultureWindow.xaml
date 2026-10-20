@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.SelectCultureWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="SelectCultureWindow" FrameworkElement.Height="300" FrameworkElement.Width="300" Window.Icon="App.ico" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <ListBox Name="b" Grid.Row="0" Grid.ColumnSpan="2">
+      <!--Unknown connection ID: 2-->
+    </ListBox>
+    <Button ContentControl.Content="OK" Grid.Row="1" Grid.Column="0" FrameworkElement.Margin="5">
+      <!--Unknown connection ID: 3-->
+    </Button>
+    <Button ContentControl.Content="Cancel" Grid.Row="1" Grid.Column="1" FrameworkElement.Margin="5">
+      <!--Unknown connection ID: 4-->
+    </Button>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

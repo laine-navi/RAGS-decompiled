@@ -1,0 +1,2246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.RagsDesigner" xmlns:WPFRagsLib="clr-namespace:WPFRagsLib;assembly=WPFRagsLib" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:util="clr-namespace:Wpf.Util" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" Window.Title="Rags Designer" FrameworkElement.Height="640" FrameworkElement.Width="800" Window.Icon="App.ico" Control.FontSize="12" Window.WindowStartupLocation="CenterScreen" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner">
+  <Grid Language="en" Name="i">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition Width=".3*" />
+    </Grid.ColumnDefinitions>
+    <GridSplitter FrameworkElement.HorizontalAlignment="right" Grid.Column="0" Grid.RowSpan="3" FrameworkElement.Width="3" />
+    <Menu IsMainMenu="True" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Top" Control.BorderBrush="#FF000000" Control.BorderThickness="1">
+      <MenuItem HeaderedItemsControl.Header="_File">
+        <MenuItem HeaderedItemsControl.Header="New">
+          <!--Unknown connection ID: 3-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Load">
+          <!--Unknown connection ID: 4-->
+        </MenuItem>
+        <MenuItem Name="j" HeaderedItemsControl.Header="Save">
+          <!--Unknown connection ID: 5-->
+        </MenuItem>
+        <MenuItem Name="k" HeaderedItemsControl.Header="Save As">
+          <!--Unknown connection ID: 6-->
+        </MenuItem>
+        <MenuItem Name="l" HeaderedItemsControl.Header="Save To Web Format">
+          <!--Unknown connection ID: 7-->
+        </MenuItem>
+        <Separator />
+        <MenuItem Name="m" HeaderedItemsControl.Header="Import XML">
+          <!--Unknown connection ID: 8-->
+        </MenuItem>
+        <MenuItem Name="n" HeaderedItemsControl.Header="Export XML">
+          <!--Unknown connection ID: 9-->
+        </MenuItem>
+        <Separator />
+        <MenuItem HeaderedItemsControl.Header="Exit">
+          <!--Unknown connection ID: 10-->
+        </MenuItem>
+      </MenuItem>
+      <MenuItem HeaderedItemsControl.Header="_Tools">
+        <MenuItem HeaderedItemsControl.Header="Update Text To HTML">
+          <!--Unknown connection ID: 11-->
+        </MenuItem>
+        <Separator />
+        <MenuItem HeaderedItemsControl.Header="Edit Quick Action Commands">
+          <!--Unknown connection ID: 12-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Debug">
+          <!--Unknown connection ID: 13-->
+        </MenuItem>
+        <Separator />
+        <MenuItem Name="o" HeaderedItemsControl.Header="Auto Save Settings">
+          <!--Unknown connection ID: 14-->
+        </MenuItem>
+        <MenuItem Name="p" HeaderedItemsControl.Header="Set Spell Check Language">
+          <!--Unknown connection ID: 15-->
+        </MenuItem>
+        <MenuItem Name="q" HeaderedItemsControl.Header="Set Background Colors" UIElement.Visibility="Collapsed">
+          <MenuItem HeaderedItemsControl.Header="General" />
+          <MenuItem HeaderedItemsControl.Header="Rooms" />
+          <MenuItem HeaderedItemsControl.Header="Player" />
+          <MenuItem HeaderedItemsControl.Header="Objects" />
+          <MenuItem HeaderedItemsControl.Header="Characters" />
+          <MenuItem HeaderedItemsControl.Header="Variables" />
+          <MenuItem HeaderedItemsControl.Header="Timers" />
+          <!--Unknown connection ID: 16-->
+        </MenuItem>
+        <Separator />
+        <MenuItem Name="r" HeaderedItemsControl.Header="Search">
+          <!--Unknown connection ID: 17-->
+        </MenuItem>
+      </MenuItem>
+      <MenuItem HeaderedItemsControl.Header="_Help">
+        <MenuItem Name="s" HeaderedItemsControl.Header="About">
+          <!--Unknown connection ID: 18-->
+        </MenuItem>
+        <MenuItem Name="t" HeaderedItemsControl.Header="Register">
+          <!--Unknown connection ID: 19-->
+        </MenuItem>
+      </MenuItem>
+    </Menu>
+    <TabControl Name="u" Grid.RowSpan="3" Control.Background="#00FFFFFF" TabStripPlacement="Bottom" FrameworkElement.Margin="0,20,3,0">
+      <TabItem Name="v" HeaderedContentControl.Header="General" UIElement.RenderTransformOrigin="0.5,0.5" Control.BorderBrush="#FFACACAC">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#CC1FC504" Offset="0" />
+            <GradientStop Color="#FFE5E5E5" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform />
+            <SkewTransform />
+            <RotateTransform />
+            <TranslateTransform />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+        <Grid Name="w" FrameworkElement.Margin="0,5,0,-5">
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#7F1ABF00" Offset="0" />
+              <GradientStop Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <TabControl Control.Background="#00FFFFFF">
+            <TabItem Name="x" HeaderedContentControl.Header="Game Setup" Control.BorderBrush="#FF000000">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#CC1FC504" Offset="0" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="100" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Row="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="27" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Label ContentControl.Content="Game Title:" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Center" />
+                  <TextBox Name="y" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True" Grid.Column="1" Grid.ColumnSpan="3">
+                    <!--Unknown connection ID: 24-->
+                  </TextBox>
+                  <CheckBox Name="z" ContentControl.Content="Password Protect This Game?" Grid.Row="1" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left">
+                    <!--Unknown connection ID: 25-->
+                  </CheckBox>
+                  <Label ContentControl.Content="Password:" Grid.Row="1" Grid.Column="2" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Center" />
+                  <PasswordBox Name="aa" Grid.Column="3" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 26-->
+                  </PasswordBox>
+                  <CheckBox Name="ab" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" Grid.ColumnSpan="2" ContentControl.Content="Turn Off Notification Messages">
+                    <!--Unknown connection ID: 27-->
+                  </CheckBox>
+                  <Label ContentControl.Content="Initial Background Music:" Grid.Row="3" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center" />
+                  <ComboBox Name="ac" Grid.Row="3" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" Grid.ColumnSpan="2" FrameworkElement.Margin="85,0,90,0">
+                    <!--Unknown connection ID: 28-->
+                  </ComboBox>
+                  <CheckBox Name="ad" ContentControl.Content="Loop Music" Grid.Row="3" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 29-->
+                  </CheckBox>
+                  <TextBlock Grid.Row="4" TextWrapping="Wrap" FrameworkElement.VerticalAlignment="Top">Opening Message:</TextBlock>
+                  <TextBox Name="ae" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" SpellCheck.IsEnabled="True" TextWrapping="Wrap" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True">
+                    <TextBox.Text>
+                      <Binding Path="OpeningMessage" />
+                    </TextBox.Text>
+                    <!--Unknown connection ID: 30-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <GroupBox HeaderedContentControl.Header="Player Display Options">
+                    <StackPanel Orientation="Horizontal">
+                      <CheckBox Name="af" ContentControl.Content="Hide Main Picture Display" FrameworkElement.VerticalAlignment="Center">
+                        <!--Unknown connection ID: 31-->
+                      </CheckBox>
+                      <CheckBox Name="ag" ContentControl.Content="Use Inline Images" FrameworkElement.VerticalAlignment="Center" FrameworkElement.Margin="20,0,0,0">
+                        <!--Unknown connection ID: 32-->
+                      </CheckBox>
+                      <CheckBox Name="ah" ContentControl.Content="Hide Portrait Display" FrameworkElement.VerticalAlignment="Center" FrameworkElement.Margin="20,0,0,0">
+                        <!--Unknown connection ID: 33-->
+                      </CheckBox>
+                    </StackPanel>
+                  </GroupBox>
+                  <GroupBox Grid.Row="1" HeaderedContentControl.Header="Default Item Sort Order">
+                    <StackPanel Orientation="Horizontal">
+                      <Label ContentControl.Content="Room Items:" FrameworkElement.VerticalAlignment="Center" />
+                      <ComboBox Name="ai" Selector.SelectedIndex="0" FrameworkElement.VerticalAlignment="Center">
+                        <ComboBoxItem ContentControl.Content="Natural" />
+                        <ComboBoxItem ContentControl.Content="Alpha" />
+                        <!--Unknown connection ID: 34-->
+                      </ComboBox>
+                      <Label ContentControl.Content="Characters:" FrameworkElement.Margin="20,0,0,0" FrameworkElement.VerticalAlignment="Center" />
+                      <ComboBox Name="aj" Selector.SelectedIndex="0" FrameworkElement.VerticalAlignment="Center">
+                        <ComboBoxItem ContentControl.Content="Natural" />
+                        <ComboBoxItem ContentControl.Content="Alpha" />
+                        <!--Unknown connection ID: 35-->
+                      </ComboBox>
+                      <Label ContentControl.Content="Inventory:" FrameworkElement.Margin="20,0,0,0" FrameworkElement.VerticalAlignment="Center" />
+                      <ComboBox Name="ak" Selector.SelectedIndex="0" FrameworkElement.VerticalAlignment="Center">
+                        <ComboBoxItem ContentControl.Content="Natural" />
+                        <ComboBoxItem ContentControl.Content="Alpha" />
+                        <!--Unknown connection ID: 36-->
+                      </ComboBox>
+                    </StackPanel>
+                  </GroupBox>
+                </Grid>
+                <GroupBox Grid.Row="2" HeaderedContentControl.Header="Status Bar Items">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                      <ColumnDefinition Width="43" />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="25" />
+                      <RowDefinition Height="25" />
+                      <RowDefinition Height="25" />
+                      <RowDefinition Height="25" />
+                      <RowDefinition Height="25" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Status Text" FrameworkElement.VerticalAlignment="Center" />
+                    <Label ContentControl.Content="Status Bar Items:" Grid.Column="3" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="al" SpellCheck.IsEnabled="True" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 37-->
+                    </TextBox>
+                    <Button Grid.Row="1" Grid.Column="1" ContentControl.Content="Add Status Item" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 38-->
+                    </Button>
+                    <ListBox Name="am" Grid.Row="1" Grid.Column="3" Grid.RowSpan="5">
+                      <!--Unknown connection ID: 39-->
+                    </ListBox>
+                    <Label ContentControl.Content="Width In Pixels:(0=Automatic Sizing)" Grid.Row="2" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="an" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 40-->
+                    </TextBox>
+                    <Button Name="ao" Grid.Row="3" Grid.Column="1" ContentControl.Content="Delete Status Item" UIElement.IsEnabled="False" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 41-->
+                    </Button>
+                    <CheckBox Name="ap" ContentControl.Content="Initially Visible" Grid.Row="4" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 42-->
+                    </CheckBox>
+                    <TextBox Grid.Row="5" Grid.ColumnSpan="2" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" TextBoxBase.IsReadOnly="True" Text="Status Bar Items appear at the bottom of the Rags Player window and usually hold useful variable data for the player.  You will want to reference a variable typically when creating your Status Text.  Some common examples for status text might be: Name: [playername] or Cash: [v: playercash].  Please visit the online help for a complete list of text references you can use." />
+                    <Button Grid.Column="2" ContentControl.Content="Up" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 43-->
+                    </Button>
+                    <Button Grid.Column="2" ContentControl.Content="Down" Grid.Row="4" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 44-->
+                    </Button>
+                  </Grid>
+                </GroupBox>
+              </Grid>
+              <!--Unknown connection ID: 23-->
+            </TabItem>
+            <TabItem Name="aq" HeaderedContentControl.Header="Author Info" Control.BorderBrush="#FF000000">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#CC1FC504" Offset="0" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label ContentControl.Content="Author Name:" FrameworkElement.VerticalAlignment="Center" />
+                <Label Grid.Row="1" ContentControl.Content="Game Version:" FrameworkElement.VerticalAlignment="Center" />
+                <Label Grid.Row="2" ContentControl.Content="Game Information:" FrameworkElement.VerticalAlignment="Top" />
+                <TextBox Name="ar" Grid.Column="1" SpellCheck.IsEnabled="True" FrameworkElement.VerticalAlignment="Center">
+                  <!--Unknown connection ID: 46-->
+                </TextBox>
+                <TextBox Name="as" Grid.Row="1" Grid.Column="1" SpellCheck.IsEnabled="True" FrameworkElement.VerticalAlignment="Center">
+                  <!--Unknown connection ID: 47-->
+                </TextBox>
+                <TextBox Name="at" Grid.Row="2" Grid.Column="1" SpellCheck.IsEnabled="True" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                  <!--Unknown connection ID: 48-->
+                </TextBox>
+              </Grid>
+              <!--Unknown connection ID: 45-->
+            </TabItem>
+          </TabControl>
+          <!--Unknown connection ID: 22-->
+        </Grid>
+        <!--Unknown connection ID: 21-->
+      </TabItem>
+      <TabItem Name="au" HeaderedContentControl.Header="Rooms" FrameworkElement.Height="22" FrameworkElement.VerticalAlignment="Top">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#CC0E48E4" Offset="0" />
+            <GradientStop Color="White" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#660E48E4" Offset="0.013" />
+              <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <ListView Name="av" Control.Background="#00FFFFFF" Control.BorderBrush="#FF000000" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" FrameworkElement.Margin="0,0,3,0">
+              <ItemsControl.ItemsSource>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Room</Ctor>
+                </Binding>
+              </ItemsControl.ItemsSource>
+              <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                  <MenuItem Name="aw" HeaderedItemsControl.Header="Add">
+                    <!--Unknown connection ID: 51-->
+                  </MenuItem>
+                  <MenuItem Name="ax" HeaderedItemsControl.Header="Delete">
+                    <!--Unknown connection ID: 52-->
+                  </MenuItem>
+                  <MenuItem Name="ay" HeaderedItemsControl.Header="Rename">
+                    <!--Unknown connection ID: 53-->
+                  </MenuItem>
+                  <MenuItem Name="az" HeaderedItemsControl.Header="Assign Room Group">
+                    <!--Unknown connection ID: 54-->
+                  </MenuItem>
+                </ContextMenu>
+              </FrameworkElement.ContextMenu>
+              <ListView.View>
+                <GridView>
+                  <GridViewColumn Header="Room Name" util:GridViewSort.PropertyName="NameProp" util:GridViewSort.AutoSort="True">
+                    <GridViewColumn.DisplayMemberBinding>
+                      <Binding Path="NameProp" />
+                    </GridViewColumn.DisplayMemberBinding>
+                  </GridViewColumn>
+                </GridView>
+              </ListView.View>
+              <!--Unknown connection ID: 50-->
+            </ListView>
+            <Button Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" ContentControl.Content="Add Room">
+              <!--Unknown connection ID: 55-->
+            </Button>
+          </Grid>
+          <GridSplitter Grid.Column="0" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="3" />
+          <TabControl Name="a0" Grid.Column="1" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFF0F0F0" Offset="0" />
+                  <GradientStop Color="#00E5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid Name="a1">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height=".7*" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label ContentControl.Content="Room Name:" FrameworkElement.VerticalAlignment="Center" />
+                <TextBox Name="a2" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" TextBoxBase.IsReadOnly="True" SpellCheck.IsEnabled="True">
+                  <!--Unknown connection ID: 58-->
+                </TextBox>
+                <Label ContentControl.Content="Room ID:" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" />
+                <TextBox Name="a3" Grid.Column="1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" TextBoxBase.IsReadOnly="True">
+                  <!--Unknown connection ID: 59-->
+                </TextBox>
+                <Label ContentControl.Content="Room Name Override:" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" />
+                <TextBox Name="a4" Grid.Column="1" Grid.Row="2" SpellCheck.IsEnabled="True" FrameworkElement.VerticalAlignment="Center">
+                  <!--Unknown connection ID: 60-->
+                </TextBox>
+                <Label ContentControl.Content="Room Group:" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" />
+                <ComboBox Name="a5" Grid.Column="1" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+                  <!--Unknown connection ID: 61-->
+                </ComboBox>
+                <GroupBox HeaderedContentControl.Header="Description" Grid.Row="4" Grid.ColumnSpan="2">
+                  <TextBox Name="a6" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.AcceptsTab="True">
+                    <!--Unknown connection ID: 62-->
+                  </TextBox>
+                </GroupBox>
+                <GroupBox HeaderedContentControl.Header="Initial Room Pic:" Grid.Row="5" Grid.ColumnSpan="2">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="25" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ComboBox Name="a7" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 63-->
+                    </ComboBox>
+                    <MediaElement Name="a8" Grid.Row="1" Grid.ColumnSpan="2">
+                      <!--Unknown connection ID: 64-->
+                    </MediaElement>
+                  </Grid>
+                </GroupBox>
+                <!--Unknown connection ID: 57-->
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Exits">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFF0F0F0" Offset="0" />
+                  <GradientStop Color="#00E5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="37*" />
+                  <ColumnDefinition Width="77*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="30" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Name="a9" ContentControl.Content="Room Name" Control.FontWeight="Bold" Control.FontSize="18" Grid.ColumnSpan="2">
+                  <!--Unknown connection ID: 65-->
+                </Label>
+                <GroupBox HeaderedContentControl.Header="Directions" Grid.Row="1" Grid.ColumnSpan="2">
+                  <Grid Name="ba">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="80" />
+                      <ColumnDefinition Width="50" />
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Exits" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" Control.FontWeight="Bold" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" FontWeight="Bold">Initially Active</TextBlock>
+                    <Label ContentControl.Content="Destination Room" Grid.Column="2" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" Control.FontWeight="Bold" />
+                    <Label ContentControl.Content="Door/Portal Object" Grid.Column="3" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" Control.FontWeight="Bold" />
+                    <Label ContentControl.Content="North" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="South" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="West" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="East" Grid.Row="4" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="Up" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="Down" Grid.Row="6" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="NorthWest" Grid.Row="7" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="NorthEast" Grid.Row="8" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="SouthWest" Grid.Row="9" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="SouthEast" Grid.Row="10" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="In" Grid.Row="11" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <Label ContentControl.Content="Out" Grid.Row="12" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" />
+                    <CheckBox Name="bb" Grid.Column="1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 67-->
+                    </CheckBox>
+                    <CheckBox Name="bc" Grid.Column="1" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 68-->
+                    </CheckBox>
+                    <CheckBox Name="bd" Grid.Column="1" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 69-->
+                    </CheckBox>
+                    <CheckBox Name="be" Grid.Column="1" Grid.Row="4" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 70-->
+                    </CheckBox>
+                    <CheckBox Name="bf" Grid.Column="1" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 71-->
+                    </CheckBox>
+                    <CheckBox Name="bg" Grid.Column="1" Grid.Row="6" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 72-->
+                    </CheckBox>
+                    <CheckBox Name="bh" Grid.Column="1" Grid.Row="7" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 73-->
+                    </CheckBox>
+                    <CheckBox Name="bi" Grid.Column="1" Grid.Row="8" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 74-->
+                    </CheckBox>
+                    <CheckBox Name="bj" Grid.Column="1" Grid.Row="9" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 75-->
+                    </CheckBox>
+                    <CheckBox Name="bk" Grid.Column="1" Grid.Row="10" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 76-->
+                    </CheckBox>
+                    <CheckBox Name="bl" Grid.Column="1" Grid.Row="11" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 77-->
+                    </CheckBox>
+                    <CheckBox Name="bm" Grid.Column="1" Grid.Row="12" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 78-->
+                    </CheckBox>
+                    <ComboBox Name="bn" Grid.Row="1" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 79-->
+                    </ComboBox>
+                    <ComboBox Name="bo" Grid.Row="1" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 80-->
+                    </ComboBox>
+                    <ComboBox Name="bp" Grid.Row="2" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 81-->
+                    </ComboBox>
+                    <ComboBox Name="bq" Grid.Row="2" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 82-->
+                    </ComboBox>
+                    <ComboBox Name="br" Grid.Row="3" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 83-->
+                    </ComboBox>
+                    <ComboBox Name="bs" Grid.Row="3" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 84-->
+                    </ComboBox>
+                    <ComboBox Name="bt" Grid.Row="4" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 85-->
+                    </ComboBox>
+                    <ComboBox Name="bu" Grid.Row="4" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 86-->
+                    </ComboBox>
+                    <ComboBox Name="bv" Grid.Row="5" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 87-->
+                    </ComboBox>
+                    <ComboBox Name="bw" Grid.Row="5" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 88-->
+                    </ComboBox>
+                    <ComboBox Name="bx" Grid.Row="6" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 89-->
+                    </ComboBox>
+                    <ComboBox Name="by" Grid.Row="6" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 90-->
+                    </ComboBox>
+                    <ComboBox Name="bz" Grid.Row="7" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 91-->
+                    </ComboBox>
+                    <ComboBox Name="b0" Grid.Row="7" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 92-->
+                    </ComboBox>
+                    <ComboBox Name="b1" Grid.Row="8" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 93-->
+                    </ComboBox>
+                    <ComboBox Name="b2" Grid.Row="8" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 94-->
+                    </ComboBox>
+                    <ComboBox Name="b3" Grid.Row="9" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 95-->
+                    </ComboBox>
+                    <ComboBox Name="b4" Grid.Row="9" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 96-->
+                    </ComboBox>
+                    <ComboBox Name="b5" Grid.Row="10" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 97-->
+                    </ComboBox>
+                    <ComboBox Name="b6" Grid.Row="10" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 98-->
+                    </ComboBox>
+                    <ComboBox Name="b7" Grid.Row="11" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 99-->
+                    </ComboBox>
+                    <ComboBox Name="b8" Grid.Row="11" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 100-->
+                    </ComboBox>
+                    <ComboBox Name="b9" Grid.Row="12" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 101-->
+                    </ComboBox>
+                    <ComboBox Name="ca" Grid.Row="12" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 102-->
+                    </ComboBox>
+                    <!--Unknown connection ID: 66-->
+                  </Grid>
+                </GroupBox>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Objects/Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFF0F0F0" Offset="0" />
+                  <GradientStop Color="#00E5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid Name="cb">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width=".7*" />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="30" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Name="cc" ContentControl.Content="Room Name" Control.FontWeight="Bold" Control.FontSize="18" Grid.ColumnSpan="2">
+                  <!--Unknown connection ID: 104-->
+                </Label>
+                <Grid Row="1" FrameworkElement.Margin="0,0,3,0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                    <RowDefinition Height="25" />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Objects:" />
+                  <ListBox Name="cd" Grid.Row="1" UIElement.AllowDrop="True">
+                    <FrameworkElement.ContextMenu>
+                      <ContextMenu>
+                        <MenuItem Name="ce" HeaderedItemsControl.Header="Assign Selected Object">
+                          <!--Unknown connection ID: 106-->
+                        </MenuItem>
+                        <MenuItem Name="cf" HeaderedItemsControl.Header="Remove Selected Object">
+                          <!--Unknown connection ID: 107-->
+                        </MenuItem>
+                      </ContextMenu>
+                    </FrameworkElement.ContextMenu>
+                    <!--Unknown connection ID: 105-->
+                  </ListBox>
+                  <Button ContentControl.Content="Assign Objects" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Grid.Row="2">
+                    <!--Unknown connection ID: 108-->
+                  </Button>
+                </Grid>
+                <Grid Column="1" Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="30" />
+                  </Grid.RowDefinitions>
+                  <ListView Name="cg" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                    <ListView.View>
+                      <GridView>
+                        <GridViewColumn Header="Name">
+                          <GridViewColumn.DisplayMemberBinding>
+                            <Binding Path="Name" />
+                          </GridViewColumn.DisplayMemberBinding>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Value">
+                          <GridViewColumn.DisplayMemberBinding>
+                            <Binding Path="Value" />
+                          </GridViewColumn.DisplayMemberBinding>
+                        </GridViewColumn>
+                      </GridView>
+                    </ListView.View>
+                    <!--Unknown connection ID: 109-->
+                  </ListView>
+                  <Grid Row="1">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Property Name:" />
+                    <TextBox Name="ch" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                      <!--Unknown connection ID: 110-->
+                    </TextBox>
+                  </Grid>
+                  <Grid Row="2">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Property Value:" />
+                    <TextBox Name="ci" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                      <!--Unknown connection ID: 111-->
+                    </TextBox>
+                  </Grid>
+                  <Grid Row="3">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 112-->
+                    </Button>
+                    <Button Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 113-->
+                    </Button>
+                    <Button Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 114-->
+                    </Button>
+                  </Grid>
+                </Grid>
+                <!--Unknown connection ID: 103-->
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Actions">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFF0F0F0" Offset="0" />
+                  <GradientStop Color="#00E5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <WPFRagsLib:WPFActionControl Name="cj">
+                <!--Unknown connection ID: 115-->
+              </WPFRagsLib:WPFActionControl>
+            </TabItem>
+            <!--Unknown connection ID: 56-->
+          </TabControl>
+        </Grid>
+        <!--Unknown connection ID: 49-->
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Player">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#00F99504" Offset="0" />
+            <GradientStop Color="#FFE5E5E5" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#66F99504" Offset="0.003" />
+              <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <TabControl Name="ck" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#00F99504" Offset="0" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                    <RowDefinition Height="30" />
+                  </Grid.RowDefinitions>
+                  <CheckBox Name="cl" ContentControl.Content="Prompt For Player Name At Game Start?" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Margin="5,0,0,0">
+                    <!--Unknown connection ID: 117-->
+                  </CheckBox>
+                  <Grid Row="1">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="80" />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label ContentControl.Content="Player Name:" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="cm" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True">
+                      <!--Unknown connection ID: 118-->
+                    </TextBox>
+                  </Grid>
+                  <CheckBox Name="cn" ContentControl.Content="Prompt For Player Gender At Game Start?" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Margin="5,0,0,0">
+                    <!--Unknown connection ID: 119-->
+                  </CheckBox>
+                  <Grid Row="3">
+                    <GroupBox HeaderedContentControl.Header="Player Gender">
+                      <StackPanel>
+                        <RadioButton Name="co" ContentControl.Content="Male">
+                          <!--Unknown connection ID: 120-->
+                        </RadioButton>
+                        <RadioButton Name="cp" ContentControl.Content="Female">
+                          <!--Unknown connection ID: 121-->
+                        </RadioButton>
+                        <RadioButton Name="cq" ContentControl.Content="Other">
+                          <!--Unknown connection ID: 122-->
+                        </RadioButton>
+                      </StackPanel>
+                    </GroupBox>
+                  </Grid>
+                  <CheckBox Name="cr" ContentControl.Content="Enforce Carry Restrictions?" Grid.Row="4" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Margin="5,0,0,0">
+                    <!--Unknown connection ID: 123-->
+                  </CheckBox>
+                  <Grid Row="5">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="145" />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label ContentControl.Content="Player Carry Weight Limit:" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="cs" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 124-->
+                    </TextBox>
+                  </Grid>
+                  <Grid Row="6">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Player Starting Room:" />
+                    <ComboBox Name="ct" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 125-->
+                    </ComboBox>
+                  </Grid>
+                  <Grid Row="7">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Initial Inventory:" />
+                    <ListBox Name="cu" Grid.Row="1" UIElement.AllowDrop="True">
+                      <!--Unknown connection ID: 126-->
+                    </ListBox>
+                  </Grid>
+                  <Grid Row="8">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="cv" ContentControl.Content="Assign Objects" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 127-->
+                    </Button>
+                    <Button Grid.Column="1" ContentControl.Content="Remove Objects" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 128-->
+                    </Button>
+                  </Grid>
+                </Grid>
+                <Grid Column="1" FrameworkElement.Margin="3,0,0,0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Grid Row="0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Initial Description:" />
+                    <TextBox Name="cw" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                      <!--Unknown connection ID: 129-->
+                    </TextBox>
+                  </Grid>
+                  <Grid Row="1">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="25" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label ContentControl.Content="Initial Player Portrait:" FrameworkElement.VerticalAlignment="Center" />
+                    <ComboBox Name="cx" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 130-->
+                    </ComboBox>
+                  </Grid>
+                  <MediaElement Name="cy" Grid.Row="2">
+                    <!--Unknown connection ID: 131-->
+                  </MediaElement>
+                </Grid>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#00F99504" Offset="0" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <ListView Name="cz" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Name">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Name" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                      <GridViewColumn Header="Value">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Value" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                    </GridView>
+                  </ListView.View>
+                  <!--Unknown connection ID: 132-->
+                </ListView>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Name:" />
+                  <TextBox Name="c0" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 133-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Value:" />
+                  <TextBox Name="c1" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 134-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Button ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 135-->
+                  </Button>
+                  <Button Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 136-->
+                  </Button>
+                  <Button Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 137-->
+                  </Button>
+                </Grid>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Actions">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#00F99504" Offset="0" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <WPFRagsLib:WPFActionControl Name="c2">
+                <!--Unknown connection ID: 138-->
+              </WPFRagsLib:WPFActionControl>
+            </TabItem>
+            <!--Unknown connection ID: 116-->
+          </TabControl>
+        </Grid>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Objects">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFDB51F9" Offset="0.003" />
+            <GradientStop Color="#FFE5E5E5" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#66DB51F9" Offset="0.003" />
+              <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <TabControl Name="c3" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFDB51F9" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="1.3*" />
+                  <RowDefinition />
+                  <RowDefinition Height="30" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition Width=".5*" />
+                </Grid.ColumnDefinitions>
+                <Button ContentControl.Content="Add Object" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                  <!--Unknown connection ID: 141-->
+                </Button>
+                <Grid Row="1">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135" />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Object Name:" />
+                  <TextBox Name="c4" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True" TextBoxBase.IsReadOnly="True">
+                    <!--Unknown connection ID: 142-->
+                  </TextBox>
+                  <Label Grid.Row="1" ContentControl.Content="Object ID:" />
+                  <TextBox Name="c5" Grid.Row="1" TextBoxBase.IsReadOnly="True" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 143-->
+                  </TextBox>
+                  <Label Grid.Row="2" ContentControl.Content="Object Preposition:" />
+                  <TextBox Name="c6" Grid.Row="2" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 144-->
+                  </TextBox>
+                  <Label Grid.Row="3" ContentControl.Content="Display Name Override:" />
+                  <TextBox Name="c7" Grid.Row="3" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 145-->
+                  </TextBox>
+                  <Label Grid.Row="4" ContentControl.Content="Description:" />
+                  <TextBox Name="c8" Grid.Row="4" Grid.Column="1" FrameworkElement.VerticalAlignment="Stretch" SpellCheck.IsEnabled="True" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 146-->
+                  </TextBox>
+                </Grid>
+                <GroupBox Grid.Row="2" Grid.RowSpan="3" HeaderedContentControl.Header="Attributes">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition />
+                      <RowDefinition Height="28" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="c9" ContentControl.Content="Important Item (Appear At The Top Of The Lists)" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 147-->
+                    </CheckBox>
+                    <CheckBox Name="da" ContentControl.Content="Carryable" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 148-->
+                    </CheckBox>
+                    <CheckBox Name="db" ContentControl.Content="Wearable" Grid.Row="2" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 149-->
+                    </CheckBox>
+                    <CheckBox Name="dc" ContentControl.Content="Container" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 150-->
+                    </CheckBox>
+                    <CheckBox Name="dd" ContentControl.Content="Openable" Grid.Row="4" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 151-->
+                    </CheckBox>
+                    <GroupBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HeaderedContentControl.Header="Current Open State" FrameworkElement.VerticalAlignment="Center">
+                      <StackPanel FrameworkElement.HorizontalAlignment="Left" Orientation="Horizontal">
+                        <RadioButton Name="de" ContentControl.Content="Open" Control.Padding="4,-1,4,0">
+                          <!--Unknown connection ID: 152-->
+                        </RadioButton>
+                        <RadioButton Name="df" ContentControl.Content="Closed">
+                          <!--Unknown connection ID: 153-->
+                        </RadioButton>
+                      </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" HeaderedContentControl.Header="Current Wearable State" FrameworkElement.VerticalAlignment="Center">
+                      <StackPanel FrameworkElement.HorizontalAlignment="Left" Orientation="Horizontal">
+                        <RadioButton Name="dg" ContentControl.Content="Worn" Control.Padding="4,-1,4,0">
+                          <!--Unknown connection ID: 154-->
+                        </RadioButton>
+                        <RadioButton Name="dh" ContentControl.Content="Removed">
+                          <!--Unknown connection ID: 155-->
+                        </RadioButton>
+                      </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" HeaderedContentControl.Header="Current Locked State" FrameworkElement.VerticalAlignment="Center">
+                      <StackPanel FrameworkElement.HorizontalAlignment="Left" Orientation="Horizontal">
+                        <RadioButton Name="di" ContentControl.Content="Locked" Control.Padding="4,-1,4,0">
+                          <!--Unknown connection ID: 156-->
+                        </RadioButton>
+                        <RadioButton Name="dj" ContentControl.Content="Unlocked">
+                          <!--Unknown connection ID: 157-->
+                        </RadioButton>
+                      </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" HeaderedContentControl.Header="Current Visible State" FrameworkElement.VerticalAlignment="Center">
+                      <StackPanel FrameworkElement.HorizontalAlignment="Left" Orientation="Horizontal">
+                        <RadioButton Name="dk" ContentControl.Content="Visible" Control.Padding="4,-1,4,0">
+                          <!--Unknown connection ID: 158-->
+                        </RadioButton>
+                        <RadioButton Name="dl" ContentControl.Content="Invisible">
+                          <!--Unknown connection ID: 159-->
+                        </RadioButton>
+                      </StackPanel>
+                    </GroupBox>
+                    <CheckBox Name="dm" ContentControl.Content="Lockable" Grid.Row="5" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 160-->
+                    </CheckBox>
+                    <CheckBox Name="dn" ContentControl.Content="Enterable" Grid.Row="6" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 161-->
+                    </CheckBox>
+                    <CheckBox Name="do" ContentControl.Content="Readable" Grid.Row="7" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 162-->
+                    </CheckBox>
+                    <Grid Row="8">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition />
+                      </Grid.ColumnDefinitions>
+                      <Label ContentControl.Content="Weight:" />
+                      <TextBox Name="dp" Grid.Column="1" Control.VerticalContentAlignment="Center" Control.HorizontalContentAlignment="Stretch">
+                        <!--Unknown connection ID: 163-->
+                      </TextBox>
+                    </Grid>
+                  </Grid>
+                </GroupBox>
+                <Label Grid.Column="1" ContentControl.Content="Objects Contained:" />
+                <ListBox Name="dq" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" FrameworkElement.Margin="3,0,0,0" SelectionMode="Extended" UIElement.IsEnabled="False">
+                  <FrameworkElement.ContextMenu>
+                    <ContextMenu>
+                      <MenuItem HeaderedItemsControl.Header="Add Objects">
+                        <!--Unknown connection ID: 165-->
+                      </MenuItem>
+                      <MenuItem HeaderedItemsControl.Header="Remove Selected Objects">
+                        <!--Unknown connection ID: 166-->
+                      </MenuItem>
+                    </ContextMenu>
+                  </FrameworkElement.ContextMenu>
+                  <!--Unknown connection ID: 164-->
+                </ListBox>
+                <Button Name="dr" Grid.Row="3" Grid.Column="1" ContentControl.Content="Put Items In Object" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" UIElement.IsEnabled="False">
+                  <!--Unknown connection ID: 167-->
+                </Button>
+                <Button Name="ds" Grid.Row="4" Grid.Column="1" ContentControl.Content="Remove Items From Object" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" UIElement.IsEnabled="False">
+                  <!--Unknown connection ID: 168-->
+                </Button>
+              </Grid>
+              <!--Unknown connection ID: 140-->
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFDB51F9" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <ListView Name="dt" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Name">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Name" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                      <GridViewColumn Header="Value" Width="400">
+                        <GridViewColumn.CellTemplate>
+                          <DataTemplate>
+                            <TextBlock FrameworkElement.VerticalAlignment="Center" TextWrapping="Wrap" FrameworkElement.HorizontalAlignment="Stretch">
+                              <TextBlock.Text>
+                                <Binding>
+                                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                                </Binding>
+                              </TextBlock.Text>
+                            </TextBlock>
+                          </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                      </GridViewColumn>
+                    </GridView>
+                  </ListView.View>
+                  <!--Unknown connection ID: 169-->
+                </ListView>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Name:" />
+                  <TextBox Name="du" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 170-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Value:" />
+                  <TextBox Name="dv" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 171-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Button Name="dw" ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 172-->
+                  </Button>
+                  <Button Name="dx" Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 173-->
+                  </Button>
+                  <Button Name="dy" Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 174-->
+                  </Button>
+                </Grid>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Layered Clothing">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFDB51F9" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid Name="dz">
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label Name="d0" ContentControl.Content="Object Name Here" Control.FontWeight="Bold" Control.FontSize="18">
+                    <!--Unknown connection ID: 176-->
+                  </Label>
+                  <GroupBox Grid.Row="1" HeaderedContentControl.Header="Defined Zones">
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition />
+                        <RowDefinition Height="25" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                      </Grid.ColumnDefinitions>
+                      <Label ContentControl.Content="Currently Defined Body Zones:" Grid.ColumnSpan="2" />
+                      <ListBox Name="d1" Grid.Row="1" Grid.ColumnSpan="2">
+                        <!--Unknown connection ID: 177-->
+                      </ListBox>
+                      <Button Name="d2" Grid.Row="2" ContentControl.Content="Add Zone" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                        <!--Unknown connection ID: 178-->
+                      </Button>
+                      <Button Name="d3" Grid.Row="2" Grid.Column="1" ContentControl.Content="Remove Zone" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                        <!--Unknown connection ID: 179-->
+                      </Button>
+                    </Grid>
+                  </GroupBox>
+                </Grid>
+                <GroupBox Grid.Row="1" HeaderedContentControl.Header="Object's Assigned Layers">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="25" />
+                      <RowDefinition />
+                      <RowDefinition Height="25" />
+                      <RowDefinition Height="27" />
+                      <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label ContentControl.Content="Assigned Zone Levels:" Grid.ColumnSpan="2" />
+                    <ListBox Name="d4" Grid.Row="1" Grid.ColumnSpan="2">
+                      <!--Unknown connection ID: 180-->
+                    </ListBox>
+                    <Label Grid.Row="2" ContentControl.Content="Select Zone:" />
+                    <Label Grid.Row="2" Grid.Column="1" ContentControl.Content="Select Level:" />
+                    <ComboBox Name="d5" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 181-->
+                    </ComboBox>
+                    <ComboBox Name="d6" Grid.Row="3" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                      <ComboBoxItem ContentControl.Content="1" />
+                      <ComboBoxItem ContentControl.Content="2" />
+                      <ComboBoxItem ContentControl.Content="3" />
+                      <ComboBoxItem ContentControl.Content="4" />
+                      <ComboBoxItem ContentControl.Content="5" />
+                      <ComboBoxItem ContentControl.Content="6" />
+                      <ComboBoxItem ContentControl.Content="7" />
+                      <ComboBoxItem ContentControl.Content="8" />
+                      <ComboBoxItem ContentControl.Content="9" />
+                      <ComboBoxItem ContentControl.Content="10" />
+                      <!--Unknown connection ID: 182-->
+                    </ComboBox>
+                    <Button Name="d7" Grid.Row="4" ContentControl.Content="Add Zone" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 183-->
+                    </Button>
+                    <Button Name="d8" Grid.Row="4" Grid.Column="1" ContentControl.Content="Remove Zone" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 184-->
+                    </Button>
+                  </Grid>
+                </GroupBox>
+                <Grid Column="1" RowSpan="2" FrameworkElement.Margin="3,0,0,0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Layered Clothing Instructions:" />
+                  <TextBox Name="d9" Grid.Row="1" Text="" TextWrapping="Wrap" TextBoxBase.VerticalScrollBarVisibility="Auto" TextBoxBase.AcceptsReturn="True" TextBoxBase.IsReadOnly="True">
+                    <!--Unknown connection ID: 185-->
+                  </TextBox>
+                  <Image Grid.Row="2" Source="testrender.gif" FrameworkElement.HorizontalAlignment="Right" />
+                  <TextBlock Grid.Row="2" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Width="200" TextWrapping="Wrap">Here is a layered clothing example: Let's look at this model to the right. We could design his clothing objects in the following manner. His socks would be Lower Body 1, the shoes could be lower body 2. His boxer shorts could be mid body 1, and the pants are mid body 2. His under shirt is upper body 1, and his long sleeved shirt is upper body 2. This is a very simple example, and you can add body zones and clothing levels as you see fit.</TextBlock>
+                </Grid>
+                <!--Unknown connection ID: 175-->
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Actions">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFDB51F9" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <WPFRagsLib:WPFActionControl Name="ea">
+                <!--Unknown connection ID: 186-->
+              </WPFRagsLib:WPFActionControl>
+            </TabItem>
+            <!--Unknown connection ID: 139-->
+          </TabControl>
+        </Grid>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Characters">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFFF0C00" Offset="0.003" />
+            <GradientStop Color="#FFE5E5E5" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#66FF0C00" Offset="0.003" />
+              <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <GridSplitter FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="3" />
+          <Grid FrameworkElement.Margin="0,0,3,0">
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <ListView Name="eb" Control.Background="#66FFFFFF" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True">
+              <ItemsControl.ItemsSource>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Character</Ctor>
+                </Binding>
+              </ItemsControl.ItemsSource>
+              <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                  <MenuItem Name="ec" HeaderedItemsControl.Header="Add Character">
+                    <!--Unknown connection ID: 188-->
+                  </MenuItem>
+                  <MenuItem Name="ed" HeaderedItemsControl.Header="Remove Selected Characters">
+                    <!--Unknown connection ID: 189-->
+                  </MenuItem>
+                </ContextMenu>
+              </FrameworkElement.ContextMenu>
+              <ListView.View>
+                <GridView>
+                  <GridViewColumn Header="Character Name" util:GridViewSort.PropertyName="CharProp" util:GridViewSort.AutoSort="True">
+                    <GridViewColumn.DisplayMemberBinding>
+                      <Binding Path="CharProp" />
+                    </GridViewColumn.DisplayMemberBinding>
+                  </GridViewColumn>
+                </GridView>
+              </ListView.View>
+              <!--Unknown connection ID: 187-->
+            </ListView>
+            <Button Name="ee" Grid.Row="1" ContentControl.Content="Add Character" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+              <!--Unknown connection ID: 190-->
+            </Button>
+          </Grid>
+          <TabControl Name="ef" Grid.Column="1" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFFF0C00" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="33" />
+                  <RowDefinition Height="120" />
+                  <RowDefinition />
+                  <RowDefinition />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="eg" ContentControl.Content="Character Name" Control.FontWeight="Bold" Control.FontSize="18">
+                  <!--Unknown connection ID: 192-->
+                </Label>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Character Name Override:" />
+                  <TextBox Name="eh" Grid.Row="1" SpellCheck.IsEnabled="True" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 193-->
+                  </TextBox>
+                  <Label Grid.Row="2" ContentControl.Content="Initial Room:" />
+                  <ComboBox Name="ei" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 194-->
+                  </ComboBox>
+                  <CheckBox Name="ej" Grid.Row="4" ContentControl.Content="Allow Inventory Interaction" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 195-->
+                  </CheckBox>
+                </Grid>
+                <GroupBox Name="ek" Grid.Row="1" Grid.Column="1" HeaderedContentControl.Header="Character Gender" FrameworkElement.Margin="3,0,0,0">
+                  <StackPanel FrameworkElement.VerticalAlignment="Stretch">
+                    <RadioButton Name="el" ContentControl.Content="Male" FrameworkElement.Margin="0,12,0,0">
+                      <!--Unknown connection ID: 197-->
+                    </RadioButton>
+                    <RadioButton Name="em" ContentControl.Content="Female" FrameworkElement.Margin="0,12,0,0">
+                      <!--Unknown connection ID: 198-->
+                    </RadioButton>
+                    <RadioButton Name="en" ContentControl.Content="Other" FrameworkElement.Margin="0,12,0,0">
+                      <!--Unknown connection ID: 199-->
+                    </RadioButton>
+                  </StackPanel>
+                  <!--Unknown connection ID: 196-->
+                </GroupBox>
+                <Grid Row="2" ColumnSpan="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Description:" />
+                  <TextBox Name="eo" Grid.Row="1" TextWrapping="Wrap" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 200-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Initial Inventory:" />
+                  <ListBox Name="ep" Grid.Row="1" UIElement.AllowDrop="True">
+                    <FrameworkElement.ContextMenu>
+                      <ContextMenu>
+                        <MenuItem HeaderedItemsControl.Header="Assign Selected Objects">
+                          <!--Unknown connection ID: 202-->
+                        </MenuItem>
+                        <MenuItem Name="eq" HeaderedItemsControl.Header="Remove Selected Objects">
+                          <!--Unknown connection ID: 203-->
+                        </MenuItem>
+                      </ContextMenu>
+                    </FrameworkElement.ContextMenu>
+                    <!--Unknown connection ID: 201-->
+                  </ListBox>
+                </Grid>
+                <Grid Row="3" Column="1" RowSpan="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Inital Character Portrait:" />
+                  <ComboBox Name="er" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 204-->
+                  </ComboBox>
+                  <MediaElement Name="es" Grid.Row="2">
+                    <!--Unknown connection ID: 205-->
+                  </MediaElement>
+                </Grid>
+                <Button Name="et" Grid.Row="4" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" ContentControl.Content="Assign Objects">
+                  <!--Unknown connection ID: 206-->
+                </Button>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFFF0C00" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <ListView Name="eu" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Name">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Name" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                      <GridViewColumn Header="Value">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Value" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                    </GridView>
+                  </ListView.View>
+                  <!--Unknown connection ID: 207-->
+                </ListView>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Name:" />
+                  <TextBox Name="ev" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 208-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Value:" />
+                  <TextBox Name="ew" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 209-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Button Name="ex" ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 210-->
+                  </Button>
+                  <Button Name="ey" Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 211-->
+                  </Button>
+                  <Button Name="ez" Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 212-->
+                  </Button>
+                </Grid>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Actions">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FFFF0C00" Offset="0.003" />
+                  <GradientStop Color="#FFE5E5E5" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <WPFRagsLib:WPFActionControl Name="e0">
+                <!--Unknown connection ID: 213-->
+              </WPFRagsLib:WPFActionControl>
+            </TabItem>
+            <!--Unknown connection ID: 191-->
+          </TabControl>
+        </Grid>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Variables" FrameworkElement.Height="24" FrameworkElement.VerticalAlignment="Top">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="Yellow" Offset="0.003" />
+            <GradientStop Color="White" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#66FFFF00" Offset="0.003" />
+              <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <GridSplitter FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="3" />
+          <Grid FrameworkElement.Margin="0,0,3,0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="25" />
+              <RowDefinition />
+              <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Label ContentControl.Content="Variables:" />
+            <TreeView Name="e1" Grid.Row="1" UIElement.AllowDrop="True">
+              <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                  <MenuItem Name="e2" HeaderedItemsControl.Header="Add">
+                    <!--Unknown connection ID: 215-->
+                  </MenuItem>
+                  <MenuItem Name="e3" HeaderedItemsControl.Header="Delete">
+                    <!--Unknown connection ID: 216-->
+                  </MenuItem>
+                  <Separator />
+                  <MenuItem Name="e4" HeaderedItemsControl.Header="Add Group">
+                    <!--Unknown connection ID: 217-->
+                  </MenuItem>
+                  <MenuItem Name="e5" HeaderedItemsControl.Header="Remove Group">
+                    <!--Unknown connection ID: 218-->
+                  </MenuItem>
+                </ContextMenu>
+              </FrameworkElement.ContextMenu>
+              <!--Unknown connection ID: 214-->
+            </TreeView>
+            <Button Grid.Row="2" ContentControl.Content="Add Variable" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+              <!--Unknown connection ID: 219-->
+            </Button>
+          </Grid>
+          <TabControl Grid.Column="1" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="Yellow" Offset="0.003" />
+                  <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="30" />
+                  <RowDefinition Height="40" />
+                  <RowDefinition Height=".2*" />
+                  <RowDefinition Height=".4*" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Name="e6" ContentControl.Content="Variable Name" Control.FontWeight="Bold" Control.FontSize="18">
+                  <!--Unknown connection ID: 220-->
+                </Label>
+                <GroupBox Name="e7" Grid.Row="1" HeaderedContentControl.Header="Variable Type" UIElement.IsEnabled="False">
+                  <StackPanel Orientation="Horizontal" FrameworkElement.VerticalAlignment="Center">
+                    <RadioButton Name="e8" ContentControl.Content="Number">
+                      <!--Unknown connection ID: 222-->
+                    </RadioButton>
+                    <RadioButton Name="e9" ContentControl.Content="Number Array">
+                      <!--Unknown connection ID: 223-->
+                    </RadioButton>
+                    <RadioButton Name="fa" ContentControl.Content="Text">
+                      <!--Unknown connection ID: 224-->
+                    </RadioButton>
+                    <RadioButton Name="fb" ContentControl.Content="Text Array">
+                      <!--Unknown connection ID: 225-->
+                    </RadioButton>
+                    <RadioButton Name="fc" ContentControl.Content="DateTime">
+                      <!--Unknown connection ID: 226-->
+                    </RadioButton>
+                    <RadioButton Name="fd" ContentControl.Content="DateTime Array">
+                      <!--Unknown connection ID: 227-->
+                    </RadioButton>
+                  </StackPanel>
+                  <!--Unknown connection ID: 221-->
+                </GroupBox>
+                <GroupBox Name="fe" Grid.Row="2" HeaderedContentControl.Header="Variable Comments" UIElement.IsEnabled="False">
+                  <TextBox Name="ff" SpellCheck.IsEnabled="True" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 229-->
+                  </TextBox>
+                  <!--Unknown connection ID: 228-->
+                </GroupBox>
+                <GroupBox Name="fg" HeaderedContentControl.Header="Initial Value" Grid.Row="3" UIElement.IsEnabled="False">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBox Name="fh" SpellCheck.IsEnabled="True" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                      <!--Unknown connection ID: 231-->
+                    </TextBox>
+                    <xctk:DateTimePicker Name="fi" UIElement.Visibility="Hidden">
+                      <!--Unknown connection ID: 232-->
+                    </xctk:DateTimePicker>
+                    <Grid Name="fj" UIElement.Visibility="Hidden">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                      </Grid.ColumnDefinitions>
+                      <Label ContentControl.Content="Initial Value:" />
+                      <TextBox Name="fk" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                        <!--Unknown connection ID: 234-->
+                      </TextBox>
+                      <GroupBox HeaderedContentControl.Header="Number Limits" Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                          </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition />
+                          </Grid.RowDefinitions>
+                          <CheckBox Name="fl" ContentControl.Content="Enforce Limits" FrameworkElement.VerticalAlignment="Center">
+                            <!--Unknown connection ID: 235-->
+                          </CheckBox>
+                          <Label ContentControl.Content="Min Value:" Grid.Row="1" />
+                          <TextBox Name="fm" Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                            <!--Unknown connection ID: 236-->
+                          </TextBox>
+                          <Label ContentControl.Content="Max Value:" Grid.Row="1" Grid.Column="2" />
+                          <TextBox Name="fn" FrameworkElement.VerticalAlignment="Center" Grid.Row="1" Grid.Column="3">
+                            <!--Unknown connection ID: 237-->
+                          </TextBox>
+                        </Grid>
+                      </GroupBox>
+                      <!--Unknown connection ID: 233-->
+                    </Grid>
+                  </Grid>
+                  <!--Unknown connection ID: 230-->
+                </GroupBox>
+                <GroupBox Name="fo" Grid.Row="4" HeaderedContentControl.Header="Array" UIElement.IsEnabled="False">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="25" />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="60" />
+                      <ColumnDefinition />
+                      <ColumnDefinition />
+                      <ColumnDefinition Width="100" />
+                      <ColumnDefinition Width="120" />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="fp" ContentControl.Content="Add Item" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 239-->
+                    </Button>
+                    <Button Name="fq" ContentControl.Content="Update Item" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 240-->
+                    </Button>
+                    <Button Name="fr" ContentControl.Content="Remove Item" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                      <!--Unknown connection ID: 241-->
+                    </Button>
+                    <Label ContentControl.Content="(Array is 0 Based)" Grid.Column="3" FrameworkElement.VerticalAlignment="Center" />
+                    <CheckBox Name="fs" ContentControl.Content="Multi-Dimensional" Grid.Column="4" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 242-->
+                    </CheckBox>
+                    <ListBox Name="ft" Grid.Row="1" Grid.ColumnSpan="5" FrameworkElement.Margin="-2,0,2,0">
+                      <!--Unknown connection ID: 243-->
+                    </ListBox>
+                    <DataGrid Name="fu" Grid.Row="1" Grid.ColumnSpan="5" SelectionUnit="Cell">
+                      <ItemsControl.ItemsSource>
+                        <Binding Path="DataTable" Mode="TwoWay" />
+                      </ItemsControl.ItemsSource>
+                      <FrameworkElement.ContextMenu>
+                        <ContextMenu>
+                          <MenuItem Name="fv" HeaderedItemsControl.Header="Adjust Column Count">
+                            <!--Unknown connection ID: 245-->
+                          </MenuItem>
+                          <MenuItem Name="fw" HeaderedItemsControl.Header="Insert Row">
+                            <!--Unknown connection ID: 246-->
+                          </MenuItem>
+                          <MenuItem Name="fx" HeaderedItemsControl.Header="Delete Row">
+                            <!--Unknown connection ID: 247-->
+                          </MenuItem>
+                        </ContextMenu>
+                      </FrameworkElement.ContextMenu>
+                      <DataGrid.RowHeaderTemplate>
+                        <DataTemplate>
+                          <TextBlock>
+                            <TextBlock.Text>
+                              <Binding Path="Header">
+                                <Binding.RelativeSource>
+                                  <RelativeSource Mode="FindAncestor">
+                                    <RelativeSource.AncestorType>
+                                      <x:TypeExtension>
+                                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">DataGridRow</Ctor>
+                                      </x:TypeExtension>
+                                    </RelativeSource.AncestorType>
+                                  </RelativeSource>
+                                </Binding.RelativeSource>
+                              </Binding>
+                            </TextBlock.Text>
+                          </TextBlock>
+                        </DataTemplate>
+                      </DataGrid.RowHeaderTemplate>
+                      <!--Unknown connection ID: 244-->
+                    </DataGrid>
+                  </Grid>
+                  <!--Unknown connection ID: 238-->
+                </GroupBox>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="Yellow" Offset="0.003" />
+                  <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <ListView Name="fy" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Name">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Name" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                      <GridViewColumn Header="Value">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Value" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                    </GridView>
+                  </ListView.View>
+                  <!--Unknown connection ID: 248-->
+                </ListView>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Name:" />
+                  <TextBox Name="fz" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 249-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Value:" />
+                  <TextBox Name="f0" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 250-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Button Name="f1" ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 251-->
+                  </Button>
+                  <Button Name="f2" Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 252-->
+                  </Button>
+                  <Button Name="f3" Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 253-->
+                  </Button>
+                </Grid>
+              </Grid>
+            </TabItem>
+          </TabControl>
+        </Grid>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Timers">
+        <Control.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FF04FDC6" Offset="0.003" />
+            <GradientStop Color="Yellow" Offset="1" />
+          </LinearGradientBrush>
+        </Control.Background>
+        <Grid>
+          <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#6604FDC6" Offset="0.003" />
+              <GradientStop Color="#66FFFF00" Offset="1" />
+            </LinearGradientBrush>
+          </Panel.Background>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <GridSplitter FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="3" />
+          <Grid FrameworkElement.Margin="0,0,3,0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="25" />
+              <RowDefinition />
+              <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Label ContentControl.Content="Timers:" />
+            <ListView Name="f4" Grid.Row="1" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True">
+              <ItemsControl.ItemsSource>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Timer</Ctor>
+                </Binding>
+              </ItemsControl.ItemsSource>
+              <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                  <MenuItem Name="f5" HeaderedItemsControl.Header="Add Timer">
+                    <!--Unknown connection ID: 255-->
+                  </MenuItem>
+                  <MenuItem Name="f6" HeaderedItemsControl.Header="Delete Timer">
+                    <!--Unknown connection ID: 256-->
+                  </MenuItem>
+                </ContextMenu>
+              </FrameworkElement.ContextMenu>
+              <ListView.View>
+                <GridView>
+                  <GridViewColumn Header="Name" util:GridViewSort.PropertyName="Name" util:GridViewSort.AutoSort="True">
+                    <GridViewColumn.DisplayMemberBinding>
+                      <Binding Path="Name" />
+                    </GridViewColumn.DisplayMemberBinding>
+                  </GridViewColumn>
+                </GridView>
+              </ListView.View>
+              <!--Unknown connection ID: 254-->
+            </ListView>
+            <Button Name="f7" Grid.Row="2" ContentControl.Content="Add Timer" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+              <!--Unknown connection ID: 257-->
+            </Button>
+          </Grid>
+          <TabControl Name="f8" Grid.Column="1" Control.Background="#00FFFFFF">
+            <TabItem HeaderedContentControl.Header="General">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FF04FDC6" Offset="0.003" />
+                  <GradientStop Color="Yellow" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="40" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="55" />
+                  <RowDefinition Height="75" />
+                  <RowDefinition Height="75" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Name="f9" ContentControl.Content="Timer Name" Control.FontWeight="Bold" Control.FontSize="18">
+                  <!--Unknown connection ID: 259-->
+                </Label>
+                <GroupBox Name="ga" Grid.Row="1" HeaderedContentControl.Header="Execution Order" UIElement.Visibility="Hidden">
+                  <StackPanel FrameworkElement.VerticalAlignment="Center">
+                    <Label ContentControl.Content="Timers run in order start at 1." />
+                    <TextBox Name="gb" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 261-->
+                    </TextBox>
+                  </StackPanel>
+                  <!--Unknown connection ID: 260-->
+                </GroupBox>
+                <GroupBox Name="gc" Grid.Row="2" HeaderedContentControl.Header="Timer Type">
+                  <StackPanel>
+                    <RadioButton Name="gd" ContentControl.Content="Run Always">
+                      <!--Unknown connection ID: 263-->
+                    </RadioButton>
+                    <RadioButton Name="ge" ContentControl.Content="Run a specified length">
+                      <!--Unknown connection ID: 264-->
+                    </RadioButton>
+                  </StackPanel>
+                  <!--Unknown connection ID: 262-->
+                </GroupBox>
+                <GroupBox Name="gf" HeaderedContentControl.Header="Timer Detail" Grid.Row="3">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="140" />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label ContentControl.Content="Length In Turns:" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="gg" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 266-->
+                    </TextBox>
+                    <CheckBox Name="gh" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Restart Automatically">
+                      <!--Unknown connection ID: 267-->
+                    </CheckBox>
+                  </Grid>
+                  <!--Unknown connection ID: 265-->
+                </GroupBox>
+                <GroupBox Name="gi" HeaderedContentControl.Header="Live Action Timer" Grid.Row="4">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition />
+                      <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="140" />
+                      <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="gj" ContentControl.Content="Live Timer" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 269-->
+                    </CheckBox>
+                    <Label Grid.Row="1" ContentControl.Content="Seconds To Fire:" FrameworkElement.VerticalAlignment="Center" />
+                    <TextBox Name="gk" Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center">
+                      <!--Unknown connection ID: 270-->
+                    </TextBox>
+                  </Grid>
+                  <!--Unknown connection ID: 268-->
+                </GroupBox>
+                <CheckBox Name="gl" ContentControl.Content="Initially Active" Grid.Row="5" FrameworkElement.VerticalAlignment="Top">
+                  <!--Unknown connection ID: 271-->
+                </CheckBox>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Custom Properties">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FF04FDC6" Offset="0.003" />
+                  <GradientStop Color="Yellow" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="60" />
+                  <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <ListView Name="gm" ItemsControl.ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" ItemsControl.AlternationCount="2">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Name">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Name" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                      <GridViewColumn Header="Value">
+                        <GridViewColumn.DisplayMemberBinding>
+                          <Binding Path="Value" />
+                        </GridViewColumn.DisplayMemberBinding>
+                      </GridViewColumn>
+                    </GridView>
+                  </ListView.View>
+                  <!--Unknown connection ID: 272-->
+                </ListView>
+                <Grid Row="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Name:" />
+                  <TextBox Name="gn" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TextBoxBase.VerticalScrollBarVisibility="Auto">
+                    <!--Unknown connection ID: 273-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="2">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Label ContentControl.Content="Property Value:" />
+                  <TextBox Name="go" Grid.Row="1" TextBoxBase.AcceptsReturn="True" TextBoxBase.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+                    <!--Unknown connection ID: 274-->
+                  </TextBox>
+                </Grid>
+                <Grid Row="3">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                  </Grid.ColumnDefinitions>
+                  <Button Name="gp" ContentControl.Content="Add Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 275-->
+                  </Button>
+                  <Button Name="gq" Grid.Column="1" ContentControl.Content="Update Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 276-->
+                  </Button>
+                  <Button Name="gr" Grid.Column="2" ContentControl.Content="Delete Property" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">
+                    <!--Unknown connection ID: 277-->
+                  </Button>
+                </Grid>
+              </Grid>
+            </TabItem>
+            <TabItem HeaderedContentControl.Header="Actions">
+              <Control.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                  <GradientStop Color="#FF04FDC6" Offset="0.003" />
+                  <GradientStop Color="Yellow" Offset="1" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <WPFRagsLib:WPFActionControl Name="gs">
+                <!--Unknown connection ID: 278-->
+              </WPFRagsLib:WPFActionControl>
+            </TabItem>
+            <!--Unknown connection ID: 258-->
+          </TabControl>
+        </Grid>
+      </TabItem>
+      <TabItem HeaderedContentControl.Header="Multimedia">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height=".5*" />
+          </Grid.RowDefinitions>
+          <GridSplitter FrameworkElement.HorizontalAlignment="Right" Grid.RowSpan="2" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.Width="3" />
+          <GridSplitter Grid.Column="1" Grid.Row="1" FrameworkElement.Height="3" FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.VerticalAlignment="Top" />
+          <ListView Name="gt" Grid.RowSpan="2" FrameworkElement.Margin="0,0,3,0" Control.FontSize="9" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True">
+            <ItemsControl.ItemsSource>
+              <Binding>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GamePicture</Ctor>
+              </Binding>
+            </ItemsControl.ItemsSource>
+            <ListView.View>
+              <GridView>
+                <GridViewColumn Header="Multimedia" util:GridViewSort.PropertyName="TheName" util:GridViewSort.AutoSort="True">
+                  <GridViewColumn.DisplayMemberBinding>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TheName</Ctor>
+                    </Binding>
+                  </GridViewColumn.DisplayMemberBinding>
+                </GridViewColumn>
+              </GridView>
+            </ListView.View>
+            <!--Unknown connection ID: 279-->
+          </ListView>
+          <Grid Name="gu" Column="1">
+            <MediaElement Name="gv" Grid.Column="1">
+              <!--Unknown connection ID: 281-->
+            </MediaElement>
+            <!--Unknown connection ID: 280-->
+          </Grid>
+          <GroupBox Grid.Row="1" Grid.Column="1" HeaderedContentControl.Header="Layered Images" FrameworkElement.Margin="0,3,0,0">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="80" />
+              </Grid.ColumnDefinitions>
+              <ListBox Name="gw" Grid.RowSpan="3" UIElement.AllowDrop="True">
+                <!--Unknown connection ID: 282-->
+              </ListBox>
+              <Button Name="gx" ContentControl.Content="Remove" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left">
+                <!--Unknown connection ID: 283-->
+              </Button>
+              <Button Name="gy" ContentControl.Content="Up" Grid.Column="1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left">
+                <!--Unknown connection ID: 284-->
+              </Button>
+              <Button Name="gz" ContentControl.Content="Down" Grid.Column="1" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Left">
+                <!--Unknown connection ID: 285-->
+              </Button>
+            </Grid>
+          </GroupBox>
+        </Grid>
+      </TabItem>
+      <!--Unknown connection ID: 20-->
+    </TabControl>
+    <GridSplitter Grid.Column="1" FrameworkElement.VerticalAlignment="Bottom" FrameworkElement.Height="3" FrameworkElement.HorizontalAlignment="Stretch" />
+    <Grid Column="1" FrameworkElement.Margin="0,20,0,3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Label ContentControl.Content="Multimedia Library:" />
+      <TreeView Name="g0" Grid.Column="0" Grid.Row="1" UIElement.AllowDrop="True">
+        <FrameworkElement.ContextMenu>
+          <ContextMenu>
+            <MenuItem Name="g1" HeaderedItemsControl.Header="Add">
+              <!--Unknown connection ID: 287-->
+            </MenuItem>
+            <MenuItem Name="g2" HeaderedItemsControl.Header="Delete">
+              <!--Unknown connection ID: 288-->
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="g3" HeaderedItemsControl.Header="Add Group">
+              <!--Unknown connection ID: 289-->
+            </MenuItem>
+            <MenuItem Name="g4" HeaderedItemsControl.Header="Remove Group">
+              <!--Unknown connection ID: 290-->
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="g5" HeaderedItemsControl.Header="Save To Disk">
+              <!--Unknown connection ID: 291-->
+            </MenuItem>
+          </ContextMenu>
+        </FrameworkElement.ContextMenu>
+        <!--Unknown connection ID: 286-->
+      </TreeView>
+    </Grid>
+    <Grid Column="1" Row="1">
+      <MediaElement Name="g6">
+        <!--Unknown connection ID: 292-->
+      </MediaElement>
+    </Grid>
+    <GridSplitter Grid.Column="1" Grid.Row="2" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Height="3" FrameworkElement.HorizontalAlignment="Stretch" />
+    <Grid Row="2" Column="1" FrameworkElement.Margin="0,3,0,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="74*" />
+        <ColumnDefinition Width="23*" />
+        <ColumnDefinition Width="86*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Label ContentControl.Content="Object Library:" Grid.ColumnSpan="3" />
+      <TreeView Name="g7" Grid.Row="1" Grid.ColumnSpan="3" FrameworkElement.Margin="0,5,0,-5" UIElement.AllowDrop="True">
+        <TreeViewItem HeaderedItemsControl.Header="test" IsExpanded="True">
+          <TreeViewItem HeaderedItemsControl.Header="testing" IsSelected="True" />
+        </TreeViewItem>
+        <FrameworkElement.ContextMenu>
+          <ContextMenu>
+            <MenuItem Name="g8" HeaderedItemsControl.Header="Add">
+              <!--Unknown connection ID: 294-->
+            </MenuItem>
+            <MenuItem Name="g9" HeaderedItemsControl.Header="Delete">
+              <!--Unknown connection ID: 295-->
+            </MenuItem>
+            <MenuItem Name="ha" HeaderedItemsControl.Header="Rename">
+              <!--Unknown connection ID: 296-->
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="hb" HeaderedItemsControl.Header="Add Group">
+              <!--Unknown connection ID: 297-->
+            </MenuItem>
+            <MenuItem Name="hc" HeaderedItemsControl.Header="Remove Group">
+              <!--Unknown connection ID: 298-->
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="hd" HeaderedItemsControl.Header="Copy">
+              <!--Unknown connection ID: 299-->
+            </MenuItem>
+            <MenuItem Name="he" HeaderedItemsControl.Header="Paste">
+              <!--Unknown connection ID: 300-->
+            </MenuItem>
+          </ContextMenu>
+        </FrameworkElement.ContextMenu>
+        <!--Unknown connection ID: 293-->
+      </TreeView>
+    </Grid>
+    <!--Unknown connection ID: 2-->
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

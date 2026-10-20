@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="RAGSWPFPlayer.EndGameWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Your Game Has Ended" FrameworkElement.Height="205.263" FrameworkElement.Width="385.714" Window.AllowsTransparency="True" Window.WindowStyle="None" Control.Background="#4CFFFFFF" Window.WindowStartupLocation="CenterOwner" xmlns:ragswpfplayer="clr-namespace:RAGSWPFPlayer;assembly=RAGSWPFPlayer">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Label Grid.Row="0" Grid.ColumnSpan="4" ContentControl.Content="The game has ended." FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Control.FontWeight="Bold" Control.FontSize="20" FrameworkElement.Margin="88,29,86,37" FrameworkElement.Width="212" />
+    <Label Grid.Row="0" Grid.ColumnSpan="4" ContentControl.Content="Would you like to play again?" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Control.FontWeight="Bold" Control.FontSize="20" FrameworkElement.Margin="49,55,49,10" />
+    <Button Name="a" Grid.Row="1" Grid.Column="0" FrameworkElement.Margin="7" ContentControl.Content="Restart" Control.FontWeight="Bold" Control.FontSize="14">
+      <Control.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#9900FF0C" Offset="0" />
+          <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+      </Control.Background>
+      <!--Unknown connection ID: 1-->
+    </Button>
+    <Button Name="b" Grid.Row="1" Grid.Column="1" FrameworkElement.Margin="7" ContentControl.Content="Load" Control.FontWeight="Bold" Control.FontSize="14">
+      <Control.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#9900FF0C" Offset="0" />
+          <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+      </Control.Background>
+      <!--Unknown connection ID: 2-->
+    </Button>
+    <Button Name="c" Grid.Row="1" FrameworkElement.Margin="7" Grid.Column="2" ContentControl.Content="Quick Load" Control.FontWeight="Bold" Control.FontSize="14">
+      <Control.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#9900FF0C" Offset="0" />
+          <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+      </Control.Background>
+      <!--Unknown connection ID: 3-->
+    </Button>
+    <Button Name="d" Grid.Row="1" Grid.Column="3" FrameworkElement.Margin="7" ContentControl.Content="No" Control.FontWeight="Bold" Control.FontSize="14">
+      <Control.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#9900FF0C" Offset="0" />
+          <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+      </Control.Background>
+      <!--Unknown connection ID: 4-->
+    </Button>
+  </Grid>
+</Window>

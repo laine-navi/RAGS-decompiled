@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.QuickMenuItemWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Quick Menu Items" FrameworkElement.Height="430" FrameworkElement.Width="545" Window.WindowStartupLocation="CenterOwner" Window.Icon="App.ico" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width=".6*" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <GridSplitter FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.Width="3" />
+    <Grid Name="c" FrameworkElement.Margin="0,0,3,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="25" />
+        <RowDefinition />
+        <RowDefinition Height="30" />
+      </Grid.RowDefinitions>
+      <Label ContentControl.Content="Menu Items" Grid.ColumnSpan="3" />
+      <ListBox Name="d" Grid.Row="1" Grid.ColumnSpan="3">
+        <!--Unknown connection ID: 2-->
+      </ListBox>
+      <Button Name="e" Grid.Row="2" ContentControl.Content="Add" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 3-->
+      </Button>
+      <Button Name="f" Grid.Row="2" Grid.Column="1" ContentControl.Content="View/Edit" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 4-->
+      </Button>
+      <Button Name="g" Grid.Row="2" Grid.Column="2" ContentControl.Content="Delete" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 5-->
+      </Button>
+      <!--Unknown connection ID: 1-->
+    </Grid>
+    <Grid Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="23" />
+        <RowDefinition Height="25" />
+        <RowDefinition />
+        <RowDefinition Height="70" />
+        <RowDefinition />
+        <RowDefinition Height="30" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Label ContentControl.Content="Menu Item Name:" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center" />
+      <TextBox Name="h" Grid.Row="1" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center">
+        <!--Unknown connection ID: 6-->
+      </TextBox>
+      <GroupBox HeaderedContentControl.Header="Show Command For" Grid.Row="2">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <CheckBox Name="i" ContentControl.Content="Rooms" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 7-->
+          </CheckBox>
+          <CheckBox Name="j" ContentControl.Content="Player" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 8-->
+          </CheckBox>
+          <CheckBox Name="k" ContentControl.Content="Objects" Grid.Row="2" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 9-->
+          </CheckBox>
+          <CheckBox Name="l" ContentControl.Content="Characters" Grid.Row="3" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 10-->
+          </CheckBox>
+        </Grid>
+      </GroupBox>
+      <GroupBox Name="m" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" HeaderedContentControl.Header="Required Object Attributes" UIElement.IsEnabled="False">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <CheckBox Name="n" ContentControl.Content="Carryable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 12-->
+          </CheckBox>
+          <CheckBox Name="o" Grid.Row="1" ContentControl.Content="Wearable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 13-->
+          </CheckBox>
+          <CheckBox Name="p" Grid.Row="2" ContentControl.Content="Container" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 14-->
+          </CheckBox>
+          <CheckBox Name="q" Grid.Row="3" ContentControl.Content="Openable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 15-->
+          </CheckBox>
+          <CheckBox Name="r" Grid.Row="4" ContentControl.Content="Lockable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 16-->
+          </CheckBox>
+          <CheckBox Name="s" Grid.Row="5" ContentControl.Content="Enterable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 17-->
+          </CheckBox>
+          <CheckBox Name="t" Grid.Row="6" ContentControl.Content="Readable" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 18-->
+          </CheckBox>
+        </Grid>
+        <!--Unknown connection ID: 11-->
+      </GroupBox>
+      <GroupBox Grid.Row="3" HeaderedContentControl.Header="Overwrite Commands">
+        <CheckBox Name="u" FrameworkElement.VerticalAlignment="Center">
+          <TextBox TextWrapping="Wrap">Overwrite Actions Without Warning</TextBox>
+          <!--Unknown connection ID: 19-->
+        </CheckBox>
+      </GroupBox>
+      <TextBox Grid.Row="4" Grid.ColumnSpan="2" TextWrapping="Wrap" FrameworkElement.VerticalAlignment="Center">Use the [Self] tag in Quick Menu commands and conditions to have the Rags Designer automatically replace [Self] with the appropriate name when inserted into your objects. Use the [Name] tag to insert the base object name. This is useful for command references.</TextBox>
+      <Button ContentControl.Content="Restore Defaults" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 20-->
+      </Button>
+      <Button ContentControl.Content="Close" Grid.Row="5" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 21-->
+      </Button>
+    </Grid>
+  </Grid>
+</Window>

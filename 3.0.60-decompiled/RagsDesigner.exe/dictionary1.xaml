@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <ObjectDataProvider x:Key="colorsTypeOdp" MethodName="GetType">
+    <ObjectDataProvider.ObjectType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">sys:Type</Ctor>
+      </x:TypeExtension>
+    </ObjectDataProvider.ObjectType>
+    <ObjectDataProvider.MethodParameters>
+      <system:String xmlns:system="clr-namespace:System;assembly=System.Private.CoreLib">System.Windows.Media.Colors, PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</system:String>
+    </ObjectDataProvider.MethodParameters>
+  </ObjectDataProvider>
+  <ObjectDataProvider x:Key="colorPropertiesOdp" MethodName="GetProperties">
+    <ObjectDataProvider.ObjectInstance>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">colorsTypeOdp</Ctor>
+      </StaticResourceExtension>
+    </ObjectDataProvider.ObjectInstance>
+  </ObjectDataProvider>
+</ResourceDictionary>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:chrome="clr-namespace:Xceed.Wpf.Toolkit.Chromes" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../../Themes/Aero2/Common.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <conv:InverseBoolConverter x:Key="InverseBoolConverter" />
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:DropDownButton</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="Control.IsTabStop" Value="False" />
+    <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+    <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+    <Setter Property="Control.Padding" Value="3" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:DropDownButton</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid Name="MainGrid" UIElement.SnapsToDevicePixels="True">
+            <ToggleButton Name="PART_DropDownButton" Grid.Column="1">
+              <ToggleButton.IsChecked>
+                <Binding Mode="TwoWay">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsOpen</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                </Binding>
+              </ToggleButton.IsChecked>
+              <UIElement.IsHitTestVisible>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsOpen</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                  <Binding.Converter>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">InverseBoolConverter</Ctor>
+                    </StaticResourceExtension>
+                  </Binding.Converter>
+                </Binding>
+              </UIElement.IsHitTestVisible>
+              <Control.Template>
+                <ControlTemplate>
+                  <ControlTemplate.TargetType>
+                    <x:TypeExtension>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ToggleButton</Ctor>
+                    </x:TypeExtension>
+                  </ControlTemplate.TargetType>
+                  <ContentPresenter />
+                </ControlTemplate>
+              </Control.Template>
+              <Grid>
+                <chrome:ButtonChrome Name="ToggleButtonChrome" RenderChecked="{TemplateBinding local:DropDownButton.IsOpen}" RenderEnabled="{TemplateBinding UIElement.IsEnabled}">
+                  <chrome:ButtonChrome.RenderMouseOver>
+                    <Binding ElementName="PART_DropDownButton">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsMouseOver</Ctor>
+                    </Binding>
+                  </chrome:ButtonChrome.RenderMouseOver>
+                  <chrome:ButtonChrome.RenderPressed>
+                    <Binding ElementName="PART_DropDownButton">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsPressed</Ctor>
+                    </Binding>
+                  </chrome:ButtonChrome.RenderPressed>
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*" />
+                      <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter FrameworkElement.Margin="{TemplateBinding Control.Padding}" Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" FrameworkElement.VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" RecognizesAccessKey="True" />
+                    <Grid Name="arrowGlyph" UIElement.IsHitTestVisible="False" FrameworkElement.Margin="4,3,4,3" Column="1">
+                      <Path Name="Arrow" FrameworkElement.Width="7" FrameworkElement.Height="4" Data="M0,1 C0,1 0,0 0,0 C0,0 3,0 3,0 C3,0 3,1 3,1 C3,1 4,1 4,1 C4,1 4,0 4,0 C4,0 7,0 7,0 C7,0 7,1 7,1 C7,1 6,1 6,1 C6,1 6,2 6,2 C6,2 5,2 5,2 C5,2 5,3 5,3 C5,3 4,3 4,3 C4,3 4,4 4,4 C4,4 3,4 3,4 C3,4 3,3 3,3 C3,3 2,3 2,3 C2,3 2,2 2,2 C2,2 1,2 1,2 C1,2 1,1 1,1 C1,1 0,1 0,1" Shape.Fill="{DynamicResource {Static SystemColors.ControlTextBrushKey}}" />
+                    </Grid>
+                  </Grid>
+                </chrome:ButtonChrome>
+              </Grid>
+            </ToggleButton>
+            <Popup Name="PART_Popup" HorizontalOffset="1" VerticalOffset="1" AllowsTransparency="True" StaysOpen="False" Placement="Bottom" UIElement.Focusable="False">
+              <Popup.IsOpen>
+                <Binding ElementName="PART_DropDownButton">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsChecked</Ctor>
+                </Binding>
+              </Popup.IsOpen>
+              <Border BorderThickness="1">
+                <Border.Background>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PanelBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Border.Background>
+                <Border.BorderBrush>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PopupDarkBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Border.BorderBrush>
+                <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding local:DropDownButton.DropDownContent}" />
+              </Border>
+            </Popup>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter TargetName="Arrow" Value="{DynamicResource {Static SystemColors.GrayTextBrushKey}}" Property="Shape.Fill" />
+              <Setter TargetName="ToggleButtonChrome" Value="{DynamicResource {Static SystemColors.GrayTextBrushKey}}" Property="Control.Foreground" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:DropDownButton</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

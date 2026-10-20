@@ -1,0 +1,25 @@
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Runtime.Serialization;
+
+namespace WPFRagsLib.RagsGame.com;
+
+[DebuggerStepThrough]
+[EditorBrowsable(EditorBrowsableState.Advanced)]
+[GeneratedCode("System.ServiceModel", "4.0.0.0")]
+[DataContract(Namespace = "http://tempuri.org/")]
+public class RegisterResponseBody
+{
+	[DataMember(EmitDefaultValue = false, Order = 0)]
+	public RegData RegisterResult;
+
+	public RegisterResponseBody()
+	{
+	}
+
+	public RegisterResponseBody(RegData RegisterResult)
+	{
+		this.RegisterResult = RegisterResult;
+	}
+}

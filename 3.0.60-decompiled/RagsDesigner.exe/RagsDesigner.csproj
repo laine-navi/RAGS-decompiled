@@ -1,0 +1,122 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>RagsDesigner</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net45</TargetFramework>
+    <Prefer32Bit>True</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="WPFRagsDesigner.Resources.Silverlight.Silverlight.js" />
+    <None Remove="WPFRagsDesigner.Resources.Silverlight.RagsPlayer.html" />
+    <None Remove="WPFRagsDesigner.Resources.Silverlight.RagsSvPlayer.xap" />
+    <EmbeddedResource Include="WPFRagsDesigner.Resources.Silverlight.Silverlight.js" LogicalName="WPFRagsDesigner.Resources.Silverlight.Silverlight.js" />
+    <EmbeddedResource Include="WPFRagsDesigner.Resources.Silverlight.RagsPlayer.html" LogicalName="WPFRagsDesigner.Resources.Silverlight.RagsPlayer.html" />
+    <EmbeddedResource Include="WPFRagsDesigner.Resources.Silverlight.RagsSvPlayer.xap" LogicalName="WPFRagsDesigner.Resources.Silverlight.RagsSvPlayer.xap" />
+    <ApplicationConfig Remove="RagsDesigner.exe.config" />
+    <ApplicationConfig Include="RagsDesigner.exe.config" />
+    <ApplicationDefinition Remove="WPFRagsDesigner/App.xaml" />
+    <ApplicationDefinition Include="WPFRagsDesigner/App.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="app.xaml" />
+    <Page Remove="dictionary1.xaml" />
+    <Page Remove="WPFRagsDesigner/AboutWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/AutoSaveSettingsWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/ExportXMLSelectionWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/GetDimensionWidthWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/GradientPickerWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/NewGameWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/QuickCommandEditWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/QuickMenuItemWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/RagsDesigner.xaml" />
+    <Page Remove="WPFRagsDesigner/RegistrationWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/SearchWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/SelectCultureWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/SelectObjectsWindow.xaml" />
+    <Page Remove="WPFRagsDesigner/tvObjectLibraryControl.xaml" />
+    <Page Include="dictionary1.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="dictionary1.xaml" />
+    <Page Include="WPFRagsDesigner/AboutWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="aboutwindow.xaml" />
+    <Page Include="WPFRagsDesigner/AutoSaveSettingsWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="autosavesettingswindow.xaml" />
+    <Page Include="WPFRagsDesigner/ExportXMLSelectionWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="exportxmlselectionwindow.xaml" />
+    <Page Include="WPFRagsDesigner/GetDimensionWidthWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="getdimensionwidthwindow.xaml" />
+    <Page Include="WPFRagsDesigner/GradientPickerWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="gradientpickerwindow.xaml" />
+    <Page Include="WPFRagsDesigner/NewGameWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="newgamewindow.xaml" />
+    <Page Include="WPFRagsDesigner/QuickCommandEditWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="quickcommandeditwindow.xaml" />
+    <Page Include="WPFRagsDesigner/QuickMenuItemWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="quickmenuitemwindow.xaml" />
+    <Page Include="WPFRagsDesigner/RagsDesigner.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="ragsdesigner.xaml" />
+    <Page Include="WPFRagsDesigner/RegistrationWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="registrationwindow.xaml" />
+    <Page Include="WPFRagsDesigner/SearchWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="searchwindow.xaml" />
+    <Page Include="WPFRagsDesigner/SelectCultureWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="selectculturewindow.xaml" />
+    <Page Include="WPFRagsDesigner/SelectObjectsWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="selectobjectswindow.xaml" />
+    <Page Include="WPFRagsDesigner/tvObjectLibraryControl.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="tvobjectlibrarycontrol.xaml" />
+    <Resource Remove="app.ico" />
+    <Resource Remove="images/cancel.png" />
+    <Resource Remove="images/command.png" />
+    <Resource Remove="images/green.png" />
+    <Resource Remove="images/media-icon.png" />
+    <Resource Remove="images/object.png" />
+    <Resource Remove="images/question.png" />
+    <Resource Remove="images/red.png" />
+    <Resource Remove="images/run.png" />
+    <Resource Remove="images/taskhs.png" />
+    <Resource Remove="site_logo.gif" />
+    <Resource Remove="testrender.gif" />
+    <Resource Include="app.ico" LogicalName="app.ico" />
+    <Resource Include="images/cancel.png" LogicalName="images/cancel.png" />
+    <Resource Include="images/command.png" LogicalName="images/command.png" />
+    <Resource Include="images/green.png" LogicalName="images/green.png" />
+    <Resource Include="images/media-icon.png" LogicalName="images/media-icon.png" />
+    <Resource Include="images/object.png" LogicalName="images/object.png" />
+    <Resource Include="images/question.png" LogicalName="images/question.png" />
+    <Resource Include="images/red.png" LogicalName="images/red.png" />
+    <Resource Include="images/run.png" LogicalName="images/run.png" />
+    <Resource Include="images/taskhs.png" LogicalName="images/taskhs.png" />
+    <Resource Include="site_logo.gif" LogicalName="site_logo.gif" />
+    <Resource Include="testrender.gif" LogicalName="testrender.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="WPFRagsLib">
+      <HintPath>3.0.60/WPFRagsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="RagsSvPlayerLib">
+      <HintPath>3.0.60/RagsSvPlayerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>3.0.60/Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Polenter.SharpSerializer">
+      <HintPath>3.0.60/Polenter.SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>3.0.60/System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.IO.Compression.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

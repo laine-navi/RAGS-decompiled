@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.QuickCommandEditWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:WPFRagsLib="clr-namespace:WPFRagsLib;assembly=WPFRagsLib" Window.Title="Quick Command Editing" FrameworkElement.Height="520" FrameworkElement.Width="675" Window.Icon="App.ico" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="35" />
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Label Name="a" ContentControl.Content="Command We Are Editing" Control.FontWeight="Bold" Control.FontSize="18">
+      <!--Unknown connection ID: 1-->
+    </Label>
+    <WPFRagsLib:WPFActionControl Name="b" Grid.Row="1">
+      <!--Unknown connection ID: 2-->
+    </WPFRagsLib:WPFActionControl>
+    <Button Grid.Row="2" ContentControl.Content="Finished" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 3-->
+    </Button>
+  </Grid>
+</Window>

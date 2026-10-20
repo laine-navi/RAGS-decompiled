@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>RAGSWPFPlayer</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net45</TargetFramework>
+    <Prefer32Bit>True</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationConfig Remove="RAGSWPFPlayer.exe.config" />
+    <ApplicationConfig Include="RAGSWPFPlayer.exe.config" />
+    <ApplicationDefinition Remove="RAGSWPFTEST1/App.xaml" />
+    <ApplicationDefinition Include="RAGSWPFTEST1/App.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="app.xaml" />
+    <Page Remove="RAGSWPFPlayer/DebugDataWindow.xaml" />
+    <Page Remove="RAGSWPFPlayer/DebugNewValWindow.xaml" />
+    <Page Remove="RAGSWPFPlayer/EndGameWindow.xaml" />
+    <Page Remove="RAGSWPFPlayer/GameInfoWindow.xaml" />
+    <Page Remove="RAGSWPFTEST1/AboutWindow.xaml" />
+    <Page Remove="RAGSWPFTEST1/AdditionalInputWindow.xaml" />
+    <Page Remove="RAGSWPFTEST1/GetGenderWindow.xaml" />
+    <Page Remove="RAGSWPFTEST1/MainWindow.xaml" />
+    <Page Remove="RAGSWPFTEST1/WaitWindow.xaml" />
+    <Page Include="RAGSWPFPlayer/DebugDataWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="debugdatawindow.xaml" />
+    <Page Include="RAGSWPFPlayer/DebugNewValWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="debugnewvalwindow.xaml" />
+    <Page Include="RAGSWPFPlayer/EndGameWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="endgamewindow.xaml" />
+    <Page Include="RAGSWPFPlayer/GameInfoWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="gameinfowindow.xaml" />
+    <Page Include="RAGSWPFTEST1/AboutWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="aboutwindow.xaml" />
+    <Page Include="RAGSWPFTEST1/AdditionalInputWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="additionainputwindow.xaml" />
+    <Page Include="RAGSWPFTEST1/GetGenderWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="getgenderwindow.xaml" />
+    <Page Include="RAGSWPFTEST1/MainWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="mainwindow.xaml" />
+    <Page Include="RAGSWPFTEST1/WaitWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="waitwindow.xaml" />
+    <Resource Remove="app.ico" />
+    <Resource Remove="blank.png" />
+    <Resource Remove="redist_enu.txt" />
+    <Resource Remove="site_logo.gif" />
+    <Resource Include="app.ico" LogicalName="app.ico" />
+    <Resource Include="blank.png" LogicalName="blank.png" />
+    <Resource Include="redist_enu.txt" LogicalName="redist_enu.txt" />
+    <Resource Include="site_logo.gif" LogicalName="site_logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="RagsSvPlayerLib">
+      <HintPath>3.0.60/RagsSvPlayerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFRagsLib">
+      <HintPath>3.0.60/WPFRagsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Polenter.SharpSerializer">
+      <HintPath>3.0.60/Polenter.SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>3.0.60/System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+  </ItemGroup>
+</Project>

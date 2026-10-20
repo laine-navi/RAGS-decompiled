@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="WPFRagsLib.WPFActionControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:wpfragslib="clr-namespace:WPFRagsLib;assembly=WPFRagsLib">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <GridSplitter FrameworkElement.VerticalAlignment="Bottom" FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.Height="3" />
+    <Grid Name="TreeControl" FrameworkElement.Margin="0,0,0,3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Label ContentControl.Content="Actions and Conditions:" />
+      <TreeView Name="tvActionsConditions" Grid.Row="1" Control.Background="#4CFFFFFF" UIElement.AllowDrop="True">
+        <FrameworkElement.ContextMenu>
+          <ContextMenu />
+        </FrameworkElement.ContextMenu>
+        <!--Unknown connection ID: 2-->
+      </TreeView>
+      <!--Unknown connection ID: 1-->
+    </Grid>
+    <Grid Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <GridSplitter FrameworkElement.HorizontalAlignment="Right" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.Width="3" />
+      <GroupBox Name="gbActionAttributes" HeaderedContentControl.Header="Action Attributes" FrameworkElement.Margin="0,0,3,0">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="23" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <Label ContentControl.Content="Action Name Override:" FrameworkElement.VerticalAlignment="Top" Control.FontSize="10" />
+          <TextBox Name="tbActionNameOverride" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 4-->
+          </TextBox>
+          <CheckBox Name="cbActionActive" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Initially Active" Control.FontSize="10">
+            <!--Unknown connection ID: 5-->
+          </CheckBox>
+          <GroupBox HeaderedContentControl.Header="Action Parent" Grid.Row="3">
+            <ComboBox Name="cbActionParent" FrameworkElement.VerticalAlignment="Center">
+              <!--Unknown connection ID: 6-->
+            </ComboBox>
+          </GroupBox>
+          <GroupBox Name="gbCondBehavior" HeaderedContentControl.Header="Condition Behavior" Grid.Row="4">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <RadioButton Name="rbFailOnFirst" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Stop On First Fail" Control.FontSize="10">
+                <!--Unknown connection ID: 8-->
+              </RadioButton>
+              <RadioButton Name="rbRunAll" FrameworkElement.VerticalAlignment="Center" Grid.Row="1" ContentControl.Content="Run all - pass on an success" Control.FontSize="10">
+                <!--Unknown connection ID: 9-->
+              </RadioButton>
+            </Grid>
+            <!--Unknown connection ID: 7-->
+          </GroupBox>
+          <GroupBox Name="gbAddInput" HeaderedContentControl.Header="Additional Input" Grid.Row="5">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="15" />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <RadioButton Name="rbaddinputnone" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="None" Control.FontSize="10">
+                <!--Unknown connection ID: 11-->
+              </RadioButton>
+              <RadioButton Name="rbaddinputObject" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Object" Control.FontSize="10">
+                <!--Unknown connection ID: 12-->
+              </RadioButton>
+              <RadioButton Name="rbaddinputCharacter" Grid.Column="0" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Character" Control.FontSize="10">
+                <!--Unknown connection ID: 13-->
+              </RadioButton>
+              <RadioButton Name="rbaddinputText" Grid.Column="1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Text" Control.FontSize="10">
+                <!--Unknown connection ID: 14-->
+              </RadioButton>
+              <RadioButton Name="rbaddinputObjectorCharacter" Grid.Column="0" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Obj Or Char" Control.FontSize="10">
+                <!--Unknown connection ID: 15-->
+              </RadioButton>
+              <RadioButton Name="rbaddinputCustom" Grid.Column="1" Grid.Row="2" FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Custom" Control.FontSize="10">
+                <!--Unknown connection ID: 16-->
+              </RadioButton>
+              <RadioButton Name="rbAddInputInventory" Grid.Column="0" Grid.Row="3" FrameworkElement.VerticalAlignment="top" ContentControl.Content="Inventory" FrameworkElement.Margin="0,0,0,0" Control.FontSize="10">
+                <!--Unknown connection ID: 17-->
+              </RadioButton>
+              <Button Name="btnAdvancedOptions" Grid.Row="3" Grid.Column="1" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Margin="0,3,0,0" UIElement.Visibility="Collapsed">
+                <TextBlock TextWrapping="Wrap" FrameworkElement.Height="Auto" FontSize="10">Advanced Options</TextBlock>
+                <!--Unknown connection ID: 18-->
+              </Button>
+            </Grid>
+            <!--Unknown connection ID: 10-->
+          </GroupBox>
+        </Grid>
+        <!--Unknown connection ID: 3-->
+      </GroupBox>
+      <GroupBox Name="gbCustomChoices" Grid.Column="1" HeaderedContentControl.Header="Custom Choices" UIElement.Visibility="Hidden">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition />
+            <RowDefinition Height="25" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Label ContentControl.Content="Title:" Grid.ColumnSpan="3" />
+          <TextBox Name="tbCustomChoiceTitle" Grid.Row="1" Grid.ColumnSpan="3" FrameworkElement.VerticalAlignment="Center">
+            <!--Unknown connection ID: 20-->
+          </TextBox>
+          <ListBox Name="lbActionCustomChoices" Grid.Row="2" Grid.ColumnSpan="3">
+            <!--Unknown connection ID: 21-->
+          </ListBox>
+          <Button Name="btnActionCustomAdd" ContentControl.Content="Add" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+            <!--Unknown connection ID: 22-->
+          </Button>
+          <Button Name="btnActionCustomUpdate" ContentControl.Content="Upd" Grid.Row="3" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+            <!--Unknown connection ID: 23-->
+          </Button>
+          <Button Name="btnActionCustomDelete" ContentControl.Content="Del" Grid.Row="3" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+            <!--Unknown connection ID: 24-->
+          </Button>
+        </Grid>
+        <!--Unknown connection ID: 19-->
+      </GroupBox>
+      <GroupBox Name="gbCommands" Grid.Column="1" Grid.ColumnSpan="2" HeaderedContentControl.Header="Add Commands">
+        <Grid Name="grdCommandGrid">
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Grid Name="grdCommandSteps" Column="0" RowSpan="9">
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label ContentControl.Content="Step 1" />
+            <ComboBox Name="cbCommandStep1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+              <!--Unknown connection ID: 28-->
+            </ComboBox>
+            <Label Name="lblCommandStep2" Grid.Row="2" ContentControl.Content="Step 2">
+              <!--Unknown connection ID: 29-->
+            </Label>
+            <ComboBox Name="cbCommandStep2" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+              <!--Unknown connection ID: 30-->
+            </ComboBox>
+            <Label Name="lblCommandStep3" Grid.Row="4" ContentControl.Content="Step 3">
+              <!--Unknown connection ID: 31-->
+            </Label>
+            <Label Name="lblCommandText" Grid.Row="4" ContentControl.Content="CommandText">
+              <!--Unknown connection ID: 32-->
+            </Label>
+            <ComboBox Name="cbCommandStep3" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+              <!--Unknown connection ID: 33-->
+            </ComboBox>
+            <TextBox Name="txtCommandText" TextBoxBase.AcceptsReturn="True" Grid.Row="5" Grid.RowSpan="3" TextWrapping="Wrap">
+              <!--Unknown connection ID: 34-->
+            </TextBox>
+            <Label Name="lblCommandStep4" Grid.Row="6" ContentControl.Content="Step 4">
+              <!--Unknown connection ID: 35-->
+            </Label>
+            <ComboBox Name="cbCommandStep4" Grid.Row="7" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+              <!--Unknown connection ID: 36-->
+            </ComboBox>
+            <TextBox Name="txtStep4" Grid.Row="7" FrameworkElement.VerticalAlignment="Center" TextBoxBase.AcceptsReturn="True" SpellCheck.IsEnabled="True">
+              <!--Unknown connection ID: 37-->
+            </TextBox>
+            <Button ContentControl.Content="?" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="20" Grid.Row="8" FrameworkElement.ToolTip="Get Help On This Command" />
+            <!--Unknown connection ID: 27-->
+          </Grid>
+          <GroupBox Name="gbCommandChoices" Grid.RowSpan="9" Grid.Column="1" HeaderedContentControl.Header="Custom Choices">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="25" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <ListBox Name="lbCustomChoices" Grid.Row="0" Grid.ColumnSpan="4">
+                <!--Unknown connection ID: 39-->
+              </ListBox>
+              <Button Name="CmdAddCustomChoice" ContentControl.Content="Add" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                <!--Unknown connection ID: 40-->
+              </Button>
+              <Button Name="CmdUpdateCustomChoice" ContentControl.Content="Upd" Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                <!--Unknown connection ID: 41-->
+              </Button>
+              <Button Name="CmdDelCustomChoice" ContentControl.Content="Del" Grid.Row="1" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                <!--Unknown connection ID: 42-->
+              </Button>
+              <Button Name="CmdAdvCustomChoice" UIElement.Visibility="Collapsed" ContentControl.Content="Adv..." Grid.Row="1" Grid.Column="3" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+                <!--Unknown connection ID: 43-->
+              </Button>
+            </Grid>
+            <!--Unknown connection ID: 38-->
+          </GroupBox>
+          <!--Unknown connection ID: 26-->
+        </Grid>
+        <!--Unknown connection ID: 25-->
+      </GroupBox>
+      <GroupBox Name="gbConditionData" HeaderedContentControl.Header="Condition Data" Grid.Column="1" Grid.ColumnSpan="2" UIElement.Visibility="Hidden">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Label ContentControl.Content="Condtion Name:" FrameworkElement.VerticalAlignment="Center" />
+          <TextBox Name="txtConditionName" Grid.Column="0" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.Margin="100,0,0,0">
+            <!--Unknown connection ID: 45-->
+          </TextBox>
+          <GroupBox HeaderedContentControl.Header="Checks" Grid.Row="1">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="30" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <ListBox Name="lbChecks" Grid.ColumnSpan="2">
+                <FrameworkElement.ContextMenu>
+                  <ContextMenu>
+                    <Button ContentControl.Content="Add &quot;And&quot; Check">
+                      <!--Unknown connection ID: 47-->
+                    </Button>
+                    <Button ContentControl.Content="Add &quot;Or&quot; Check">
+                      <!--Unknown connection ID: 48-->
+                    </Button>
+                    <Button ContentControl.Content="Delete selected item">
+                      <!--Unknown connection ID: 49-->
+                    </Button>
+                  </ContextMenu>
+                </FrameworkElement.ContextMenu>
+                <!--Unknown connection ID: 46-->
+              </ListBox>
+              <Button Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" ContentControl.Content="And">
+                <!--Unknown connection ID: 50-->
+              </Button>
+              <Button Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" ContentControl.Content="Or">
+                <!--Unknown connection ID: 51-->
+              </Button>
+            </Grid>
+          </GroupBox>
+          <GroupBox Grid.Row="1" Grid.Column="1">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <Label Name="lblConditionStep1" ContentControl.Content="Step 1" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 52-->
+              </Label>
+              <ComboBox Name="cbConditionStep1" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 53-->
+              </ComboBox>
+              <Label Name="lblConditionStep2" Grid.Row="2" ContentControl.Content="Step 2" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 54-->
+              </Label>
+              <ComboBox Name="cbConditionStep2" Grid.Row="3" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+                <!--Unknown connection ID: 55-->
+              </ComboBox>
+              <Label Name="lblConditionStep3" Grid.Row="4" ContentControl.Content="Step 3" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 56-->
+              </Label>
+              <ComboBox Name="cbConditionStep3" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+                <!--Unknown connection ID: 57-->
+              </ComboBox>
+              <Label Name="lblConditionStep4" Grid.Row="6" ContentControl.Content="Step 4" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 58-->
+              </Label>
+              <ComboBox Name="cbConditionStep4" Grid.Row="7" FrameworkElement.VerticalAlignment="Center" IsEditable="True">
+                <!--Unknown connection ID: 59-->
+              </ComboBox>
+              <TextBox Name="txtConditionStep4" Grid.Row="7" FrameworkElement.VerticalAlignment="Center">
+                <!--Unknown connection ID: 60-->
+              </TextBox>
+            </Grid>
+          </GroupBox>
+        </Grid>
+        <!--Unknown connection ID: 44-->
+      </GroupBox>
+    </Grid>
+  </Grid>
+</UserControl>

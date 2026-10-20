@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.SelectObjectsWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="SelectObjectsWindow" FrameworkElement.Height="300" FrameworkElement.Width="300" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25" />
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Label ContentControl.Content="Objects To Add:" />
+    <ListBox Name="a" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Extended">
+      <!--Unknown connection ID: 1-->
+    </ListBox>
+    <Button ContentControl.Content="OK" Grid.Row="2" IsDefault="True" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 2-->
+    </Button>
+    <Button ContentControl.Content="Cancel" Grid.Row="2" Grid.Column="1" IsCancel="True" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 3-->
+    </Button>
+  </Grid>
+</Window>

@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="RAGSWPFTEST1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Rags Player" FrameworkElement.Height="600" FrameworkElement.Width="800" Window.Icon="App.ico" xmlns:ragswpftest1="clr-namespace:RAGSWPFTEST1;assembly=RAGSWPFPlayer">
+  <Grid Name="s">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height=".6*" />
+      <RowDefinition Height=".4*" />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Menu IsMainMenu="True" Grid.ColumnSpan="2" FrameworkElement.VerticalAlignment="Top" Control.BorderBrush="#FF000000" Control.BorderThickness="1">
+      <MenuItem HeaderedItemsControl.Header="_File">
+        <MenuItem HeaderedItemsControl.Header="Open A New Game">
+          <!--Unknown connection ID: 3-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Save Current Game">
+          <!--Unknown connection ID: 4-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Load A Saved Game">
+          <!--Unknown connection ID: 5-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Save A Transcript" />
+        <MenuItem HeaderedItemsControl.Header="Exit">
+          <!--Unknown connection ID: 6-->
+        </MenuItem>
+      </MenuItem>
+      <MenuItem HeaderedItemsControl.Header="_Edit">
+        <MenuItem HeaderedItemsControl.Header="Quick Save" InputGestureText="F8">
+          <!--Unknown connection ID: 7-->
+        </MenuItem>
+        <MenuItem HeaderedItemsControl.Header="Quick Load" InputGestureText="F9">
+          <!--Unknown connection ID: 8-->
+        </MenuItem>
+      </MenuItem>
+      <MenuItem HeaderedItemsControl.Header="_Tools">
+        <MenuItem HeaderedItemsControl.Header="Update Text To HTML">
+          <!--Unknown connection ID: 9-->
+        </MenuItem>
+        <MenuItem Name="t" IsCheckable="True" IsChecked="True" HeaderedItemsControl.Header="Turn Off Auto Pause">
+          <!--Unknown connection ID: 10-->
+        </MenuItem>
+      </MenuItem>
+      <MenuItem HeaderedItemsControl.Header="_Help">
+        <MenuItem HeaderedItemsControl.Header="About">
+          <!--Unknown connection ID: 11-->
+        </MenuItem>
+      </MenuItem>
+    </Menu>
+    <Grid Name="u" Column="1" FrameworkElement.Margin="0,0,0,0">
+      <Border Name="v" Grid.Column="1" BorderBrush="#FF000000" BorderThickness="2" FrameworkElement.Margin="0,20,0,0">
+        <MediaElement Name="w" Grid.Column="1" FrameworkElement.Margin="0">
+          <!--Unknown connection ID: 14-->
+        </MediaElement>
+        <!--Unknown connection ID: 13-->
+      </Border>
+      <!--Unknown connection ID: 12-->
+    </Grid>
+    <Grid Column="0" Row="0" FrameworkElement.Margin="0,20,5,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width=".3*" />
+        <ColumnDefinition Width=".3*" />
+        <ColumnDefinition Width=".4*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height=".3*" />
+      </Grid.RowDefinitions>
+      <Border Name="x" Grid.ColumnSpan="3">
+        <WebBrowser Name="y" Grid.ColumnSpan="3">
+          <!--Unknown connection ID: 16-->
+        </WebBrowser>
+        <!--Unknown connection ID: 15-->
+      </Border>
+      <Button Name="z" ContentControl.Content="Click To Continue..." FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Margin="0,0,5,0" FrameworkElement.Height="26" FrameworkElement.VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" UIElement.IsEnabled="True">
+        <Control.Background>
+          <RadialGradientBrush>
+            <GradientStop Color="#FFE2CCCC" Offset="0" />
+            <GradientStop Color="#FFF30404" Offset="1" />
+          </RadialGradientBrush>
+        </Control.Background>
+        <!--Unknown connection ID: 17-->
+      </Button>
+      <Grid Name="aa" Row="1" Panel.Background="#33FFFFFF">
+        <Border Name="ab" Grid.Row="1" BorderBrush="#FF000000" BorderThickness="1">
+          <MediaElement Name="ac" Grid.ColumnSpan="1" FrameworkElement.Margin="0" Grid.Row="1">
+            <!--Unknown connection ID: 20-->
+          </MediaElement>
+          <!--Unknown connection ID: 19-->
+        </Border>
+        <!--Unknown connection ID: 18-->
+      </Grid>
+      <Label Name="ad" ContentControl.Content="Test Room 1" Grid.Column="1" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Margin="3,0,0,0" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+        <!--Unknown connection ID: 21-->
+      </Label>
+    </Grid>
+    <Grid FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Height="100" FrameworkElement.Margin="341,77,0,0" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Width="100" />
+    <Border Name="ae" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="#FF000000" BorderThickness="1">
+      <StatusBar Name="af">
+        <!--Unknown connection ID: 23-->
+      </StatusBar>
+      <!--Unknown connection ID: 22-->
+    </Border>
+    <GridSplitter FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.Height="6" FrameworkElement.Width="auto" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FrameworkElement.VerticalAlignment="top" />
+    <GridSplitter Grid.Column="0" FrameworkElement.HorizontalAlignment="right" FrameworkElement.Height="auto" Grid.RowSpan="1" FrameworkElement.VerticalAlignment="stretch" FrameworkElement.Width="6" FrameworkElement.Margin="0,20,0,0" />
+    <Grid Name="ag" Row="1" Column="0" ColumnSpan="2" FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.Width="auto">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition FrameworkContentElement.Name="ah" Width=".4*">
+          <!--Unknown connection ID: 25-->
+        </ColumnDefinition>
+        <ColumnDefinition FrameworkContentElement.Name="ai">
+          <!--Unknown connection ID: 26-->
+        </ColumnDefinition>
+        <ColumnDefinition FrameworkContentElement.Name="aj" Width="1.2*">
+          <!--Unknown connection ID: 27-->
+        </ColumnDefinition>
+        <ColumnDefinition FrameworkContentElement.Name="ak">
+          <!--Unknown connection ID: 28-->
+        </ColumnDefinition>
+        <ColumnDefinition FrameworkContentElement.Name="al">
+          <!--Unknown connection ID: 29-->
+        </ColumnDefinition>
+        <ColumnDefinition FrameworkContentElement.Name="am">
+          <!--Unknown connection ID: 30-->
+        </ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Grid Name="an" FrameworkElement.Margin="0,5,0,2">
+        <Image Name="ao" Grid.Column="0" Source="300px-Compass_Rose_UD.png" FrameworkElement.Margin="2">
+          <!--Unknown connection ID: 32-->
+        </Image>
+        <Button Name="ap" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" FrameworkElement.Margin="15,10,15,0" FrameworkElement.VerticalAlignment="Top" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 33-->
+        </Button>
+        <Button Name="aq" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" FrameworkElement.Margin="15,0,15,10" FrameworkElement.VerticalAlignment="Bottom" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 34-->
+        </Button>
+        <!--Unknown connection ID: 31-->
+      </Grid>
+      <Grid Name="ar" Column="1" FrameworkElement.Margin="0,0,5,0">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition Width="22.6" />
+        </Grid.ColumnDefinitions>
+        <Image Name="as" Grid.RowSpan="5" Source="300px-Compass_Rose_English_North.png" FrameworkElement.Margin="2" Grid.ColumnSpan="5">
+          <!--Unknown connection ID: 36-->
+        </Image>
+        <Button Name="at" Grid.Column="2" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 37-->
+        </Button>
+        <Button Name="au" Grid.Column="2" Grid.Row="4" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 38-->
+        </Button>
+        <Button Name="av" Grid.Column="4" Grid.Row="2" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 39-->
+        </Button>
+        <Button Name="aw" Grid.Column="0" Grid.Row="2" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 40-->
+        </Button>
+        <Button Name="ax" Grid.Column="1" Grid.Row="1" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 41-->
+        </Button>
+        <Button Name="ay" Grid.Column="3" Grid.Row="1" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 42-->
+        </Button>
+        <Button Name="az" Grid.Column="1" Grid.Row="3" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 43-->
+        </Button>
+        <Button Name="a0" Grid.Column="3" Grid.Row="3" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 44-->
+        </Button>
+        <Button Name="a1" Grid.Column="4" Grid.Row="0" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" ContentControl.Content="In" Control.FontSize="7" Control.FontWeight="Bold" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 45-->
+        </Button>
+        <Button Name="a2" Grid.Column="4" Grid.Row="4" UIElement.Opacity="0.9" FrameworkElement.Width="20" FrameworkElement.Height="20" Control.BorderThickness="0" ContentControl.Content="Out" Control.FontSize="7" Control.FontWeight="Bold" UIElement.Visibility="Hidden">
+          <Control.BorderBrush>
+            <NullExtension />
+          </Control.BorderBrush>
+          <Control.Template>
+            <ControlTemplate>
+              <ControlTemplate.TargetType>
+                <x:TypeExtension>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+                </x:TypeExtension>
+              </ControlTemplate.TargetType>
+              <Grid>
+                <Ellipse Shape.Stroke="#FF000000" Shape.StrokeThickness="1">
+                  <Shape.Fill>
+                    <RadialGradientBrush>
+                      <GradientStop Color="#FF04BF04" Offset="0.003" />
+                      <GradientStop Color="#FF7DF97D" Offset="1" />
+                      <GradientStop Color="#FF237C23" Offset="0.48" />
+                    </RadialGradientBrush>
+                  </Shape.Fill>
+                </Ellipse>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+              </Grid>
+            </ControlTemplate>
+          </Control.Template>
+          <!--Unknown connection ID: 46-->
+        </Button>
+        <!--Unknown connection ID: 35-->
+      </Grid>
+      <Grid Name="a3" Column="2" Panel.Background="#33FFFFFF" FrameworkElement.Margin="0,5,3,0">
+        <Border Name="a4" Grid.Column="2" BorderBrush="#FF000000" BorderThickness="1" FrameworkElement.Margin="0,0,3,0">
+          <MediaElement Name="a5" Grid.Column="2" FrameworkElement.Margin="0">
+            <!--Unknown connection ID: 49-->
+          </MediaElement>
+          <!--Unknown connection ID: 48-->
+        </Border>
+        <!--Unknown connection ID: 47-->
+      </Grid>
+      <Grid Name="a6" Column="3" FrameworkElement.Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25" />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" ContentControl.Content="Room Objects:" />
+        <ListBox Name="a7" FrameworkElement.Margin="0,0,0,0" Grid.Row="1">
+          <!--Unknown connection ID: 51-->
+        </ListBox>
+        <!--Unknown connection ID: 50-->
+      </Grid>
+      <Grid Name="a8" Column="4" FrameworkElement.Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25" />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" ContentControl.Content="Visible Characters:" />
+        <ListBox Name="a9" FrameworkElement.Margin="0,0,0,0" Grid.Row="1">
+          <!--Unknown connection ID: 53-->
+        </ListBox>
+        <!--Unknown connection ID: 52-->
+      </Grid>
+      <Grid Name="ba" Column="5" FrameworkElement.Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25" />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" ContentControl.Content="Inventory:" />
+        <ListBox Name="bb" FrameworkElement.Margin="0,0,0,0" Grid.Row="1">
+          <!--Unknown connection ID: 55-->
+        </ListBox>
+        <!--Unknown connection ID: 54-->
+      </Grid>
+      <GridSplitter Grid.Column="0" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="6" />
+      <GridSplitter Grid.Column="1" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="6" />
+      <GridSplitter Grid.Column="2" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="6" />
+      <GridSplitter Grid.Column="3" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="6" />
+      <GridSplitter Grid.Column="4" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Width="6" />
+      <!--Unknown connection ID: 24-->
+    </Grid>
+    <MediaElement Name="bc" UIElement.Visibility="Hidden" LoadedBehavior="Manual">
+      <!--Unknown connection ID: 56-->
+    </MediaElement>
+    <MediaElement Name="bd" UIElement.Visibility="Hidden" LoadedBehavior="Manual">
+      <!--Unknown connection ID: 57-->
+    </MediaElement>
+    <Grid Column="1" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Height="100" FrameworkElement.Margin="88,102,0,-182" Row="2" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Width="100" />
+    <!--Unknown connection ID: 2-->
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" xmlns:themes="clr-namespace:Xceed.Wpf.Toolkit.Themes">
+  <SolidColorBrush options:Freeze="true" Color="#FFFFFF">
+    <x:Key>
+      <ComponentResourceKey ResourceId="ControlNormalBackgroundKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </SolidColorBrush>
+  <SolidColorBrush options:Freeze="true" Color="#F4F4F4">
+    <x:Key>
+      <ComponentResourceKey ResourceId="ControlDisabledBackgroundKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </SolidColorBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FFabadb3" Offset="0" />
+        <GradientStop Color="#FFdbdfe6" Offset="0.05000000074505806" />
+        <GradientStop Color="#FFdbdfe6" Offset="0.949999988079071" />
+        <GradientStop Color="#FFe3e9ef" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ControlNormalBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FF3d7bad" Offset="0" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.05000000074505806" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.949999988079071" />
+        <GradientStop Color="#FFb7d9ed" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ControlMouseOverBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FF3d7bad" Offset="0" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.05000000074505806" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.949999988079071" />
+        <GradientStop Color="#FFb7d9ed" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ControlFocusedBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <SolidColorBrush options:Freeze="true" Color="#FFABADB3">
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonNormalOuterBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </SolidColorBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Offset="0" Color="#FFfcfcfc" />
+        <GradientStop Offset="0.69" Color="#FFf9f9f9" />
+        <GradientStop Offset="0.69" Color="#FFf3f3f3" />
+        <GradientStop Offset="1" Color="#FFf3f3f3" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonNormalInnerBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Offset="0" Color="#FFf2f2f2" />
+        <GradientStop Offset="0.69" Color="#FFe8e8e8" />
+        <GradientStop Offset="0.69" Color="#FFd1d1d1" />
+        <GradientStop Offset="1" Color="#FFd1d1d1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonNormalBackgroundKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <SolidColorBrush options:Freeze="true" Color="#FF3C7FB1">
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonMouseOverOuterBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </SolidColorBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FFfafdfe" Offset="0" />
+        <GradientStop Color="#FFf5fbfe" Offset="0.5" />
+        <GradientStop Color="#FFeff9fe" Offset="0.5009999871253967" />
+        <GradientStop Color="#FFe8f5fc" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonMouseOverInnerBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FFeaf6fd" Offset="0" />
+        <GradientStop Color="#FFd9f0fc" Offset="0.5" />
+        <GradientStop Color="#FFbee6fd" Offset="0.5009999871253967" />
+        <GradientStop Color="#FFa7d9f5" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonMouseOverBackgroundKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <SolidColorBrush options:Freeze="true" Color="#FF2C628B">
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonPressedOuterBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </SolidColorBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FF9eb0ba" Offset="0" />
+        <GradientStop Color="#FF9abacb" Offset="0.5" />
+        <GradientStop Color="#FF78aac5" Offset="0.5008999705314636" />
+        <GradientStop Color="#FF5a96b8" Offset="0.8999999761581421" />
+        <GradientStop Color="#FF68b2da" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonPressedInnerBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FFe5f4fc" Offset="0" />
+        <GradientStop Color="#FFc4e5f6" Offset="0.5" />
+        <GradientStop Color="#FF98d1ef" Offset="0.5009999871253967" />
+        <GradientStop Color="#FF68b3db" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonPressedBackgroundKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+  <LinearGradientBrush options:Freeze="true" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Color="#FF3d7bad" Offset="0" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.05000000074505806" />
+        <GradientStop Color="#FFa4c9e3" Offset="0.949999988079071" />
+        <GradientStop Color="#FFb7d9ed" Offset="1" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+    <x:Key>
+      <ComponentResourceKey ResourceId="ButtonFocusedOuterBorderKey">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">themes:ResourceKeys</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </LinearGradientBrush>
+</ResourceDictionary>

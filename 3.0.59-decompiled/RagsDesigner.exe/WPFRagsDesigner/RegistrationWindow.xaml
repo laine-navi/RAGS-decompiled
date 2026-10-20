@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.RegistrationWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Registration" FrameworkElement.Height="300" FrameworkElement.Width="300" Window.Icon="App.ico" Window.WindowStartupLocation="CenterOwner" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25" />
+      <RowDefinition Height="25" />
+      <RowDefinition Height="25" />
+      <RowDefinition Height="25" />
+      <RowDefinition />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Label ContentControl.Content="Enter your registered email address:" Grid.ColumnSpan="3" />
+    <TextBox Name="a" Grid.ColumnSpan="3" FrameworkElement.VerticalAlignment="Center" Grid.Row="1">
+      <!--Unknown connection ID: 2-->
+    </TextBox>
+    <Label ContentControl.Content="Enter your key:" Grid.Row="2" Grid.ColumnSpan="3" />
+    <TextBox Name="b" Grid.ColumnSpan="3" FrameworkElement.VerticalAlignment="Center" Grid.Row="3">
+      <!--Unknown connection ID: 3-->
+    </TextBox>
+    <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.ColumnSpan="3" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center">If you don't have a key yet, you can click the "Get A Key" button below to get one.</TextBlock>
+    <Button Name="c" ContentControl.Content="Register" Grid.Row="5" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" IsDefault="True">
+      <!--Unknown connection ID: 4-->
+    </Button>
+    <Button Name="d" ContentControl.Content="Get A Key" Grid.Row="5" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 5-->
+    </Button>
+    <Button Name="e" ContentControl.Content="Cancel" Grid.Row="5" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" IsCancel="True">
+      <!--Unknown connection ID: 6-->
+    </Button>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</Window>

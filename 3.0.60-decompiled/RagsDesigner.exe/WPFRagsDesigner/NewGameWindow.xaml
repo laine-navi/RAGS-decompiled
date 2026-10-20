@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.NewGameWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="New Game" FrameworkElement.Height="200" FrameworkElement.Width="300" Window.Icon="App.ico" Window.WindowStartupLocation="CenterOwner" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner;assembly=RagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <GroupBox HeaderedContentControl.Header="New Game Type">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <RadioButton FrameworkElement.VerticalAlignment="Center" ContentControl.Content="Blank Game" ToggleButton.IsChecked="True" />
+        <RadioButton Name="a" FrameworkElement.VerticalAlignment="Center" Grid.Row="1" ContentControl.Content="Simple Two Room Game">
+          <!--Unknown connection ID: 1-->
+        </RadioButton>
+        <RadioButton Name="b" FrameworkElement.VerticalAlignment="Center" Grid.Row="2" ContentControl.Content="Slightly Larger Demo Game">
+          <!--Unknown connection ID: 2-->
+        </RadioButton>
+      </Grid>
+    </GroupBox>
+    <Grid Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <CheckBox Name="c" FrameworkElement.VerticalAlignment="Center" UIElement.Visibility="Hidden">
+        <TextBox TextWrapping="Wrap">Display At Startup</TextBox>
+        <!--Unknown connection ID: 3-->
+      </CheckBox>
+      <Button ContentControl.Content="Create Game" IsDefault="True" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center" Grid.Column="1">
+        <!--Unknown connection ID: 4-->
+      </Button>
+      <Button ContentControl.Content="Cancel" IsCancel="True" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 5-->
+      </Button>
+    </Grid>
+  </Grid>
+</Window>

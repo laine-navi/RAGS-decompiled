@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsDesigner.SearchWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:util="clr-namespace:Wpf.Util" Window.Title="Search" FrameworkElement.Height="445" FrameworkElement.Width="540" Window.WindowStartupLocation="CenterOwner" Window.Icon="App.ico" xmlns:wpfragsdesigner="clr-namespace:WPFRagsDesigner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="26" />
+      <RowDefinition Height="30" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition Width="60" />
+    </Grid.ColumnDefinitions>
+    <Label ContentControl.Content="Search Term:" />
+    <TextBox Name="c" Grid.Row="1" FrameworkElement.VerticalAlignment="Center">
+      <!--Unknown connection ID: 1-->
+    </TextBox>
+    <Button ContentControl.Content="Search" Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+      <!--Unknown connection ID: 2-->
+    </Button>
+    <ListView Name="d" Grid.Row="2" Grid.ColumnSpan="2" Selector.IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True">
+      <ItemsControl.ItemsSource>
+        <Binding>
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SearchResult</Ctor>
+        </Binding>
+      </ItemsControl.ItemsSource>
+      <ListView.View>
+        <GridView>
+          <GridViewColumn Header="Object Type" Width="Auto" util:GridViewSort.PropertyName="Type" util:GridViewSort.AutoSort="True">
+            <GridViewColumn.DisplayMemberBinding>
+              <Binding Path="Type" />
+            </GridViewColumn.DisplayMemberBinding>
+          </GridViewColumn>
+          <GridViewColumn Header="Name" Width="Auto" util:GridViewSort.PropertyName="Name" util:GridViewSort.AutoSort="True">
+            <GridViewColumn.DisplayMemberBinding>
+              <Binding Path="Name" />
+            </GridViewColumn.DisplayMemberBinding>
+          </GridViewColumn>
+          <GridViewColumn Header="Data" Width="Auto" util:GridViewSort.PropertyName="Data" util:GridViewSort.AutoSort="True">
+            <GridViewColumn.DisplayMemberBinding>
+              <Binding Path="Data" />
+            </GridViewColumn.DisplayMemberBinding>
+          </GridViewColumn>
+        </GridView>
+      </ListView.View>
+      <!--Unknown connection ID: 3-->
+    </ListView>
+  </Grid>
+</Window>

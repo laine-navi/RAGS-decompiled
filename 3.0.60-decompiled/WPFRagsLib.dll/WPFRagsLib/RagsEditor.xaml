@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WPFRagsLib.RagsEditor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Rags Editor" FrameworkElement.Height="480" FrameworkElement.Width="640" Window.Icon="App.ico" Window.WindowStartupLocation="CenterOwner" xmlns:wpfragslib="clr-namespace:WPFRagsLib;assembly=WPFRagsLib">
+  <Grid>
+    <Menu Name="d">
+      <MenuItem Name="e" HeaderedItemsControl.Header="Bold">
+        <!--Unknown connection ID: 2-->
+      </MenuItem>
+      <MenuItem Name="f" HeaderedItemsControl.Header="Italic">
+        <!--Unknown connection ID: 3-->
+      </MenuItem>
+      <MenuItem Name="g" HeaderedItemsControl.Header="Underscore">
+        <!--Unknown connection ID: 4-->
+      </MenuItem>
+      <Rectangle Shape.StrokeThickness="1" Shape.Stroke="#FF000000" FrameworkElement.Height="15" />
+      <MenuItem Name="h" HeaderedItemsControl.Header="Color">
+        <!--Unknown connection ID: 5-->
+      </MenuItem>
+      <MenuItem Name="i" HeaderedItemsControl.Header="Font">
+        <!--Unknown connection ID: 6-->
+      </MenuItem>
+      <MenuItem Name="j" HeaderedItemsControl.Header="Middle">
+        <!--Unknown connection ID: 7-->
+      </MenuItem>
+      <MenuItem Name="k" HeaderedItemsControl.Header="Variables">
+        <!--Unknown connection ID: 8-->
+      </MenuItem>
+      <!--Unknown connection ID: 1-->
+    </Menu>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="30" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <WebBrowser Name="l" Grid.ColumnSpan="4" UIElement.Visibility="Hidden" FrameworkElement.Margin="0,20,0,0">
+        <!--Unknown connection ID: 9-->
+      </WebBrowser>
+      <TextBox Name="m" Grid.ColumnSpan="4" UIElement.Visibility="Visible" TextBoxBase.AcceptsReturn="True" TextBoxBase.AcceptsTab="True" TextWrapping="Wrap" FrameworkElement.Margin="0,20,0,0">
+        <!--Unknown connection ID: 10-->
+      </TextBox>
+      <Button Name="n" ContentControl.Content="Preview View" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 11-->
+      </Button>
+      <Button Name="o" ContentControl.Content="Apply" IsDefault="True" Grid.Row="1" Grid.Column="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 12-->
+      </Button>
+      <Button Name="p" ContentControl.Content="Cancel" IsCancel="True" Grid.Row="1" Grid.Column="2" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 13-->
+      </Button>
+      <Button Name="q" ContentControl.Content="Test Javascript" UIElement.IsEnabled="False" Grid.Row="1" Grid.Column="3" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="Center">
+        <!--Unknown connection ID: 14-->
+      </Button>
+    </Grid>
+  </Grid>
+</Window>

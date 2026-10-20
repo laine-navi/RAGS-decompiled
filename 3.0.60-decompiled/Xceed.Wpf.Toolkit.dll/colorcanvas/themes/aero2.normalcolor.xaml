@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:themes="clr-namespace:Xceed.Wpf.Toolkit.Themes" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../../Themes/Aero2/Common.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <conv:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+  <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+  <Style x:Key="ColorCanvasTextBoxStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TextBox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>TextBox</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Style.Triggers>
+      <Trigger Property="UIElement.IsFocused" Value="False">
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="SliderRepeatButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RepeatButton</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+    <Setter Property="Control.IsTabStop" Value="False" />
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RepeatButton</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border Background="{TemplateBinding Control.Background}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="VerticalSlideThumbTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Thumb</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Canvas UIElement.SnapsToDevicePixels="True">
+      <Path Name="LeftArrow" Shape.Stretch="Fill" Shape.StrokeLineJoin="Round" Shape.Stroke="#FF000000" Shape.Fill="#FF000000" Data="F1 M276.761,316 L262.619,307.835 L262.619,324.165 L276.761,316" UIElement.RenderTransformOrigin="0.5,0.5" FrameworkElement.Width="6" FrameworkElement.Height="8">
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform />
+            <SkewTransform />
+            <RotateTransform />
+            <TranslateTransform Y="6" X="-3" />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+      </Path>
+      <Path Name="RightArrow" Shape.Stretch="Fill" Shape.StrokeLineJoin="Round" Shape.Stroke="#FF000000" Shape.Fill="#FF000000" Data="F1 M276.761,316 L262.619,307.835 L262.619,324.165 L276.761,316" UIElement.RenderTransformOrigin="0.5,0.5" FrameworkElement.Width="6" FrameworkElement.Height="8">
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform />
+            <SkewTransform />
+            <RotateTransform Angle="-180" />
+            <TranslateTransform Y="6" X="8" />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+      </Path>
+    </Canvas>
+  </ControlTemplate>
+  <Style x:Key="VerticalSlideThumbStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Thumb</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+    <Setter Property="FrameworkElement.Height" Value="12" />
+    <Setter Property="FrameworkElement.Width" Value="11" />
+    <Setter Property="Control.Foreground" Value="#FF808080" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">VerticalSlideThumbTemplate</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="ColorSpectrumSliderTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorSpectrumSlider</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid>
+      <Border Name="PART_TrackBackground" BorderBrush="#FFA9A9A9" BorderThickness="1" FrameworkElement.Width="15" FrameworkElement.Margin="0,8,0,0">
+        <Rectangle Name="PART_SpectrumDisplay" Shape.Stretch="Fill" FrameworkElement.VerticalAlignment="Stretch" />
+      </Border>
+      <Track FrameworkElement.Name="PART_Track">
+        <Track.DecreaseRepeatButton>
+          <RepeatButton ButtonBase.Command="Slider.DecreaseLarge">
+            <FrameworkElement.Style>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SliderRepeatButtonStyle</Ctor>
+              </StaticResourceExtension>
+            </FrameworkElement.Style>
+          </RepeatButton>
+        </Track.DecreaseRepeatButton>
+        <Track.IncreaseRepeatButton>
+          <RepeatButton ButtonBase.Command="Slider.IncreaseLarge">
+            <FrameworkElement.Style>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SliderRepeatButtonStyle</Ctor>
+              </StaticResourceExtension>
+            </FrameworkElement.Style>
+          </RepeatButton>
+        </Track.IncreaseRepeatButton>
+        <Track.Thumb>
+          <Thumb>
+            <FrameworkElement.Style>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">VerticalSlideThumbStyle</Ctor>
+              </StaticResourceExtension>
+            </FrameworkElement.Style>
+          </Thumb>
+        </Track.Thumb>
+      </Track>
+    </Grid>
+  </ControlTemplate>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorSpectrumSlider</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Slider.Orientation" Value="Vertical" />
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Setter Property="Control.Foreground" Value="{DynamicResource {Static SystemColors.ControlTextBrushKey}}" />
+    <Setter Property="RangeBase.Minimum" Value="1" />
+    <Setter Property="RangeBase.Maximum" Value="360" />
+    <Setter Property="Slider.TickFrequency" Value="0.001" />
+    <Setter Property="Slider.IsSnapToTickEnabled" Value="True" />
+    <Setter Property="Slider.IsDirectionReversed" Value="False" />
+    <Setter Property="Slider.IsMoveToPointEnabled" Value="True" />
+    <Setter Property="RangeBase.Value" Value="0" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorSpectrumSliderTemplate</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorSpectrumSlider</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <ControlTemplate x:Key="ColorCanvasTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorCanvas</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Border Background="{TemplateBinding Control.Background}" BorderThickness="{TemplateBinding Control.BorderThickness}" BorderBrush="{TemplateBinding Control.BorderBrush}" Padding="3">
+      <Grid FrameworkElement.Margin="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Border BorderThickness="1" BorderBrush="#FFA9A9A9" UIElement.ClipToBounds="True">
+            <Border.Background>
+              <StaticResourceExtension xmlns="">
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CheckerBrush</Ctor>
+              </StaticResourceExtension>
+            </Border.Background>
+            <Canvas Name="PART_ColorShadingCanvas" FrameworkElement.Width="200" FrameworkElement.Height="100" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Top">
+              <Rectangle Name="ColorShadingRectangle">
+                <FrameworkElement.Height>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Height" />
+                </FrameworkElement.Height>
+                <FrameworkElement.Width>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Width" />
+                </FrameworkElement.Width>
+                <Shape.Fill>
+                  <Binding ElementName="PART_SpectrumSlider">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SelectedColor</Ctor>
+                    <Binding.Converter>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorToSolidColorBrushConverter</Ctor>
+                      </StaticResourceExtension>
+                    </Binding.Converter>
+                  </Binding>
+                </Shape.Fill>
+              </Rectangle>
+              <Rectangle Name="WhiteGradient">
+                <FrameworkElement.Width>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Width" />
+                </FrameworkElement.Width>
+                <FrameworkElement.Height>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Height" />
+                </FrameworkElement.Height>
+                <Shape.Fill>
+                  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="#ffffffff" />
+                    <GradientStop Offset="1" Color="Transparent" />
+                  </LinearGradientBrush>
+                </Shape.Fill>
+              </Rectangle>
+              <Rectangle Name="BlackGradient">
+                <FrameworkElement.Width>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Width" />
+                </FrameworkElement.Width>
+                <FrameworkElement.Height>
+                  <Binding ElementName="PART_ColorShadingCanvas" Path="Height" />
+                </FrameworkElement.Height>
+                <Shape.Fill>
+                  <LinearGradientBrush StartPoint="0,1" EndPoint="0, 0">
+                    <GradientStop Offset="0" Color="#ff000000" />
+                    <GradientStop Offset="1" Color="#00000000" />
+                  </LinearGradientBrush>
+                </Shape.Fill>
+              </Rectangle>
+              <Canvas Name="PART_ColorShadeSelector" FrameworkElement.Width="10" FrameworkElement.Height="10" UIElement.IsHitTestVisible="False">
+                <Ellipse FrameworkElement.Width="10" FrameworkElement.Height="10" Shape.StrokeThickness="3" Shape.Stroke="#FFFFFFFF" UIElement.IsHitTestVisible="False" />
+                <Ellipse FrameworkElement.Width="10" FrameworkElement.Height="10" Shape.StrokeThickness="1" Shape.Stroke="#FF000000" UIElement.IsHitTestVisible="False" />
+              </Canvas>
+            </Canvas>
+          </Border>
+          <Border Grid.Row="1" FrameworkElement.Margin="0,5,0,0">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Border FrameworkElement.Height="22" FrameworkElement.Margin="2,0,2,0" BorderThickness="1" BorderBrush="#FFC9CACA">
+                <Border.Background>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CheckerBrush</Ctor>
+                  </StaticResourceExtension>
+                </Border.Background>
+                <Rectangle Name="SelectedColor">
+                  <Shape.Fill>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SelectedColor</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                      <Binding.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorToSolidColorBrushConverter</Ctor>
+                        </StaticResourceExtension>
+                      </Binding.Converter>
+                    </Binding>
+                  </Shape.Fill>
+                </Rectangle>
+              </Border>
+              <TextBox Name="PART_HexadecimalTextBox" Grid.Column="1" FrameworkElement.Margin="2,0,2,0" FrameworkElement.VerticalAlignment="Center">
+                <FrameworkElement.Style>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTextBoxStyle</Ctor>
+                  </StaticResourceExtension>
+                </FrameworkElement.Style>
+              </TextBox>
+            </Grid>
+          </Border>
+          <Border Grid.Column="1" Grid.RowSpan="2" FrameworkElement.Margin="4,-8,0,0" UIElement.ClipToBounds="False">
+            <local:ColorSpectrumSlider Name="PART_SpectrumSlider" FrameworkElement.VerticalAlignment="Stretch" />
+          </Border>
+        </Grid>
+        <Border FrameworkElement.MinWidth="180" Grid.Row="1" BorderThickness="1" UIElement.ClipToBounds="True" FrameworkElement.Margin="0,10,0,0">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="R" FrameworkElement.VerticalAlignment="Center" />
+            <Slider Name="PART_RSlider" RangeBase.Maximum="255" RangeBase.SmallChange="1" RangeBase.LargeChange="10" TickFrequency="1" Grid.Row="0" Grid.Column="1" FrameworkElement.Margin="4,6,4,6" FrameworkElement.VerticalAlignment="Center">
+              <RangeBase.Value>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">R</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                </Binding>
+              </RangeBase.Value>
+            </Slider>
+            <TextBox Grid.Row="0" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+              <FrameworkElement.Style>
+                <StaticResourceExtension xmlns="">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTextBoxStyle</Ctor>
+                </StaticResourceExtension>
+              </FrameworkElement.Style>
+              <TextBox.Text>
+                <Binding ElementName="PART_RSlider">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                </Binding>
+              </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="G" FrameworkElement.VerticalAlignment="Center" />
+            <Slider Name="PART_GSlider" RangeBase.Maximum="255" RangeBase.SmallChange="1" RangeBase.LargeChange="10" TickFrequency="1" Grid.Row="1" Grid.Column="1" FrameworkElement.Margin="4,6,4,6" FrameworkElement.VerticalAlignment="Center">
+              <RangeBase.Value>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">G</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                </Binding>
+              </RangeBase.Value>
+            </Slider>
+            <TextBox Grid.Row="1" Grid.Column="2" FrameworkElement.VerticalAlignment="Center">
+              <FrameworkElement.Style>
+                <StaticResourceExtension xmlns="">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTextBoxStyle</Ctor>
+                </StaticResourceExtension>
+              </FrameworkElement.Style>
+              <TextBox.Text>
+                <Binding ElementName="PART_GSlider">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                </Binding>
+              </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="B" FrameworkElement.VerticalAlignment="Center" />
+            <Slider Name="PART_BSlider" RangeBase.Maximum="255" RangeBase.SmallChange="1" RangeBase.LargeChange="10" TickFrequency="1" Grid.Row="2" Grid.Column="1" FrameworkElement.Margin="4,6,4,6" FrameworkElement.VerticalAlignment="Center">
+              <RangeBase.Value>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">B</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                </Binding>
+              </RangeBase.Value>
+            </Slider>
+            <TextBox Grid.Row="2" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+              <FrameworkElement.Style>
+                <StaticResourceExtension xmlns="">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTextBoxStyle</Ctor>
+                </StaticResourceExtension>
+              </FrameworkElement.Style>
+              <TextBox.Text>
+                <Binding ElementName="PART_BSlider">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                </Binding>
+              </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="A" FrameworkElement.VerticalAlignment="Center">
+              <UIElement.Visibility>
+                <Binding Path="UsingAlphaChannel">
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                  <Binding.Converter>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                    </StaticResourceExtension>
+                  </Binding.Converter>
+                </Binding>
+              </UIElement.Visibility>
+            </TextBlock>
+            <Slider Name="PART_OpacitySlider" Grid.Row="3" Grid.Column="1" RangeBase.Maximum="255" RangeBase.SmallChange="1" RangeBase.LargeChange="10" FrameworkElement.Margin="4,6,4,6" FrameworkElement.VerticalAlignment="Center">
+              <RangeBase.Value>
+                <Binding Path="A">
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                </Binding>
+              </RangeBase.Value>
+              <UIElement.Visibility>
+                <Binding Path="UsingAlphaChannel">
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                  <Binding.Converter>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                    </StaticResourceExtension>
+                  </Binding.Converter>
+                </Binding>
+              </UIElement.Visibility>
+            </Slider>
+            <TextBox Grid.Row="3" Grid.Column="3" FrameworkElement.VerticalAlignment="Center">
+              <FrameworkElement.Style>
+                <StaticResourceExtension xmlns="">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTextBoxStyle</Ctor>
+                </StaticResourceExtension>
+              </FrameworkElement.Style>
+              <TextBox.Text>
+                <Binding ElementName="PART_OpacitySlider">
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                </Binding>
+              </TextBox.Text>
+              <UIElement.Visibility>
+                <Binding Path="UsingAlphaChannel">
+                  <Binding.RelativeSource>
+                    <RelativeSource>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                    </RelativeSource>
+                  </Binding.RelativeSource>
+                  <Binding.Converter>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                    </StaticResourceExtension>
+                  </Binding.Converter>
+                </Binding>
+              </UIElement.Visibility>
+            </TextBox>
+          </Grid>
+        </Border>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorCanvas</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PanelBackgroundBrush</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.BorderBrush" Value="{DynamicResource {Static themes:ResourceKeys.ControlNormalBorderKey}}" />
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ColorCanvasTemplate</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:ColorCanvas</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

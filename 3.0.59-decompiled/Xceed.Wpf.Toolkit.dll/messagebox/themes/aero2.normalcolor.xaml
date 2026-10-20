@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:prim="clr-namespace:Xceed.Wpf.Toolkit.Primitives">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../../Themes/Aero2/Common.xaml" />
+    <ResourceDictionary Source="../../Core/Themes/Aero2/WindowControl.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <ControlTemplate x:Key="MessageBoxTemplate">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:MessageBox</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="group1">
+          <VisualState x:Name="OK">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_OkButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="OKCancel">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_OkButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CancelButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="YesNo">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_YesButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_NoButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="YesNoCancel">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_YesButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_NoButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CancelButton" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame ObjectKeyFrame.KeyTime="0">
+                  <ObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <prim:WindowControl Name="PART_WindowControl" Caption="{TemplateBinding prim:WindowControl.Caption}" CaptionForeground="{TemplateBinding prim:WindowControl.CaptionForeground}" CaptionShadowBrush="{TemplateBinding prim:WindowControl.CaptionShadowBrush}" CaptionIcon="{TemplateBinding prim:WindowControl.CaptionIcon}" Control.Background="{TemplateBinding Control.Background}" Control.BorderBrush="{TemplateBinding Control.BorderBrush}" Control.BorderThickness="{TemplateBinding Control.BorderThickness}" IsActive="{TemplateBinding prim:WindowControl.IsActive}" WindowBackground="{TemplateBinding prim:WindowControl.WindowBackground}" WindowInactiveBackground="{TemplateBinding prim:WindowControl.WindowInactiveBackground}" WindowBorderBrush="{TemplateBinding prim:WindowControl.WindowBorderBrush}" WindowBorderThickness="{TemplateBinding prim:WindowControl.WindowBorderThickness}" CloseButtonStyle="{TemplateBinding prim:WindowControl.CloseButtonStyle}" WindowOpacity="{TemplateBinding prim:WindowControl.WindowOpacity}">
+        <ContentControl.Content>
+          <Grid FrameworkElement.MinWidth="350">
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid FrameworkElement.Margin="24,16,24,22">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Image Name="MessageBoxImage" FrameworkElement.VerticalAlignment="Top" UIElement.SnapsToDevicePixels="True" Stretch="None" Source="{TemplateBinding local:MessageBox.ImageSource}" />
+              <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                <TextBlock Name="MessageText" TextWrapping="Wrap" FrameworkElement.VerticalAlignment="Center" FrameworkElement.MaxWidth="450" Text="{TemplateBinding local:MessageBox.Text}" FontFamily="{TemplateBinding Control.FontFamily}" FontSize="{TemplateBinding Control.FontSize}" FontStyle="{TemplateBinding Control.FontStyle}" FontWeight="{TemplateBinding Control.FontWeight}" Foreground="{TemplateBinding Control.Foreground}" FrameworkElement.Margin="10,0,0,0" />
+              </ScrollViewer>
+            </Grid>
+            <Border Grid.Row="1" Background="{TemplateBinding local:MessageBox.ButtonRegionBackground}">
+              <Grid FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Margin="12">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Name="PART_YesButton" Grid.Column="0" FrameworkElement.MinWidth="65" FrameworkElement.Margin="6,0,0,0" UIElement.Visibility="Collapsed" ContentControl.Content="{TemplateBinding local:MessageBox.YesButtonContent}" FrameworkElement.Style="{TemplateBinding local:MessageBox.YesButtonStyle}" />
+                <Button Name="PART_NoButton" Grid.Column="1" FrameworkElement.MinWidth="65" FrameworkElement.Margin="6,0,0,0" UIElement.Visibility="Collapsed" ContentControl.Content="{TemplateBinding local:MessageBox.NoButtonContent}" FrameworkElement.Style="{TemplateBinding local:MessageBox.NoButtonStyle}" />
+                <Button Name="PART_OkButton" Grid.Column="2" FrameworkElement.MinWidth="65" FrameworkElement.Margin="6,0,0,0" UIElement.Visibility="Collapsed" ContentControl.Content="{TemplateBinding local:MessageBox.OkButtonContent}" FrameworkElement.Style="{TemplateBinding local:MessageBox.OkButtonStyle}" />
+                <Button Name="PART_CancelButton" Grid.Column="3" FrameworkElement.MinWidth="65" FrameworkElement.Margin="6,0,0,0" UIElement.Visibility="Collapsed" ContentControl.Content="{TemplateBinding local:MessageBox.CancelButtonContent}" FrameworkElement.Style="{TemplateBinding local:MessageBox.CancelButtonStyle}" IsCancel="True" />
+              </Grid>
+            </Border>
+          </Grid>
+        </ContentControl.Content>
+      </prim:WindowControl>
+    </Grid>
+  </ControlTemplate>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:MessageBox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>prim:WindowControl</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Setter Property="local:MessageBox.ButtonRegionBackground" Value="#FFF0F0F0" />
+    <Setter Property="UIElement.Focusable" Value="False" />
+    <Setter Property="FrameworkElement.MinWidth" Value="350" />
+    <Setter Property="FrameworkElement.MinHeight" Value="50" />
+    <Setter Property="FrameworkElement.MaxHeight" Value="250" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">MessageBoxTemplate</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:MessageBox</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

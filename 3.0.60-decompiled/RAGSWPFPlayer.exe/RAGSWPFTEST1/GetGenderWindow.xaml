@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="RAGSWPFTEST1.GetGenderWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Window.Title="Set Player Gender" FrameworkElement.Height="150" FrameworkElement.Width="164.662" Window.Icon="App.ico" xmlns:ragswpftest1="clr-namespace:RAGSWPFTEST1;assembly=RAGSWPFPlayer">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height=".4*" />
+    </Grid.RowDefinitions>
+    <GroupBox HeaderedContentControl.Header="Choose Your Gender:">
+      <StackPanel>
+        <RadioButton Name="a" ContentControl.Content="Male" FrameworkElement.VerticalAlignment="Top" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Margin="40,0,0,0">
+          <!--Unknown connection ID: 1-->
+        </RadioButton>
+        <RadioButton Name="b" ContentControl.Content="Female" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Margin="40,0,0,0">
+          <!--Unknown connection ID: 2-->
+        </RadioButton>
+        <RadioButton Name="c" ContentControl.Content="Other" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Top" FrameworkElement.Margin="40,0,0,0">
+          <!--Unknown connection ID: 3-->
+        </RadioButton>
+      </StackPanel>
+    </GroupBox>
+    <Button ContentControl.Content="Done" FrameworkElement.HorizontalAlignment="Center" Grid.Row="1" FrameworkElement.VerticalAlignment="Center" FrameworkElement.Width="75" IsDefault="True">
+      <!--Unknown connection ID: 4-->
+    </Button>
+  </Grid>
+</Window>

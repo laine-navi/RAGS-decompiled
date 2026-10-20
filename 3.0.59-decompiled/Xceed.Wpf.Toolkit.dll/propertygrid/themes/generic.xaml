@@ -1,0 +1,1498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:pg="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters" xmlns:editor="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid.Editors" xmlns:pgconv="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid.Converters" xmlns:utilities="clr-namespace:Xceed.Wpf.Toolkit.Core.Utilities" xmlns:commands="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid.Commands" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../../NumericUpDown/Themes/Generic.xaml" />
+    <ResourceDictionary Source="../../DateTimeUpDown/Themes/Generic.xaml" />
+    <ResourceDictionary Source="../../WatermarkTextBox/Themes/Generic.xaml" />
+    <ResourceDictionary Source="../../ColorPicker/Themes/Generic.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+  <conv:InverseBoolConverter x:Key="InverseBoolConverter" />
+  <pgconv:ExpandableObjectMarginConverter x:Key="ExpandableObjectMarginConverter" />
+  <StaticExtension x:Key="EmptyString" Member="sys:String.Empty" />
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorByteUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorByteUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDecimalUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDecimalUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDoubleUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDoubleUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorIntegerUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorIntegerUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorLongUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorLongUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorShortUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorShortUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorSingleUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorSingleUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDateTimeUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">DateTimeUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorDateTimeUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorComboBox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>ComboBox</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorComboBox</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorCheckBox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>CheckBox</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Setter Property="FrameworkElement.Margin" Value="5,0,0,0" />
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorCheckBox</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorTextBox</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">WatermarkTextBox</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorTextBox</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorTextBlock</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>TextBlock</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorTextBlock</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorColorPicker</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">
+          <x:TypeExtension>
+            <Ctor>local:ColorPicker</Ctor>
+          </x:TypeExtension>
+        </Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="local:ColorPicker.ShowDropDownButton" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorColorPicker</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorSByteUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorSByteUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorUIntegerUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorUIntegerUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorULongUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorULongUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorUShortUpDown</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.BasedOn>
+      <StaticResourceExtension xmlns="">
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NumericUpDown</Ctor>
+      </StaticResourceExtension>
+    </Style.BasedOn>
+    <Style.Triggers>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="UIElement.IsKeyboardFocusWithin" Value="False" />
+          <Condition Property="UIElement.IsMouseOver" Value="False" />
+        </MultiTrigger.Conditions>
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="UpDownBase.ShowButtonSpinner" Value="False" />
+      </MultiTrigger>
+    </Style.Triggers>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">editor:PropertyGridEditorUShortUpDown</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <SolidColorBrush x:Key="MouseOverBorderBrush" Color="#FFFFB700" />
+  <LinearGradientBrush x:Key="MouseOverBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="#FFFEFBF4" />
+    <GradientStop Offset="0.19" Color="#FFFDE7CE" />
+    <GradientStop Offset="0.39" Color="#FFFDDEB8" />
+    <GradientStop Offset="0.39" Color="#FFFFCE6B" />
+    <GradientStop Offset="0.79" Color="#FFFFDE9A" />
+    <GradientStop Offset="1" Color="#FFFFEBAA" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="CheckedBorderBrush" Color="#FFC29B29" />
+  <LinearGradientBrush x:Key="CheckedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="#FFFFDCA0" />
+    <GradientStop Offset="0.18" Color="#FFFFD692" />
+    <GradientStop Offset="0.39" Color="#FFFFC45D" />
+    <GradientStop Offset="1" Color="#FFFFD178" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="PressedBorderBrush" Color="#FFC29B29" />
+  <LinearGradientBrush x:Key="PressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="#FFE3C085" />
+    <GradientStop Offset="0.19" Color="#FFF4CC89" />
+    <GradientStop Offset="0.36" Color="#FFF5C777" />
+    <GradientStop Offset="0.36" Color="#FFF5BB56" />
+    <GradientStop Offset="0.79" Color="#FFF4CE9A" />
+    <GradientStop Offset="1" Color="#FFF3E28D" />
+  </LinearGradientBrush>
+  <Style x:Key="OptionsToggleButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RadioButton</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="FrameworkElement.FocusVisualStyle">
+      <Setter.Value>
+        <NullExtension />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="FrameworkElement.Height" Value="22" />
+    <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+    <Setter Property="ToolTipService.InitialShowDelay" Value="900" />
+    <Setter Property="ToolTipService.ShowDuration" Value="20000" />
+    <Setter Property="ToolTipService.BetweenShowDelay" Value="0" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">RadioButton</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid UIElement.SnapsToDevicePixels="True">
+            <Border Name="OuterBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" CornerRadius="2" />
+            <Border Name="MiddleBorder" BorderBrush="#00FFFFFF" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="#00FFFFFF" CornerRadius="2">
+              <Border Name="InnerBorder" BorderBrush="#00FFFFFF" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="#00FFFFFF" CornerRadius="2" Padding="{TemplateBinding Control.Padding}">
+                <StackPanel Name="StackPanel" FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}">
+                  <ContentPresenter Name="Content" Content="{TemplateBinding ContentControl.Content}" FrameworkElement.Margin="1" RenderOptions.BitmapScalingMode="NearestNeighbor" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" />
+                </StackPanel>
+              </Border>
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="OuterBorder" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">MouseOverBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="OuterBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">MouseOverBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="InnerBorder" Property="Border.BorderBrush" Value="#80FFFFFF" />
+            </Trigger>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter TargetName="Content" Property="UIElement.Opacity" Value="0.5" />
+              <Setter TargetName="OuterBorder" Property="TextElement.Foreground" Value="#FF9E9E9E" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter TargetName="OuterBorder" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CheckedBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="OuterBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">CheckedBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="InnerBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFE7CBAD" Offset="0" />
+                    <GradientStop Color="#FFF7D7B5" Offset="0.1" />
+                    <GradientStop Color="#FFFFD38C" Offset="0.36" />
+                    <GradientStop Color="#FFFFC75A" Offset="0.36" />
+                    <GradientStop Color="#FFFFEFA5" Offset="1" />
+                  </LinearGradientBrush>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+              <Setter TargetName="OuterBorder" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PressedBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="OuterBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PressedBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="InnerBorder" Property="Border.BorderBrush" Value="#00FFFFFF" />
+            </Trigger>
+            <MultiTrigger>
+              <MultiTrigger.Conditions>
+                <Condition Property="ToggleButton.IsChecked" Value="True" />
+                <Condition Property="UIElement.IsMouseOver" Value="True" />
+              </MultiTrigger.Conditions>
+              <Setter TargetName="MiddleBorder" Property="Border.Background">
+                <Setter.Value>
+                  <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#40FFFEFE" Offset="0" />
+                    <GradientStop Color="#40FFFEFE" Offset="0.39" />
+                    <GradientStop Color="#20FFCE68" Offset="0.39" />
+                    <GradientStop Color="#20FFCE68" Offset="0.69" />
+                    <GradientStop Color="#10FFFFFF" Offset="1" />
+                  </LinearGradientBrush>
+                </Setter.Value>
+              </Setter>
+            </MultiTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ClearFilterButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background" Value="#00FFFFFF" />
+    <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="FrameworkElement.Height" Value="22" />
+    <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+    <Setter Property="ToolTipService.InitialShowDelay" Value="900" />
+    <Setter Property="ToolTipService.ShowDuration" Value="20000" />
+    <Setter Property="ToolTipService.BetweenShowDelay" Value="0" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Button</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid UIElement.SnapsToDevicePixels="True">
+            <Border Name="OuterBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" CornerRadius="2" />
+            <Border Name="MiddleBorder" BorderBrush="#00FFFFFF" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="#00FFFFFF" CornerRadius="2">
+              <Border Name="InnerBorder" BorderBrush="#00FFFFFF" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="#00FFFFFF" CornerRadius="2" Padding="{TemplateBinding Control.Padding}">
+                <StackPanel Name="StackPanel" FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}">
+                  <ContentPresenter Name="Content" Content="{TemplateBinding ContentControl.Content}" FrameworkElement.Margin="1" RenderOptions.BitmapScalingMode="NearestNeighbor" FrameworkElement.VerticalAlignment="Center" FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" />
+                </StackPanel>
+              </Border>
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="OuterBorder" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">MouseOverBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="OuterBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">MouseOverBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="InnerBorder" Property="Border.BorderBrush" Value="#80FFFFFF" />
+            </Trigger>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter TargetName="Content" Property="UIElement.Opacity" Value="0.5" />
+              <Setter TargetName="OuterBorder" Property="TextElement.Foreground" Value="#FF9E9E9E" />
+            </Trigger>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+              <Setter TargetName="OuterBorder" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PressedBackgroundBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="OuterBorder" Property="Border.BorderBrush">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PressedBorderBrush</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="InnerBorder" Property="Border.BorderBrush" Value="#00FFFFFF" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <SolidColorBrush x:Key="GlyphBrush" Color="#FF31347C" />
+  <ControlTemplate x:Key="ExpanderToggleButton">
+    <ControlTemplate.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ToggleButton</Ctor>
+      </x:TypeExtension>
+    </ControlTemplate.TargetType>
+    <Grid>
+      <Rectangle Name="Rectangle" FrameworkElement.Margin="0,0,0,0" Shape.Fill="#00FFFFFF" />
+      <Path Name="Up_Arrow" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" Data="M0,0 L4,4 L8,0" UIElement.RenderTransformOrigin="0.5,0.5">
+        <Shape.Fill>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+          </StaticResourceExtension>
+        </Shape.Fill>
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform ScaleX="1" ScaleY="1" />
+            <SkewTransform AngleX="0" AngleY="0" />
+            <RotateTransform Angle="-90" />
+            <TranslateTransform X="0" Y="0" />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+      </Path>
+      <Path Name="Down_Arrow" UIElement.Visibility="Collapsed" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" Data="M0,4 L4,0 L8,4" UIElement.RenderTransformOrigin="0.5,0.5">
+        <Shape.Fill>
+          <StaticResourceExtension xmlns="">
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GlyphBrush</Ctor>
+          </StaticResourceExtension>
+        </Shape.Fill>
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform ScaleX="1" ScaleY="1" />
+            <SkewTransform AngleX="0" AngleY="0" />
+            <RotateTransform Angle="135" />
+            <TranslateTransform X="0" Y="0" />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+      </Path>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="ToggleButton.IsChecked" Value="true">
+        <Setter TargetName="Down_Arrow" Property="UIElement.Visibility" Value="Visible" />
+        <Setter TargetName="Up_Arrow" Property="UIElement.Visibility" Value="Collapsed" />
+        <Setter TargetName="Down_Arrow" Property="UIElement.OpacityMask" Value="#FF000000" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="ExpanderStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Expander</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Padding" Value="0" />
+    <Setter Property="Control.Background" Value="#FFF0F0F0" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Expander</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Name="ContentRow" Height="*" />
+            </Grid.RowDefinitions>
+            <Border Name="Border" Background="{TemplateBinding Control.Background}" BorderBrush="#FFF0F0F0">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="20" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ToggleButton FrameworkElement.OverridesDefaultStyle="True">
+                  <Control.Template>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ExpanderToggleButton</Ctor>
+                    </StaticResourceExtension>
+                  </Control.Template>
+                  <ToggleButton.IsChecked>
+                    <Binding Path="IsExpanded" Mode="TwoWay">
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </ToggleButton.IsChecked>
+                </ToggleButton>
+                <ContentPresenter Grid.Column="1" FrameworkElement.Margin="1" RecognizesAccessKey="True" ContentSource="Header" TextElement.FontWeight="Bold" />
+              </Grid>
+            </Border>
+            <Border Name="ExpandSite" UIElement.Visibility="Collapsed" Grid.Row="1" Background="{Static SystemColors.ControlBrush}" Padding="10 0 0 0">
+              <Border BorderThickness="0" FrameworkElement.Margin="0" Padding="0" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Stretch">
+                <ContentPresenter FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" FrameworkElement.Margin="{TemplateBinding Control.Padding}" FrameworkElement.VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Focusable="False" />
+              </Border>
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="Expander.IsExpanded" Value="True">
+              <Setter TargetName="ExpandSite" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="PropertyExpanderStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Expander</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Padding" Value="10 0 0 0" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Expander</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid>
+            <Border Name="ExpandSite" UIElement.Visibility="Collapsed" Grid.Row="1" Padding="0 0 0 0">
+              <Border BorderThickness="0" FrameworkElement.Margin="0" Padding="0" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Stretch">
+                <ContentPresenter FrameworkElement.HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" FrameworkElement.VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Focusable="False" />
+              </Border>
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="Expander.IsExpanded" Value="True">
+              <Setter TargetName="ExpandSite" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ContextMenu>
+    <MenuItem HeaderedItemsControl.Header="Reset Value" Command="commands:PropertyItemCommands.ResetValue" />
+    <x:Key>
+      <ComponentResourceKey ResourceId="SelectedObjectAdvancedOptionsMenu">
+        <ComponentResourceKey.TypeInTargetAssembly>
+          <x:TypeExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyGrid</Ctor>
+          </x:TypeExtension>
+        </ComponentResourceKey.TypeInTargetAssembly>
+      </ComponentResourceKey>
+    </x:Key>
+  </ContextMenu>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyItemBase</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Background" Value="{Static SystemColors.WindowBrush}" />
+    <Setter Property="FrameworkElement.Margin" Value="0,0,0,1" />
+    <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+    <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyItemBase</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border ContextMenuService.Placement="Bottom">
+            <FrameworkElement.ContextMenu>
+              <Binding>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">AdvancedOptionsMenu</Ctor>
+                <Binding.RelativeSource>
+                  <RelativeSource Mode="FindAncestor" AncestorType="pg:PropertyGrid" />
+                </Binding.RelativeSource>
+              </Binding>
+            </FrameworkElement.ContextMenu>
+            <Grid FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Stretch">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                  <ColumnDefinition.Width>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">NameColumnWidth</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">FindAncestor</Ctor>
+                          <RelativeSource.AncestorType>
+                            <x:TypeExtension>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyGrid</Ctor>
+                            </x:TypeExtension>
+                          </RelativeSource.AncestorType>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </ColumnDefinition.Width>
+                </ColumnDefinition>
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Border Name="PART_Name" Background="{TemplateBinding Control.Background}" FrameworkElement.Margin="0,0,1,0" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Stretch">
+                <Grid FrameworkElement.Margin="2,2,2,2" FrameworkElement.VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <Grid>
+                    <FrameworkElement.Margin>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Level</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                          </RelativeSource>
+                        </Binding.RelativeSource>
+                        <Binding.Converter>
+                          <StaticResourceExtension xmlns="">
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ExpandableObjectMarginConverter</Ctor>
+                          </StaticResourceExtension>
+                        </Binding.Converter>
+                      </Binding>
+                    </FrameworkElement.Margin>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="15" />
+                      <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton Name="_expandableButton" Grid.Column="0" FrameworkElement.OverridesDefaultStyle="True">
+                      <Control.Template>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ExpanderToggleButton</Ctor>
+                        </StaticResourceExtension>
+                      </Control.Template>
+                      <ToggleButton.IsChecked>
+                        <Binding>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsExpanded</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                        </Binding>
+                      </ToggleButton.IsChecked>
+                      <UIElement.Visibility>
+                        <Binding>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsExpandable</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                          <Binding.Converter>
+                            <StaticResourceExtension xmlns="">
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                            </StaticResourceExtension>
+                          </Binding.Converter>
+                        </Binding>
+                      </UIElement.Visibility>
+                    </ToggleButton>
+                    <TextBlock Grid.Column="1" FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                      <TextBlock.Text>
+                        <Binding>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">DisplayName</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                        </Binding>
+                      </TextBlock.Text>
+                    </TextBlock>
+                  </Grid>
+                  <Grid Column="1" FrameworkElement.HorizontalAlignment="Right" FrameworkElement.Margin="5,0,5,0" utilities:ContextMenuUtilities.OpenOnMouseLeftButtonClick="True">
+                    <UIElement.Visibility>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowAdvancedOptions</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource Mode="FindAncestor" AncestorType="pg:PropertyGrid" />
+                        </Binding.RelativeSource>
+                        <Binding.Converter>
+                          <StaticResourceExtension xmlns="">
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                          </StaticResourceExtension>
+                        </Binding.Converter>
+                      </Binding>
+                    </UIElement.Visibility>
+                    <FrameworkElement.ContextMenu>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">AdvancedOptionsMenu</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource Mode="FindAncestor" AncestorType="pg:PropertyGrid" />
+                        </Binding.RelativeSource>
+                      </Binding>
+                    </FrameworkElement.ContextMenu>
+                    <Image Name="_optionsImage" FrameworkElement.Width="11" FrameworkElement.Height="11">
+                      <FrameworkElement.ToolTip>
+                        <Binding>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">AdvancedOptionsTooltip</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                        </Binding>
+                      </FrameworkElement.ToolTip>
+                    </Image>
+                  </Grid>
+                </Grid>
+              </Border>
+              <Border Name="PART_Editor" Grid.Column="1" Background="{TemplateBinding Control.Background}" KeyboardNavigation.DirectionalNavigation="None" FrameworkElement.VerticalAlignment="Stretch" FrameworkElement.HorizontalAlignment="Stretch">
+                <ContentControl Name="PART_ValueContainer" Content="{TemplateBinding pg:PropertyItemBase.Editor}" UIElement.Focusable="False" Control.IsTabStop="False" FrameworkElement.VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <UIElement.IsEnabled>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsReadOnly</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource Mode="FindAncestor" AncestorType="pg:PropertyGrid" />
+                      </Binding.RelativeSource>
+                      <Binding.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">InverseBoolConverter</Ctor>
+                        </StaticResourceExtension>
+                      </Binding.Converter>
+                    </Binding>
+                  </UIElement.IsEnabled>
+                </ContentControl>
+              </Border>
+              <Expander Name="_propertyExpander" Grid.ColumnSpan="2" Grid.Row="1" IsExpanded="{TemplateBinding pg:PropertyItemBase.IsExpanded}" UIElement.IsEnabled="True">
+                <FrameworkElement.Style>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PropertyExpanderStyle</Ctor>
+                  </StaticResourceExtension>
+                </FrameworkElement.Style>
+                <pg:PropertyItemsControl Name="PART_PropertyItemsControl" Control.IsTabStop="False" UIElement.Focusable="False">
+                  <ItemsControl.ItemsSource>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Properties</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </ItemsControl.ItemsSource>
+                  <ItemsControl.ItemContainerStyle>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PropertyContainerStyle</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </ItemsControl.ItemContainerStyle>
+                  <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                      <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                  </ItemsControl.ItemsPanel>
+                </pg:PropertyItemsControl>
+              </Expander>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="PART_Name" Property="Border.Background" Value="#CED4DF" />
+            </Trigger>
+            <Trigger Property="pg:PropertyItemBase.IsSelected" Value="True">
+              <Setter TargetName="PART_Name" Property="Border.Background" Value="#43577B" />
+              <Setter TargetName="PART_Name" Property="TextElement.Foreground" Value="#FFFFFFFF" />
+            </Trigger>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter TargetName="PART_ValueContainer" Value="{DynamicResource {Static SystemColors.GrayTextBrushKey}}" Property="Control.Foreground" />
+            </Trigger>
+            <Trigger Property="Validation.HasError" Value="True">
+              <Setter Property="FrameworkElement.ToolTip">
+                <Setter.Value>
+                  <Binding RelativeSource="{Static RelativeSource.Self}" Path="(Validation.Errors).CurrentItem.ErrorContent" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger SourceName="_expandableButton" Property="UIElement.Visibility" Value="Visible">
+              <Setter Property="UIElement.Focusable" Value="False" />
+            </Trigger>
+            <DataTrigger Value="{Static pg:StringConstants.Local}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/Local11.png" />
+            </DataTrigger>
+            <DataTrigger Value="{Static pg:StringConstants.Resource}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/Resource11.png" />
+            </DataTrigger>
+            <DataTrigger Value="{Static pg:StringConstants.Databinding}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/Database11.png" />
+            </DataTrigger>
+            <DataTrigger Value="{Static pg:StringConstants.Inheritance}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/Inheritance11.png" />
+            </DataTrigger>
+            <DataTrigger Value="{Static pg:StringConstants.StyleSetter}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/Style11.png" />
+            </DataTrigger>
+            <DataTrigger Value="{Static pg:StringConstants.AdvancedProperties}">
+              <DataTrigger.Binding>
+                <Binding ElementName="_optionsImage" Path="ToolTip" />
+              </DataTrigger.Binding>
+              <Setter TargetName="_optionsImage" Property="Image.Source" Value="../Images/AdvancedProperties11.png" />
+            </DataTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyItemBase</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyGrid</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Style.Resources>
+      <ResourceDictionary>
+        <pgconv:SelectedObjectConverter x:Key="objectConverter" />
+      </ResourceDictionary>
+    </Style.Resources>
+    <Setter Property="Control.Background" Value="#BCC7D8" />
+    <Setter Property="Control.BorderBrush" Value="#43577B" />
+    <Setter Property="Control.BorderThickness" Value="1" />
+    <Setter Property="pg:PropertyGrid.SelectedObjectType">
+      <Setter.Value>
+        <Binding Path="SelectedObject" ConverterParameter="Type">
+          <Binding.RelativeSource>
+            <RelativeSource>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Self</Ctor>
+            </RelativeSource>
+          </Binding.RelativeSource>
+          <Binding.Converter>
+            <StaticResourceExtension xmlns="">
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">objectConverter</Ctor>
+            </StaticResourceExtension>
+          </Binding.Converter>
+        </Binding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="pg:PropertyGrid.SelectedObjectTypeName">
+      <Setter.Value>
+        <Binding Path="SelectedObject" ConverterParameter="TypeName">
+          <Binding.RelativeSource>
+            <RelativeSource>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Self</Ctor>
+            </RelativeSource>
+          </Binding.RelativeSource>
+          <Binding.Converter>
+            <StaticResourceExtension xmlns="">
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">objectConverter</Ctor>
+            </StaticResourceExtension>
+          </Binding.Converter>
+        </Binding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="pg:PropertyGrid.SelectedObjectName">
+      <Setter.Value>
+        <Binding Path="SelectedObject" ConverterParameter="SelectedObjectName">
+          <Binding.RelativeSource>
+            <RelativeSource>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Self</Ctor>
+            </RelativeSource>
+          </Binding.RelativeSource>
+          <Binding.Converter>
+            <StaticResourceExtension xmlns="">
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">objectConverter</Ctor>
+            </StaticResourceExtension>
+          </Binding.Converter>
+        </Binding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyGrid</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}">
+            <Grid FrameworkElement.Margin="{TemplateBinding Control.Padding}">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <StackPanel Orientation="Horizontal" FrameworkElement.Margin="6,2,0,4">
+                <UIElement.Visibility>
+                  <Binding>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowTitle</Ctor>
+                    <Binding.RelativeSource>
+                      <RelativeSource>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                      </RelativeSource>
+                    </Binding.RelativeSource>
+                    <Binding.Converter>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                      </StaticResourceExtension>
+                    </Binding.Converter>
+                  </Binding>
+                </UIElement.Visibility>
+                <TextBlock Text="{TemplateBinding pg:PropertyGrid.SelectedObjectTypeName}" FontWeight="Bold" />
+                <TextBlock Text="{TemplateBinding pg:PropertyGrid.SelectedObjectName}" FrameworkElement.Margin="5,0,0,0" />
+              </StackPanel>
+              <Grid Name="toolsContainer" Row="1" FrameworkElement.Margin="4,0,4,4">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Name="sortButtonContainer" FrameworkElement.Margin="4">
+                  <UIElement.Visibility>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowSortOptions</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                      <Binding.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                        </StaticResourceExtension>
+                      </Binding.Converter>
+                    </Binding>
+                  </UIElement.Visibility>
+                  <StackPanel Orientation="Horizontal" FrameworkElement.Margin="1">
+                    <RadioButton FrameworkElement.VerticalAlignment="Center" FrameworkElement.ToolTip="Categorized">
+                      <FrameworkElement.Style>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">OptionsToggleButtonStyle</Ctor>
+                        </StaticResourceExtension>
+                      </FrameworkElement.Style>
+                      <ToggleButton.IsChecked>
+                        <Binding>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsCategorized</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                        </Binding>
+                      </ToggleButton.IsChecked>
+                      <Image Source="./../Images/Categorize16.png" FrameworkElement.Width="16" FrameworkElement.Height="16" />
+                    </RadioButton>
+                    <RadioButton FrameworkElement.VerticalAlignment="Center" FrameworkElement.ToolTip="Alphabetical">
+                      <FrameworkElement.Style>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">OptionsToggleButtonStyle</Ctor>
+                        </StaticResourceExtension>
+                      </FrameworkElement.Style>
+                      <ToggleButton.IsChecked>
+                        <Binding Mode="OneWay">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsCategorized</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                          <Binding.Converter>
+                            <StaticResourceExtension xmlns="">
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">InverseBoolConverter</Ctor>
+                            </StaticResourceExtension>
+                          </Binding.Converter>
+                        </Binding>
+                      </ToggleButton.IsChecked>
+                      <Image Source="./../Images/SortAscending16.png" FrameworkElement.Width="16" FrameworkElement.Height="16" />
+                    </RadioButton>
+                  </StackPanel>
+                </Grid>
+                <Border Name="searchBoxContainer" Grid.Column="1" FrameworkElement.Margin="4,4,0,4" Background="#FFFFFFFF" BorderBrush="#FF808080" BorderThickness="1">
+                  <UIElement.Visibility>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowSearchBox</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                      <Binding.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                        </StaticResourceExtension>
+                      </Binding.Converter>
+                    </Binding>
+                  </UIElement.Visibility>
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*" />
+                      <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <local:WatermarkTextBox Name="_txtFilter" Control.Background="#00FFFFFF" Watermark="{TemplateBinding pg:PropertyGrid.FilterWatermark}">
+                      <TextBox.Text>
+                        <Binding UpdateSourceTrigger="PropertyChanged">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Filter</Ctor>
+                          <Binding.RelativeSource>
+                            <RelativeSource>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                            </RelativeSource>
+                          </Binding.RelativeSource>
+                        </Binding>
+                      </TextBox.Text>
+                      <FrameworkElement.Style>
+                        <Style>
+                          <Style.TargetType>
+                            <x:TypeExtension>
+                              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Control</Ctor>
+                            </x:TypeExtension>
+                          </Style.TargetType>
+                          <Setter Property="Control.BorderThickness" Value="0" />
+                          <Style.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                              <Setter Property="Control.BorderThickness" Value="1" />
+                            </Trigger>
+                          </Style.Triggers>
+                        </Style>
+                      </FrameworkElement.Style>
+                    </local:WatermarkTextBox>
+                    <Button Grid.Column="1" ButtonBase.Command="commands:PropertyGridCommands.ClearFilter" FrameworkElement.HorizontalAlignment="Left">
+                      <FrameworkElement.Style>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ClearFilterButtonStyle</Ctor>
+                        </StaticResourceExtension>
+                      </FrameworkElement.Style>
+                      <Image Source="./../Images/ClearFilter16.png" FrameworkElement.Width="16" FrameworkElement.Height="16" />
+                    </Button>
+                  </Grid>
+                </Border>
+              </Grid>
+              <Grid Row="2" Panel.Background="{Static SystemColors.WindowBrush}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                  <pg:PropertyItemsControl Name="PART_PropertyItemsControl" Control.IsTabStop="False" UIElement.Focusable="False" Control.Background="{Static SystemColors.ControlBrush}" FrameworkElement.VerticalAlignment="Top">
+                    <ItemsControl.ItemsSource>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Properties</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                          </RelativeSource>
+                        </Binding.RelativeSource>
+                      </Binding>
+                    </ItemsControl.ItemsSource>
+                    <ItemsControl.ItemContainerStyle>
+                      <Binding>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PropertyContainerStyle</Ctor>
+                        <Binding.RelativeSource>
+                          <RelativeSource>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                          </RelativeSource>
+                        </Binding.RelativeSource>
+                      </Binding>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                      </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.GroupStyle>
+                      <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                          <Style>
+                            <Style.TargetType>
+                              <x:TypeExtension>
+                                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">GroupItem</Ctor>
+                              </x:TypeExtension>
+                            </Style.TargetType>
+                            <Setter Property="Control.Template">
+                              <Setter.Value>
+                                <ControlTemplate>
+                                  <Border>
+                                    <Expander IsExpanded="True">
+                                      <FrameworkElement.Style>
+                                        <StaticResourceExtension xmlns="">
+                                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ExpanderStyle</Ctor>
+                                        </StaticResourceExtension>
+                                      </FrameworkElement.Style>
+                                      <HeaderedContentControl.Header>
+                                        <Binding>
+                                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Name</Ctor>
+                                        </Binding>
+                                      </HeaderedContentControl.Header>
+                                      <ItemsPresenter />
+                                    </Expander>
+                                  </Border>
+                                </ControlTemplate>
+                              </Setter.Value>
+                            </Setter>
+                          </Style>
+                        </GroupStyle.ContainerStyle>
+                      </GroupStyle>
+                    </ItemsControl.GroupStyle>
+                  </pg:PropertyItemsControl>
+                </ScrollViewer>
+                <Thumb Name="PART_DragThumb" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.Width="5" FrameworkElement.Margin="6,0,0,0" FrameworkElement.Cursor="SizeWE">
+                  <Control.Template>
+                    <ControlTemplate>
+                      <Border Background="#00FFFFFF" />
+                    </ControlTemplate>
+                  </Control.Template>
+                </Thumb>
+              </Grid>
+              <GridSplitter FrameworkElement.Height="3" Grid.Row="3" FrameworkElement.HorizontalAlignment="Stretch">
+                <UIElement.Visibility>
+                  <Binding>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowSummary</Ctor>
+                    <Binding.RelativeSource>
+                      <RelativeSource>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                      </RelativeSource>
+                    </Binding.RelativeSource>
+                    <Binding.Converter>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                      </StaticResourceExtension>
+                    </Binding.Converter>
+                  </Binding>
+                </UIElement.Visibility>
+              </GridSplitter>
+              <StackPanel Grid.Row="4" FrameworkElement.Margin="0,0,0,5">
+                <UIElement.Visibility>
+                  <Binding>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ShowSummary</Ctor>
+                    <Binding.RelativeSource>
+                      <RelativeSource>
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                      </RelativeSource>
+                    </Binding.RelativeSource>
+                    <Binding.Converter>
+                      <StaticResourceExtension xmlns="">
+                        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">BooleanToVisibilityConverter</Ctor>
+                      </StaticResourceExtension>
+                    </Binding.Converter>
+                  </Binding>
+                </UIElement.Visibility>
+                <TextBlock Padding="2 2 2 0" FontWeight="Bold">
+                  <TextBlock.Text>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SelectedPropertyItem.DisplayName</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </TextBlock.Text>
+                </TextBlock>
+                <TextBlock Padding="5 2 2 0" TextWrapping="WrapWithOverflow">
+                  <TextBlock.Text>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">SelectedPropertyItem.Description</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </TextBlock.Text>
+                </TextBlock>
+              </StackPanel>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <MultiTrigger>
+              <MultiTrigger.Conditions>
+                <Condition SourceName="searchBoxContainer" Property="UIElement.Visibility" Value="Collapsed" />
+                <Condition SourceName="sortButtonContainer" Property="UIElement.Visibility" Value="Collapsed" />
+              </MultiTrigger.Conditions>
+              <Setter TargetName="toolsContainer" Property="UIElement.Visibility" Value="Collapsed" />
+            </MultiTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">pg:PropertyGrid</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>

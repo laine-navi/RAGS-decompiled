@@ -1,0 +1,45 @@
+using System.Runtime.InteropServices;
+
+namespace System.Data.SqlServerCe;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class SETABLEINFO
+{
+	public IntPtr pwszTable = IntPtr.Zero;
+
+	public uint cchMax;
+
+	public bool fIsSystem;
+
+	public bool fReadOnly;
+
+	public ulong uhVersion;
+
+	public bool fTemporary;
+
+	public bool fOrdered;
+
+	public long lNextIdentity;
+
+	public bool fIdentityOverflow;
+
+	public ushort wTracking;
+
+	public int lTableNick;
+
+	public uint dwCedbType;
+
+	public int hBookmark;
+
+	public uint cPages;
+
+	public uint cLvPages;
+
+	public uint dwGrantedOps;
+
+	public bool fHasDefaults;
+
+	public bool fCompressed;
+
+	public uint cStatMods;
+}

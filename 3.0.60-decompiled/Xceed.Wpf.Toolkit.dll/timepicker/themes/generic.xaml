@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Xceed.Wpf.Toolkit" xmlns:chrome="clr-namespace:Xceed.Wpf.Toolkit.Chromes" xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters">
+  <conv:InverseBoolConverter x:Key="InverseBoolConverter" />
+  <conv:TimeFormatToDateTimeFormatConverter x:Key="TimeFormatToDateTimeFormatConverter" />
+  <DataTemplate x:Key="DefaultWatermarkTemplate">
+    <ContentControl Control.Foreground="#FF808080" UIElement.Focusable="False" FrameworkElement.Margin="0,0,3,0">
+      <ContentControl.Content>
+        <Binding />
+      </ContentControl.Content>
+    </ContentControl>
+  </DataTemplate>
+  <LinearGradientBrush x:Key="PopupDarkBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#FFA3AEB9" Offset="0" />
+    <GradientStop Color="#FF8399A9" Offset="0.375" />
+    <GradientStop Color="#FF718597" Offset="0.375" />
+    <GradientStop Color="#FF617584" Offset="1" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="PopupBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientBrush.GradientStops>
+      <GradientStopCollection>
+        <GradientStop Offset="0" Color="#FFffffff" />
+        <GradientStop Offset="1" Color="#FFE8EBED" />
+      </GradientStopCollection>
+    </GradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <Style x:Key="TimePickerToggleButtonStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ToggleButton</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ToggleButton</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Grid UIElement.SnapsToDevicePixels="True">
+            <chrome:ButtonChrome Name="ToggleButtonChrome" CornerRadius="0,2.75,2.75,0" RenderMouseOver="{TemplateBinding UIElement.IsMouseOver}" RenderPressed="{TemplateBinding ButtonBase.IsPressed}">
+              <chrome:ButtonChrome.RenderChecked>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsOpen</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource Mode="FindAncestor" AncestorType="local:TimePicker" />
+                  </Binding.RelativeSource>
+                </Binding>
+              </chrome:ButtonChrome.RenderChecked>
+              <chrome:ButtonChrome.RenderEnabled>
+                <Binding>
+                  <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsEnabled</Ctor>
+                  <Binding.RelativeSource>
+                    <RelativeSource Mode="FindAncestor" AncestorType="local:TimePicker" />
+                  </Binding.RelativeSource>
+                </Binding>
+              </chrome:ButtonChrome.RenderEnabled>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.VerticalAlignment="Stretch" UIElement.SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                <Grid Name="arrowGlyph" UIElement.IsHitTestVisible="False" Column="1" FrameworkElement.Margin="5">
+                  <Path Name="Arrow" FrameworkElement.Width="7" FrameworkElement.Height="4" Data="M0,1 C0,1 0,0 0,0 C0,0 3,0 3,0 C3,0 3,1 3,1 C3,1 4,1 4,1 C4,1 4,0 4,0 C4,0 7,0 7,0 C7,0 7,1 7,1 C7,1 6,1 6,1 C6,1 6,2 6,2 C6,2 5,2 5,2 C5,2 5,3 5,3 C5,3 4,3 4,3 C4,3 4,4 4,4 C4,4 3,4 3,4 C3,4 3,3 3,3 C3,3 2,3 2,3 C2,3 2,2 2,2 C2,2 1,2 1,2 C1,2 1,1 1,1 C1,1 0,1 0,1" Shape.Fill="#FF000000" />
+                </Grid>
+              </Grid>
+            </chrome:ButtonChrome>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+              <Setter TargetName="Arrow" Property="Shape.Fill" Value="#AFAFAF" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <SolidColorBrush x:Key="ListItemHover" Color="#FFE7F5FD" />
+  <Style x:Key="TimeItemStyle">
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ListBoxItem</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ListBoxItem</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border FrameworkElement.Name="Border" UIElement.SnapsToDevicePixels="True">
+            <ContentPresenter FrameworkElement.Margin="4" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Border.Background">
+                <Setter.Value>
+                  <StaticResourceExtension xmlns="">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ListItemHover</Ctor>
+                  </StaticResourceExtension>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="ListBoxItem.IsSelected" Value="True">
+              <Setter TargetName="Border" Value="{DynamicResource {Static SystemColors.HighlightBrushKey}}" Property="Border.Background" />
+              <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style>
+    <Style.TargetType>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:TimePicker</Ctor>
+      </x:TypeExtension>
+    </Style.TargetType>
+    <Setter Property="local:TimePicker.WatermarkTemplate">
+      <Setter.Value>
+        <StaticResourceExtension xmlns="">
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">DefaultWatermarkTemplate</Ctor>
+        </StaticResourceExtension>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Control.IsTabStop" Value="False" />
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.TargetType>
+            <x:TypeExtension>
+              <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:TimePicker</Ctor>
+            </x:TypeExtension>
+          </ControlTemplate.TargetType>
+          <Border>
+            <Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <local:DateTimeUpDown Name="PART_TimeUpDown" Control.BorderThickness="1,1,0,1" Control.Background="{TemplateBinding Control.Background}" Control.Foreground="{TemplateBinding Control.Foreground}" FrameworkElement.ContextMenu="{TemplateBinding FrameworkElement.ContextMenu}" AllowSpin="{TemplateBinding local:TimePicker.AllowSpin}" Control.TabIndex="{TemplateBinding Control.TabIndex}" Control.Padding="{TemplateBinding Control.Padding}" FormatString="{TemplateBinding local:TimePicker.FormatString}" ShowButtonSpinner="{TemplateBinding local:TimePicker.ShowButtonSpinner}" Watermark="{TemplateBinding local:TimePicker.Watermark}" WatermarkTemplate="{TemplateBinding local:TimePicker.WatermarkTemplate}" TextAlignment="{TemplateBinding local:TimePicker.TextAlignment}">
+                  <local:DateTimeUpDown.Format>
+                    <TemplateBindingExtension>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Format</Ctor>
+                      <TemplateBindingExtension.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TimeFormatToDateTimeFormatConverter</Ctor>
+                        </StaticResourceExtension>
+                      </TemplateBindingExtension.Converter>
+                    </TemplateBindingExtension>
+                  </local:DateTimeUpDown.Format>
+                  <UpDownBase.Value xmlns="http://schemas.xceed.com/wpf/xaml/toolkit">
+                    <Binding xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Value</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </UpDownBase.Value>
+                  <UpDownBase.Minimum xmlns="http://schemas.xceed.com/wpf/xaml/toolkit">
+                    <Binding xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Minimum</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </UpDownBase.Minimum>
+                  <UpDownBase.Maximum xmlns="http://schemas.xceed.com/wpf/xaml/toolkit">
+                    <Binding xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Maximum</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </UpDownBase.Maximum>
+                  <UpDownBase.ClipValueToMinMax xmlns="http://schemas.xceed.com/wpf/xaml/toolkit">
+                    <Binding xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">ClipValueToMinMax</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </UpDownBase.ClipValueToMinMax>
+                </local:DateTimeUpDown>
+                <ToggleButton Name="_timePickerToggleButton" Grid.Column="1" UIElement.Focusable="False">
+                  <FrameworkElement.Style>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TimePickerToggleButtonStyle</Ctor>
+                    </StaticResourceExtension>
+                  </FrameworkElement.Style>
+                  <ToggleButton.IsChecked>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsOpen</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                    </Binding>
+                  </ToggleButton.IsChecked>
+                  <UIElement.IsHitTestVisible>
+                    <Binding>
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsOpen</Ctor>
+                      <Binding.RelativeSource>
+                        <RelativeSource>
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TemplatedParent</Ctor>
+                        </RelativeSource>
+                      </Binding.RelativeSource>
+                      <Binding.Converter>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">InverseBoolConverter</Ctor>
+                        </StaticResourceExtension>
+                      </Binding.Converter>
+                    </Binding>
+                  </UIElement.IsHitTestVisible>
+                </ToggleButton>
+              </Grid>
+              <Popup Name="PART_Popup" StaysOpen="False">
+                <Popup.IsOpen>
+                  <Binding ElementName="_timePickerToggleButton">
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">IsChecked</Ctor>
+                  </Binding>
+                </Popup.IsOpen>
+                <Border BorderThickness="1">
+                  <Border.Background>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PopupBackgroundBrush</Ctor>
+                    </StaticResourceExtension>
+                  </Border.Background>
+                  <Border.BorderBrush>
+                    <StaticResourceExtension xmlns="">
+                      <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PopupDarkBorderBrush</Ctor>
+                    </StaticResourceExtension>
+                  </Border.BorderBrush>
+                  <Grid>
+                    <ListBox Name="PART_TimeListItems" Control.BorderThickness="0" FrameworkElement.Width="150" FrameworkElement.Height="130" ItemsControl.DisplayMemberPath="Display">
+                      <ItemsControl.ItemContainerStyle>
+                        <StaticResourceExtension xmlns="">
+                          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">TimeItemStyle</Ctor>
+                        </StaticResourceExtension>
+                      </ItemsControl.ItemContainerStyle>
+                    </ListBox>
+                  </Grid>
+                </Border>
+              </Popup>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsFocused" Value="True">
+              <Setter TargetName="PART_TimeUpDown" Property="FocusManager.FocusedElement">
+                <Setter.Value>
+                  <Binding ElementName="PART_TimeUpDown" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <x:Key>
+      <x:TypeExtension>
+        <Ctor xmlns="https://github.com/icsharpcode/ILSpy">local:TimePicker</Ctor>
+      </x:TypeExtension>
+    </x:Key>
+  </Style>
+</ResourceDictionary>
