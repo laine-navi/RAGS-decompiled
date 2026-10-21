@@ -1,0 +1,19 @@
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo>
+    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+    <Reference URI="#RegData">
+      <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <DigestValue>icX1b4Oy7ExBQz8m+PNHc007g2Q=</DigestValue>
+    </Reference>
+  </SignedInfo>
+  <SignatureValue>Zw9BYKplryk7DE0+HUqfN2aHIvUvjBlqGmvzHhyeqXxKRjtjIkEbyqDDzNLRlUqoRNLPc1CcDcMX2uSoBEllhazcSvEOfTm/rbgMzC3w2oygDruNccU2ydJqz2FFGrf7EGR8TURsclBlsc8GoEg3ZsD+//gKMe6OaVhhIroUpVg=</SignatureValue>
+  <Object Id="RegData">
+    <LicenseInfo xmlns="">
+      <LicenseName>Steve L Lane</LicenseName>
+      <LicenseType>Developer License</LicenseType>
+      <LicenseDate>12/23/2010 20:16:31</LicenseDate>
+      <LicensedDevelopers>L2009383</LicensedDevelopers>
+    </LicenseInfo>
+  </Object>
+</Signature>

@@ -1,0 +1,62 @@
+1. ACCEPTANCE OF TERMS
+Welcome to RAGS! RAGS provides this RAGS Player and/or Designer service, to you, subject to the following license terms, which incorporates by reference the RAGS Terms of Service ("TOS") each which may be updated by us from time to time without notice to you (collectively this "License").  If you are in a jurisdiction where download or use of this software or service is prohibited, click "Cancel" and do not download or use this software.
+
+By checking the box and clicking the "Next" button to download RAGS Player and/or Designer, and by using and continuing to use RAGS Messenger or the other software or services, you agree to be bound by this License which includes the TOS, and represent and warrant that you are permitted to do so under applicable law.
+
+2. DIFFERENT VERSIONS OF RAGS AND RAGS CREATED GAMES.
+Not all features may be available if the game file has been created with a different version of RAGS.
+
+3. DESCRIPTION
+The foregoing software you elect to download, and any RAGS or third party software, protocols (including but not limited to API protocols) (the "Software"), along with any services, content, or materials used that are authorized by RAGS, are collectively deemed to be the "Service". Where the TOS references the defined term "Service," such terms in the TOS will also apply to the Software and services defined to be the "Service" under this License.
+RAGS allows you to create fun, exciting interactive games.
+
+From time to time, RAGS may automatically prompt you to download the latest version of the Software and notify you when it's ready to install.  If you wish to update your RAGS software, you must agree to the then current RAGS Messenger Terms of Service in order for the update to be installed on your computer.
+HOW TO UNINSTALL: To uninstall, go to your operating system Control Panel, select Add/Remove Programs, and select RAGS or other RAGS application that you wish to uninstall. Click the Change/Remove button. Leave the selection on Automatic and click Next. Then click Finish and you are done! You may have to reboot to remove some components.
+
+4. LICENSE
+The Service (which includes the Software) contains proprietary and confidential information that is protected by applicable intellectual property and other laws. RAGS and RAGS's licensors own all rights, title, and interest in and to their applicable contributions to the Service. This License grants you no right, title, or interest in any intellectual property owned or licensed by RAGS, including (but not limited to) the Service and RAGS trademarks, and creates no relationship between yourself and RAGS's licensors, or between you and RAGS other than that of RAGS to licensee.
+YOU MAY install and personally use the Software and any authorized updates provided by RAGS in object code form on a personal computer owned or controlled by you and are only permitted to access the Service through the Software, only as authorized in this License. You may use the Software and access the Service for your own noncommercial use or benefit. The Service and its components contain software licensed from RAGS licensors ("Licensor Software"). The Licensor Software enables the RAGS Software to perform certain functions including, without limitation, access proprietary data on third-party data servers. You agree not to assign, copy, transfer, or transmit the Service, or any data obtained through the Service, to any third party. Your license to use the Service, its components, and any third-party data, will terminate if you violate these restrictions. If your license terminates, you agree to cease any and all use of the Service, its components, and any third-party data. All rights in any third-party data, any third-party software, and any third-party data servers, including all ownership rights are reserved and remain with the respective third parties. You agree that these third parties may enforce their rights under this Agreement against you directly in their own name.
+RAGS may elect to provide you with customer support and/or software upgrades, enhancements, or modifications for the Service (collectively, "Support"), in its sole discretion, and may terminate such Support at any time without notice to you. RAGS may change, suspend, or discontinue any aspect of the Service at any time, including the availability of any Service feature, database, or content. RAGS may also impose limits on certain features and services or restrict your access to parts or all of the Service or the RAGS web site without notice or liability.
+
+5. RESTRICTIONS ON USE
+YOU MAY NOT and will not allow any third party to:
+copy, decompile, reverse engineer, reverse assemble, disassemble, modify, rent, lease, loan, distribute, or create derivative works (as defined by the U.S. Copyright Act) or improvements (as defined by U.S. patent law) from the Software, or any portion thereof, or otherwise attempt to discover any source code or protocols (including but no limited to API protocols) in the Service;
+obtain or attempt to obtain unauthorized access to the Service or the RAGS network;
+incorporate the protocols or Software, or any portion thereof, into any other service, software, hardware, or other technology manufactured or distributed by or for you;
+use the Service in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with this License;
+use the Service to operate nuclear facilities, life support, or other mission critical application where human life or property may be at stake. You understand that the Service is not designed for such purposes and that its failure in such cases could lead to death, personal injury, or severe property or environmental damage for which RAGS is not responsible;
+sell, lease, loan, distribute, transfer, or sublicense the Service or access thereto or derive income from the use or provision of the Service, whether for direct commercial or monetary gain or otherwise, without RAGS's prior, express, written permission.
+All Software provided to the U.S. Government pursuant to solicitations issued on or after December 1, 1995, is provided with the commercial rights and restrictions described herein.
+
+6. SOFTWARE AND SERVICE PROVIDED AS-IS
+Unless explicitly stated otherwise, any new features that augment or enhance the current Service shall be subject to this License. You understand and agree that the Service is provided "AS-IS" and that RAGS assumes no responsibility for the timeliness, deletion, mis-delivery, or failure to store any user communications or personalization settings. You also understand that RAGS is not responsible for the security or privacy of communications sent via the Service, including but not limited to where the Service is being accessed via wireless devices or other equipment used to access the Service. These disclaimers are in addition to the "Disclaimer of Warranties" section in the TOS.
+Any third party plug-ins applications that you use with the Service are owned by and are the sole responsibility of the plug-in application developer, and it is up to you decide whether these plug-in applications, or your use of them, is legal or appropriate.
+Any required or optional equipment, or third party plug-in applications, that you use to use, access, or augment the Service, whether required or optional, is subject to the terms, conditions, warranties and disclaimers provided by the manufacturer of the equipment, and RAGS makes no warranties or representations whatsoever regarding such equipment or third party plug-in application. Please refer to the materials you received when you purchased the equipment or downloaded the plug-in application to understand your rights and obligations, including what warranties and disclaimers apply to you. RAGS AND ITS AFFILIATES EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, RELATING TO SUCH EQUIPMENT OR PLUG-IN APPLICATIONS, INCLUDING THE IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+7. MODIFICATIONS TO SERVICE
+RAGS reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Service (or any part thereof) with or without notice. You agree that RAGS shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Service. RAGS may also impose limits on certain features and services or restrict your access to parts or all of the Service or the RAGS web site without notice or liability.
+
+8. TERMINATION
+Your license to the Software and to access the Service continues until it is terminated by either party. You may terminate this License by discontinuing use of all or any of the Software and by destroying all your copies of the applicable Software. RAGS may terminate this License pursuant to "Termination" section of the TOS.
+
+
+9. GOVERNMENT END USERS
+If the Service and related documentation are supplied to or purchased by or on behalf of the United States Government, then the Service is deemed to be "commercial software" as that term is used in the Federal Acquisition Regulation system. Rights of the United States shall not exceed the minimum rights set forth in FAR 52.227-19 for "restricted computer software." All other terms and conditions of this License apply.
+
+10. NOTICE
+RAGS may provide you with notices, including those regarding changes to this License, by either email, regular mail, or postings on the Service.
+
+11. GENERAL INFORMATION
+Entire Agreement. This License, which includes the TOS, constitutes the entire agreement between you and RAGS and governs your use of the Service, superseding any prior agreements between you and RAGS with respect to the Service. With respect to your use of other authorized RAGS services, affiliate services, affiliate devices or equipment, third-party content, or third-party software, you also may be subject to additional terms and conditions. In the event of any conflict between the terms and conditions of this License and those in the TOS, the terms and conditions of this License will control, except to the extent that the TOS impose additional restrictions and liabilities on your actions.
+
+Choice of Law and Forum. This License and the relationship between you and RAGS shall be governed by the laws of the State of Colorado without regard to its conflict of law provisions. You and RAGS agree to submit to the personal and exclusive jurisdiction of the courts located within the county of El Paso, Colorado.
+
+Waiver and Severability of Terms. The failure of RAGS to exercise or enforce any right or provision of this License shall not constitute a waiver of such right or provision. If any provision of this License is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of this License and TOS remain in full force and effect.
+No Right of Survivorship and Non-Transferability. You agree that your RAGS account is non-transferable and any rights to your RAGS I.D. or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, your account may be terminated and all contents therein permanently deleted.
+
+Statute of Limitations. You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Service, or this License, must be filed within one (1) year after such claim or cause of action arose or be forever barred.
+The section titles in this License are for convenience only and have no legal or contractual effect.
+
+12. VIOLATIONS
+Please report any violations of this License or TOS to our Customer Care group.
+
