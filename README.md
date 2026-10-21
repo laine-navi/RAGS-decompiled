@@ -5,8 +5,9 @@ Preservation reference for reverse engineering the RAGS game format.
 
 Not for redistribution of the original software. Binaries included for provenance only.
 
-**Engine spec:** [link to rags-engine-spec repo]
-**Preservation archive (originals + dependencies):** [link to archive.org item]
+**Engine spec:** [RAGS-engine-spec](https://github.com/laine-navi/RAGS-engine-spec)
+
+**Preservation archive (originals + dependencies):** [rags game on archive.org](https://archive.org/details/rags-suite-preservation-archive)
 
 ## Contents
 
