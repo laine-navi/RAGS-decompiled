@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_PlaylistCollectionPlaylistSetAsDeletedEventHandler(object sender, _WMPOCXEvents_PlaylistCollectionPlaylistSetAsDeletedEvent e);

@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_FolderScanStateChangeEventHandler(object sender, _WMPOCXEvents_FolderScanStateChangeEvent e);

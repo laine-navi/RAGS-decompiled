@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_MediaCollectionMediaRemovedEventHandler(object sender, _WMPOCXEvents_MediaCollectionMediaRemovedEvent e);

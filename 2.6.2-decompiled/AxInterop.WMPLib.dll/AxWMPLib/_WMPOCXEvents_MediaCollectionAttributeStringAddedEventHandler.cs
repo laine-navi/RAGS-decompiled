@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_MediaCollectionAttributeStringAddedEventHandler(object sender, _WMPOCXEvents_MediaCollectionAttributeStringAddedEvent e);

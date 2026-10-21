@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_PlaylistCollectionPlaylistAddedEventHandler(object sender, _WMPOCXEvents_PlaylistCollectionPlaylistAddedEvent e);

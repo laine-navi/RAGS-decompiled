@@ -1,0 +1,23 @@
+Version 1.3.0.0
+
+Bug Fixes:
+1. You can once again open RAGS files directly from the internet without getting the strange decryption errors we were seeing before.
+2. Weird square in main picture corrected
+3. Exit Direction or/and bug fixed
+4. Variables in names bug fixed.
+5. Playername with multiple variable levels corrected
+6. Password Protection Crash Fixed
+7. Loading older game file can cause unhandled exceptions fixed.
+
+Enhancements:
+1. Spell Checking
+2. Layered Images
+3. Quick Save and Quick Load options added. (F8 & F9 keys)
+
+
+Don't forget to check out the online video tutorials at http://www.ragsgame.com/OnlineHelp.aspx
+
+
+I hope you enjoy working with RAGS.
+Thanks,
+Steve

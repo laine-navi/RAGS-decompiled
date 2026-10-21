@@ -1,0 +1,9 @@
+namespace System.Data.SqlServerCe;
+
+internal enum QPPARAMTYPE
+{
+	QPPARAM_INPUT,
+	QPPARAM_OUTPUT,
+	QPPARAM_INOUT,
+	QPPARAM_RETURN
+}

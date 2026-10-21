@@ -1,0 +1,135 @@
+using System.Runtime.InteropServices;
+
+namespace WMPLib;
+
+[ComVisible(false)]
+[ComEventInterface(typeof(_WMPOCXEvents_0000), typeof(_WMPOCXEvents_EventProvider_0000))]
+[TypeLibType(16)]
+public interface _WMPOCXEvents_Event
+{
+	event _WMPOCXEvents_OpenStateChangeEventHandler OpenStateChange;
+
+	event _WMPOCXEvents_PlayStateChangeEventHandler PlayStateChange;
+
+	event _WMPOCXEvents_AudioLanguageChangeEventHandler AudioLanguageChange;
+
+	event _WMPOCXEvents_StatusChangeEventHandler StatusChange;
+
+	event _WMPOCXEvents_ScriptCommandEventHandler ScriptCommand;
+
+	event _WMPOCXEvents_NewStreamEventHandler NewStream;
+
+	event _WMPOCXEvents_DisconnectEventHandler Disconnect;
+
+	event _WMPOCXEvents_BufferingEventHandler Buffering;
+
+	event _WMPOCXEvents_ErrorEventHandler Error;
+
+	event _WMPOCXEvents_WarningEventHandler Warning;
+
+	event _WMPOCXEvents_EndOfStreamEventHandler EndOfStream;
+
+	event _WMPOCXEvents_PositionChangeEventHandler PositionChange;
+
+	event _WMPOCXEvents_MarkerHitEventHandler MarkerHit;
+
+	event _WMPOCXEvents_DurationUnitChangeEventHandler DurationUnitChange;
+
+	event _WMPOCXEvents_CdromMediaChangeEventHandler CdromMediaChange;
+
+	event _WMPOCXEvents_PlaylistChangeEventHandler PlaylistChange;
+
+	event _WMPOCXEvents_CurrentPlaylistChangeEventHandler CurrentPlaylistChange;
+
+	event _WMPOCXEvents_CurrentPlaylistItemAvailableEventHandler CurrentPlaylistItemAvailable;
+
+	event _WMPOCXEvents_MediaChangeEventHandler MediaChange;
+
+	event _WMPOCXEvents_CurrentMediaItemAvailableEventHandler CurrentMediaItemAvailable;
+
+	event _WMPOCXEvents_CurrentItemChangeEventHandler CurrentItemChange;
+
+	event _WMPOCXEvents_MediaCollectionChangeEventHandler MediaCollectionChange;
+
+	event _WMPOCXEvents_MediaCollectionAttributeStringAddedEventHandler MediaCollectionAttributeStringAdded;
+
+	event _WMPOCXEvents_MediaCollectionAttributeStringRemovedEventHandler MediaCollectionAttributeStringRemoved;
+
+	event _WMPOCXEvents_MediaCollectionAttributeStringChangedEventHandler MediaCollectionAttributeStringChanged;
+
+	event _WMPOCXEvents_PlaylistCollectionChangeEventHandler PlaylistCollectionChange;
+
+	event _WMPOCXEvents_PlaylistCollectionPlaylistAddedEventHandler PlaylistCollectionPlaylistAdded;
+
+	event _WMPOCXEvents_PlaylistCollectionPlaylistRemovedEventHandler PlaylistCollectionPlaylistRemoved;
+
+	event _WMPOCXEvents_PlaylistCollectionPlaylistSetAsDeletedEventHandler PlaylistCollectionPlaylistSetAsDeleted;
+
+	event _WMPOCXEvents_ModeChangeEventHandler ModeChange;
+
+	event _WMPOCXEvents_MediaErrorEventHandler MediaError;
+
+	event _WMPOCXEvents_OpenPlaylistSwitchEventHandler OpenPlaylistSwitch;
+
+	event _WMPOCXEvents_DomainChangeEventHandler DomainChange;
+
+	event _WMPOCXEvents_SwitchedToPlayerApplicationEventHandler SwitchedToPlayerApplication;
+
+	event _WMPOCXEvents_SwitchedToControlEventHandler SwitchedToControl;
+
+	event _WMPOCXEvents_PlayerDockedStateChangeEventHandler PlayerDockedStateChange;
+
+	event _WMPOCXEvents_PlayerReconnectEventHandler PlayerReconnect;
+
+	event _WMPOCXEvents_ClickEventHandler Click;
+
+	event _WMPOCXEvents_DoubleClickEventHandler DoubleClick;
+
+	event _WMPOCXEvents_KeyDownEventHandler KeyDown;
+
+	event _WMPOCXEvents_KeyPressEventHandler KeyPress;
+
+	event _WMPOCXEvents_KeyUpEventHandler KeyUp;
+
+	event _WMPOCXEvents_MouseDownEventHandler MouseDown;
+
+	event _WMPOCXEvents_MouseMoveEventHandler MouseMove;
+
+	event _WMPOCXEvents_MouseUpEventHandler MouseUp;
+
+	event _WMPOCXEvents_DeviceConnectEventHandler DeviceConnect;
+
+	event _WMPOCXEvents_DeviceDisconnectEventHandler DeviceDisconnect;
+
+	event _WMPOCXEvents_DeviceStatusChangeEventHandler DeviceStatusChange;
+
+	event _WMPOCXEvents_DeviceSyncStateChangeEventHandler DeviceSyncStateChange;
+
+	event _WMPOCXEvents_DeviceSyncErrorEventHandler DeviceSyncError;
+
+	event _WMPOCXEvents_CreatePartnershipCompleteEventHandler CreatePartnershipComplete;
+
+	event _WMPOCXEvents_DeviceEstimationEventHandler DeviceEstimation;
+
+	event _WMPOCXEvents_CdromRipStateChangeEventHandler CdromRipStateChange;
+
+	event _WMPOCXEvents_CdromRipMediaErrorEventHandler CdromRipMediaError;
+
+	event _WMPOCXEvents_CdromBurnStateChangeEventHandler CdromBurnStateChange;
+
+	event _WMPOCXEvents_CdromBurnMediaErrorEventHandler CdromBurnMediaError;
+
+	event _WMPOCXEvents_CdromBurnErrorEventHandler CdromBurnError;
+
+	event _WMPOCXEvents_LibraryConnectEventHandler LibraryConnect;
+
+	event _WMPOCXEvents_LibraryDisconnectEventHandler LibraryDisconnect;
+
+	event _WMPOCXEvents_FolderScanStateChangeEventHandler FolderScanStateChange;
+
+	event _WMPOCXEvents_StringCollectionChangeEventHandler StringCollectionChange;
+
+	event _WMPOCXEvents_MediaCollectionMediaAddedEventHandler MediaCollectionMediaAdded;
+
+	event _WMPOCXEvents_MediaCollectionMediaRemovedEventHandler MediaCollectionMediaRemoved;
+}

@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>RagsDesigner</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net46</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RagsDesigner.Resources.East.png" />
+    <None Remove="RagsDesigner.Resources.North.png" />
+    <None Remove="RagsDesigner.Resources.NorthEast.png" />
+    <None Remove="RagsDesigner.Resources.NorthWest.png" />
+    <None Remove="RagsDesigner.Resources.South.png" />
+    <None Remove="RagsDesigner.Resources.SouthEast.png" />
+    <None Remove="RagsDesigner.Resources.SouthWest.png" />
+    <None Remove="RagsDesigner.Resources.West.png" />
+    <None Remove="RagsDesigner.Resources.300px-Compass_Rose_English_North.png" />
+    <None Remove="RagsDesigner.Resources.300px-Compass_Rose_UD.png" />
+    <None Remove="RagsDesigner.Resources.TextHandler.js" />
+    <None Remove="RagsDesigner.Resources.Timer.js" />
+    <None Remove="RagsDesigner.Resources.Utilities.js" />
+    <None Remove="RagsDesigner.Resources.Variable.js" />
+    <None Remove="RagsDesigner.Resources.RagsImage.js" />
+    <None Remove="RagsDesigner.Resources.Action.js" />
+    <None Remove="RagsDesigner.Resources.Characters.js" />
+    <None Remove="RagsDesigner.Resources.Check.js" />
+    <None Remove="RagsDesigner.Resources.Command.js" />
+    <None Remove="RagsDesigner.Resources.Condition.js" />
+    <None Remove="RagsDesigner.Resources.CustomProperty.js" />
+    <None Remove="RagsDesigner.Resources.EnhancedInputData.js" />
+    <None Remove="RagsDesigner.Resources.Exit.js" />
+    <None Remove="RagsDesigner.Resources.jquery-1.5.1.min.js" />
+    <None Remove="RagsDesigner.Resources.modernizr-2.0.6.js" />
+    <None Remove="RagsDesigner.Resources.objects.js" />
+    <None Remove="RagsDesigner.Resources.Player.js" />
+    <None Remove="RagsDesigner.Resources.Room.js" />
+    <None Remove="RagsDesigner.Resources.StatusBarItem.js" />
+    <None Remove="RagsDesigner.Resources.testing.js" />
+    <None Remove="RagsDesigner.Resources.html5reset.css" />
+    <None Remove="RagsDesigner.Resources.style.css" />
+    <None Remove="RagsDesigner.Resources.WhatsNew.txt" />
+    <None Remove="Model1.csdl" />
+    <None Remove="Model1.msl" />
+    <None Remove="Model1.ssdl" />
+    <EmbeddedResource Include="RagsDesigner.Resources.East.png" LogicalName="RagsDesigner.Resources.East.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.North.png" LogicalName="RagsDesigner.Resources.North.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.NorthEast.png" LogicalName="RagsDesigner.Resources.NorthEast.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.NorthWest.png" LogicalName="RagsDesigner.Resources.NorthWest.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.South.png" LogicalName="RagsDesigner.Resources.South.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.SouthEast.png" LogicalName="RagsDesigner.Resources.SouthEast.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.SouthWest.png" LogicalName="RagsDesigner.Resources.SouthWest.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.West.png" LogicalName="RagsDesigner.Resources.West.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.300px-Compass_Rose_English_North.png" LogicalName="RagsDesigner.Resources.300px-Compass_Rose_English_North.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.300px-Compass_Rose_UD.png" LogicalName="RagsDesigner.Resources.300px-Compass_Rose_UD.png" />
+    <EmbeddedResource Include="RagsDesigner.Resources.TextHandler.js" LogicalName="RagsDesigner.Resources.TextHandler.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Timer.js" LogicalName="RagsDesigner.Resources.Timer.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Utilities.js" LogicalName="RagsDesigner.Resources.Utilities.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Variable.js" LogicalName="RagsDesigner.Resources.Variable.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.RagsImage.js" LogicalName="RagsDesigner.Resources.RagsImage.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Action.js" LogicalName="RagsDesigner.Resources.Action.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Characters.js" LogicalName="RagsDesigner.Resources.Characters.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Check.js" LogicalName="RagsDesigner.Resources.Check.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Command.js" LogicalName="RagsDesigner.Resources.Command.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Condition.js" LogicalName="RagsDesigner.Resources.Condition.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.CustomProperty.js" LogicalName="RagsDesigner.Resources.CustomProperty.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.EnhancedInputData.js" LogicalName="RagsDesigner.Resources.EnhancedInputData.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Exit.js" LogicalName="RagsDesigner.Resources.Exit.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.jquery-1.5.1.min.js" LogicalName="RagsDesigner.Resources.jquery-1.5.1.min.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.modernizr-2.0.6.js" LogicalName="RagsDesigner.Resources.modernizr-2.0.6.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.objects.js" LogicalName="RagsDesigner.Resources.objects.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Player.js" LogicalName="RagsDesigner.Resources.Player.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.Room.js" LogicalName="RagsDesigner.Resources.Room.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.StatusBarItem.js" LogicalName="RagsDesigner.Resources.StatusBarItem.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.testing.js" LogicalName="RagsDesigner.Resources.testing.js" />
+    <EmbeddedResource Include="RagsDesigner.Resources.html5reset.css" LogicalName="RagsDesigner.Resources.html5reset.css" />
+    <EmbeddedResource Include="RagsDesigner.Resources.style.css" LogicalName="RagsDesigner.Resources.style.css" />
+    <EmbeddedResource Include="RagsDesigner.Resources.WhatsNew.txt" LogicalName="RagsDesigner.Resources.WhatsNew.txt" />
+    <EmbeddedResource Include="Model1.csdl" LogicalName="Model1.csdl" />
+    <EmbeddedResource Include="Model1.msl" LogicalName="Model1.msl" />
+    <EmbeddedResource Include="Model1.ssdl" LogicalName="Model1.ssdl" />
+    <ApplicationConfig Remove="RagsDesigner.exe.config" />
+    <ApplicationConfig Include="RagsDesigner.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="RagsLib">
+      <HintPath>2.6.2/RagsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>2.6.2/System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib">
+      <HintPath>2.6.2/AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

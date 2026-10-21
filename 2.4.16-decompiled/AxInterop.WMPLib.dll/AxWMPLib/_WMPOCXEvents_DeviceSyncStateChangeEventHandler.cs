@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_DeviceSyncStateChangeEventHandler(object sender, _WMPOCXEvents_DeviceSyncStateChangeEvent e);

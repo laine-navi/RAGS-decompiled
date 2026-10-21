@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_CreatePartnershipCompleteEventHandler(object sender, _WMPOCXEvents_CreatePartnershipCompleteEvent e);

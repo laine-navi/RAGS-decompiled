@@ -1,0 +1,3 @@
+namespace AxWMPLib;
+
+public delegate void _WMPOCXEvents_CurrentMediaItemAvailableEventHandler(object sender, _WMPOCXEvents_CurrentMediaItemAvailableEvent e);

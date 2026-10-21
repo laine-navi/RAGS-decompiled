@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>RagsDesigner</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RagsDesigner.exe.licenses" />
+    <None Remove="RagsDesigner" />
+    <EmbeddedResource Include="RagsDesigner.exe.licenses" LogicalName="RagsDesigner.exe.licenses" />
+    <EmbeddedResource Include="RagsDesigner" LogicalName="RagsDesigner" />
+    <ApplicationConfig Remove="RagsDesigner.exe.config" />
+    <ApplicationConfig Include="RagsDesigner.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="RagsLib">
+      <HintPath>2.4.16/RagsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSpell.Core" />
+    <Reference Include="AxInterop.WMPLib">
+      <HintPath>2.4.16/AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSpell.Windows">
+      <HintPath>2.4.16/SharpSpell.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>2.4.16/System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../../../../usr/lib64/dotnet/shared/Microsoft.NETCore.App/10.0.12/System.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,81 @@
+using System.Runtime.InteropServices;
+
+namespace WMPLib;
+
+[TypeLibType(16)]
+[ComVisible(false)]
+[ComEventInterface(typeof(_WMPCoreEvents_0000), typeof(_WMPCoreEvents_EventProvider_0000))]
+public interface _WMPCoreEvents_Event
+{
+	event _WMPCoreEvents_OpenStateChangeEventHandler OpenStateChange;
+
+	event _WMPCoreEvents_PlayStateChangeEventHandler PlayStateChange;
+
+	event _WMPCoreEvents_AudioLanguageChangeEventHandler AudioLanguageChange;
+
+	event _WMPCoreEvents_StatusChangeEventHandler StatusChange;
+
+	event _WMPCoreEvents_ScriptCommandEventHandler ScriptCommand;
+
+	event _WMPCoreEvents_NewStreamEventHandler NewStream;
+
+	event _WMPCoreEvents_DisconnectEventHandler Disconnect;
+
+	event _WMPCoreEvents_BufferingEventHandler Buffering;
+
+	event _WMPCoreEvents_ErrorEventHandler Error;
+
+	event _WMPCoreEvents_WarningEventHandler Warning;
+
+	event _WMPCoreEvents_EndOfStreamEventHandler EndOfStream;
+
+	event _WMPCoreEvents_PositionChangeEventHandler PositionChange;
+
+	event _WMPCoreEvents_MarkerHitEventHandler MarkerHit;
+
+	event _WMPCoreEvents_DurationUnitChangeEventHandler DurationUnitChange;
+
+	event _WMPCoreEvents_CdromMediaChangeEventHandler CdromMediaChange;
+
+	event _WMPCoreEvents_PlaylistChangeEventHandler PlaylistChange;
+
+	event _WMPCoreEvents_CurrentPlaylistChangeEventHandler CurrentPlaylistChange;
+
+	event _WMPCoreEvents_CurrentPlaylistItemAvailableEventHandler CurrentPlaylistItemAvailable;
+
+	event _WMPCoreEvents_MediaChangeEventHandler MediaChange;
+
+	event _WMPCoreEvents_CurrentMediaItemAvailableEventHandler CurrentMediaItemAvailable;
+
+	event _WMPCoreEvents_CurrentItemChangeEventHandler CurrentItemChange;
+
+	event _WMPCoreEvents_MediaCollectionChangeEventHandler MediaCollectionChange;
+
+	event _WMPCoreEvents_MediaCollectionAttributeStringAddedEventHandler MediaCollectionAttributeStringAdded;
+
+	event _WMPCoreEvents_MediaCollectionAttributeStringRemovedEventHandler MediaCollectionAttributeStringRemoved;
+
+	event _WMPCoreEvents_MediaCollectionAttributeStringChangedEventHandler MediaCollectionAttributeStringChanged;
+
+	event _WMPCoreEvents_PlaylistCollectionChangeEventHandler PlaylistCollectionChange;
+
+	event _WMPCoreEvents_PlaylistCollectionPlaylistAddedEventHandler PlaylistCollectionPlaylistAdded;
+
+	event _WMPCoreEvents_PlaylistCollectionPlaylistRemovedEventHandler PlaylistCollectionPlaylistRemoved;
+
+	event _WMPCoreEvents_PlaylistCollectionPlaylistSetAsDeletedEventHandler PlaylistCollectionPlaylistSetAsDeleted;
+
+	event _WMPCoreEvents_ModeChangeEventHandler ModeChange;
+
+	event _WMPCoreEvents_MediaErrorEventHandler MediaError;
+
+	event _WMPCoreEvents_OpenPlaylistSwitchEventHandler OpenPlaylistSwitch;
+
+	event _WMPCoreEvents_DomainChangeEventHandler DomainChange;
+
+	event _WMPCoreEvents_StringCollectionChangeEventHandler StringCollectionChange;
+
+	event _WMPCoreEvents_MediaCollectionMediaAddedEventHandler MediaCollectionMediaAdded;
+
+	event _WMPCoreEvents_MediaCollectionMediaRemovedEventHandler MediaCollectionMediaRemoved;
+}
